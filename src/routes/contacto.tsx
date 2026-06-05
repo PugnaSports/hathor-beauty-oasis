@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import type { ReactNode } from "react";
 import { SectionHeader } from "@/components/hathor/SectionHeader";
 import { CTAAnchor } from "@/components/hathor/CTAButton";
 import { CLINIC } from "@/lib/hathor";
@@ -146,7 +147,7 @@ function InfoRow({
 }: {
   icon: typeof MapPin;
   label: string;
-  value: React.ReactNode;
+  value: ReactNode;
 }) {
   return (
     <div className="flex gap-5 items-start">

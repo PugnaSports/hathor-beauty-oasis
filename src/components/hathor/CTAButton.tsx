@@ -1,0 +1,32 @@
+import { Link } from "@tanstack/react-router";
+import type { ComponentProps } from "react";
+
+type Variant = "primary" | "outline" | "ghost";
+
+const styles: Record<Variant, string> = {
+  primary:
+    "bg-ink text-background hover:bg-gold",
+  outline:
+    "border border-ink/15 text-ink hover:border-gold hover:text-gold",
+  ghost:
+    "text-ink hover:text-gold",
+};
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] transition-all duration-300";
+
+export function CTALink({
+  variant = "primary",
+  className = "",
+  ...props
+}: { variant?: Variant } & ComponentProps<typeof Link>) {
+  return <Link {...props} className={`${base} ${styles[variant]} ${className}`} />;
+}
+
+export function CTAAnchor({
+  variant = "primary",
+  className = "",
+  ...props
+}: { variant?: Variant } & ComponentProps<"a">) {
+  return <a {...props} className={`${base} ${styles[variant]} ${className}`} />;
+}

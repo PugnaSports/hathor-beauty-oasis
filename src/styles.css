@@ -5,17 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * Hathor Clínica — Boutique editorial design system.
+ * Paleta nude / beige / dorado sutil + acento verde-azul clínico.
  */
 
 @theme inline {
@@ -59,29 +50,48 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-nude: var(--nude);
+  --color-nude-deep: var(--nude-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-clinical: var(--clinical);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.5rem;
+
+  /* Hathor palette */
+  --background: oklch(0.985 0.005 80);          /* warm off-white #FAF8F4 */
+  --foreground: oklch(0.22 0.012 60);           /* deep ink #2D2926 */
+  --ink: oklch(0.22 0.012 60);
+  --ink-muted: oklch(0.52 0.012 70);
+  --nude: oklch(0.94 0.018 70);                 /* soft nude #EFE7DC */
+  --nude-deep: oklch(0.88 0.025 70);            /* deeper sand */
+  --gold: oklch(0.72 0.085 80);                 /* sutil dorado #C5A059 */
+  --gold-soft: oklch(0.82 0.06 82);
+  --clinical: oklch(0.93 0.025 190);            /* whisper de verde-azul clínico */
+
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: var(--ink);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: oklch(0.985 0.005 80);
+  --secondary: var(--nude);
+  --secondary-foreground: var(--ink);
+  --muted: var(--nude);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.99 0.005 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.9 0.012 70);
+  --input: oklch(0.9 0.012 70);
+  --ring: var(--gold);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +150,27 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Reveal-on-scroll utility */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1),
+                transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

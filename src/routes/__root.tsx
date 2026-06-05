@@ -11,10 +11,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { SiteHeader } from "../components/hathor/SiteHeader";
-import { SiteFooter } from "../components/hathor/SiteFooter";
-import { MobileCTABar } from "../components/hathor/MobileCTABar";
-import { ScrollReveal } from "../components/hathor/ScrollReveal";
+import { SiteHeader } from "@/components/hathor/SiteHeader";
+import { SiteFooter } from "@/components/hathor/SiteFooter";
+import { MobileCTABar } from "@/components/hathor/MobileCTABar";
+import { ScrollReveal } from "@/components/hathor/ScrollReveal";
 
 function NotFoundComponent() {
   return (

@@ -1,11 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ExternalLink } from "@/components/hathor/ExternalLink";
 import { LegalPage, type LegalSection } from "@/components/hathor/LegalPage";
 import { CLINIC } from "@/lib/hathor";
-
-const externalLinkProps = {
-  target: "_top",
-  rel: "noopener noreferrer",
-} as const;
 
 export const Route = createFileRoute("/politica-cookies")({
   head: () => ({
@@ -100,15 +96,15 @@ const sections: LegalSection[] = [
         <ul>
           <li>
             <p><strong>Google Maps:</strong> mapa embebido y enlace de ruta a la clínica.</p>
-            <p>Más información: <a href="https://policies.google.com/privacy?hl=es" {...externalLinkProps}>política de privacidad de Google</a>.</p>
+            <p>Más información: <ExternalLink href="https://policies.google.com/privacy?hl=es">política de privacidad de Google</ExternalLink>.</p>
           </li>
           <li>
             <p><strong>Instagram:</strong> enlaces al perfil y posibles embeds de reels.</p>
-            <p>Más información: <a href="https://privacycenter.instagram.com/policy/" {...externalLinkProps}>política de privacidad de Instagram (Meta)</a>.</p>
+            <p>Más información: <ExternalLink href="https://privacycenter.instagram.com/policy/">política de privacidad de Instagram (Meta)</ExternalLink>.</p>
           </li>
           <li>
             <p><strong>WhatsApp:</strong> enlaces directos para iniciar conversación.</p>
-            <p>Más información: <a href="https://www.whatsapp.com/legal/privacy-policy-eea?lang=es_ES" {...externalLinkProps}>política de privacidad de WhatsApp</a>.</p>
+            <p>Más información: <ExternalLink href="https://www.whatsapp.com/legal/privacy-policy-eea?lang=es_ES">política de privacidad de WhatsApp</ExternalLink>.</p>
           </li>
         </ul>
       </>
@@ -125,16 +121,16 @@ const sections: LegalSection[] = [
         </p>
         <ul>
           <li>
-              <a href="https://support.google.com/accounts/answer/61416?hl=es" {...externalLinkProps}>Google Chrome</a>
+              <ExternalLink href="https://support.google.com/accounts/answer/61416?hl=es">Google Chrome</ExternalLink>
           </li>
           <li>
-              <a href="https://support.mozilla.org/es/kb/Borrar%20cookies" {...externalLinkProps}>Mozilla Firefox</a>
+              <ExternalLink href="https://support.mozilla.org/es/kb/Borrar%20cookies">Mozilla Firefox</ExternalLink>
           </li>
           <li>
-              <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" {...externalLinkProps}>Apple Safari</a>
+              <ExternalLink href="https://support.apple.com/es-es/guide/safari/sfri11471/mac">Apple Safari</ExternalLink>
           </li>
           <li>
-              <a href="https://support.microsoft.com/es-es/windows/administrar-cookies-en-microsoft-edge-ver-permitir-bloquear-eliminar-y-usar-168dab11-0753-043d-7c16-ede5947fc64d" {...externalLinkProps}>Microsoft Edge</a>
+              <ExternalLink href="https://support.microsoft.com/es-es/windows/administrar-cookies-en-microsoft-edge-ver-permitir-bloquear-eliminar-y-usar-168dab11-0753-043d-7c16-ede5947fc64d">Microsoft Edge</ExternalLink>
           </li>
         </ul>
         <p>

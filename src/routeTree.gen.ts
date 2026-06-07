@@ -13,6 +13,7 @@ import { Route as SobreNosotrosRouteImport } from './routes/sobre-nosotros'
 import { Route as ServiciosRouteImport } from './routes/servicios'
 import { Route as ProductosRouteImport } from './routes/productos'
 import { Route as PoliticaPrivacidadRouteImport } from './routes/politica-privacidad'
+import { Route as PoliticaCookiesRouteImport } from './routes/politica-cookies'
 import { Route as InstagramRouteImport } from './routes/instagram'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
@@ -36,6 +37,11 @@ const ProductosRoute = ProductosRouteImport.update({
 const PoliticaPrivacidadRoute = PoliticaPrivacidadRouteImport.update({
   id: '/politica-privacidad',
   path: '/politica-privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaCookiesRoute = PoliticaCookiesRouteImport.update({
+  id: '/politica-cookies',
+  path: '/politica-cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InstagramRoute = InstagramRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
+  '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/productos': typeof ProductosRoute
   '/servicios': typeof ServiciosRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
+  '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/productos': typeof ProductosRoute
   '/servicios': typeof ServiciosRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
+  '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/productos': typeof ProductosRoute
   '/servicios': typeof ServiciosRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/contacto'
     | '/instagram'
+    | '/politica-cookies'
     | '/politica-privacidad'
     | '/productos'
     | '/servicios'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/contacto'
     | '/instagram'
+    | '/politica-cookies'
     | '/politica-privacidad'
     | '/productos'
     | '/servicios'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/contacto'
     | '/instagram'
+    | '/politica-cookies'
     | '/politica-privacidad'
     | '/productos'
     | '/servicios'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   AvisoLegalRoute: typeof AvisoLegalRoute
   ContactoRoute: typeof ContactoRoute
   InstagramRoute: typeof InstagramRoute
+  PoliticaCookiesRoute: typeof PoliticaCookiesRoute
   PoliticaPrivacidadRoute: typeof PoliticaPrivacidadRoute
   ProductosRoute: typeof ProductosRoute
   ServiciosRoute: typeof ServiciosRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/politica-privacidad'
       fullPath: '/politica-privacidad'
       preLoaderRoute: typeof PoliticaPrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-cookies': {
+      id: '/politica-cookies'
+      path: '/politica-cookies'
+      fullPath: '/politica-cookies'
+      preLoaderRoute: typeof PoliticaCookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/instagram': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   AvisoLegalRoute: AvisoLegalRoute,
   ContactoRoute: ContactoRoute,
   InstagramRoute: InstagramRoute,
+  PoliticaCookiesRoute: PoliticaCookiesRoute,
   PoliticaPrivacidadRoute: PoliticaPrivacidadRoute,
   ProductosRoute: ProductosRoute,
   ServiciosRoute: ServiciosRoute,

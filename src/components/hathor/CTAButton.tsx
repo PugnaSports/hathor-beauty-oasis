@@ -1,5 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import type { ComponentProps } from "react";
+import {
+  EXTERNAL_LINK_REL,
+  handleExternalLinkClick,
+  isExternalHttpHref,
+} from "@/lib/external-links";
 
 type Variant = "primary" | "outline" | "ghost";
 
@@ -26,7 +31,22 @@ export function CTALink({
 export function CTAAnchor({
   variant = "primary",
   className = "",
+  href,
+  onClick,
+  rel,
+  target,
   ...props
 }: { variant?: Variant } & ComponentProps<"a">) {
-  return <a {...props} className={`${base} ${styles[variant]} ${className}`} />;
+  const isExternal = isExternalHttpHref(href);
+
+  return (
+    <a
+      {...props}
+      href={href}
+      rel={rel ?? (isExternal ? EXTERNAL_LINK_REL : undefined)}
+      target={target ?? (isExternal ? "_blank" : undefined)}
+      onClick={(event) => handleExternalLinkClick(event, href, onClick)}
+      className={`${base} ${styles[variant]} ${className}`}
+    />
+  );
 }

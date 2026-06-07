@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { ExternalLink } from "@/components/hathor/ExternalLink";
 import { CLINIC, NAV_LINKS } from "@/lib/hathor";
 
 export function SiteFooter() {
@@ -16,15 +17,13 @@ export function SiteFooter() {
               Cuidamos tu piel y tu cabello desde un enfoque profesional, cercano y
               personalizado.
             </p>
-            <a
+            <ExternalLink
               href={CLINIC.instagramUrl}
-              target="_blank"
-              rel="noreferrer"
               className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-ink hover:text-gold"
             >
               <Instagram className="h-4 w-4" />
               {CLINIC.instagramHandle}
-            </a>
+            </ExternalLink>
           </div>
 
           <div className="lg:col-span-3">

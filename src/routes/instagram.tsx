@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Play } from "lucide-react";
+import { ExternalLink } from "@/components/hathor/ExternalLink";
 import { SectionHeader } from "@/components/hathor/SectionHeader";
 import { CTAAnchor } from "@/components/hathor/CTAButton";
 import { CLINIC } from "@/lib/hathor";
@@ -49,11 +50,9 @@ function InstagramPage() {
       <section className="px-6 pb-28">
         <div className="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {CLINIC.reels.map((reel, i) => (
-            <a
+            <ExternalLink
               key={reel.id}
               href={reel.url}
-              target="_blank"
-              rel="noreferrer"
               className="group block reveal"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
@@ -84,7 +83,7 @@ function InstagramPage() {
                   </span>
                 </div>
               </div>
-            </a>
+            </ExternalLink>
           ))}
         </div>
       </section>

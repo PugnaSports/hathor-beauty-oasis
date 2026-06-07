@@ -68,12 +68,30 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-6 border-t border-border/60 pt-8 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {CLINIC.fullName}</p>
-          <p className="max-w-xl leading-relaxed">
-            La información de esta web es orientativa y no sustituye una valoración
-            profesional personalizada.
-          </p>
+        <div className="mt-16 border-t border-border/60 pt-8 text-xs text-ink-muted">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+            <p>
+              © {new Date().getFullYear()} Hathor Clínica. Todos los derechos
+              reservados.
+            </p>
+            <p className="max-w-xl leading-relaxed">
+              La información de esta web es orientativa y no sustituye una
+              valoración profesional personalizada.
+            </p>
+          </div>
+          <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-ink-muted">
+            <Link to="/aviso-legal" className="hover:text-ink">
+              Aviso legal
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link to="/politica-privacidad" className="hover:text-ink">
+              Política de privacidad
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link to="/politica-cookies" className="hover:text-ink">
+              Política de cookies
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

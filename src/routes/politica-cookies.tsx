@@ -94,40 +94,16 @@ const sections: LegalSection[] = [
         </p>
         <ul>
           <li>
-            <strong>Google Maps</strong> (mapa embebido y enlace de ruta a la
-            clínica) —{" "}
-            <a
-              href="https://policies.google.com/privacy"
-              target="_blank"
-              rel="noreferrer"
-            >
-              política de privacidad de Google
-            </a>
-            .
+            <p><strong>Google Maps:</strong> mapa embebido y enlace de ruta a la clínica.</p>
+            <p>Más información: <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener noreferrer">política de privacidad de Google</a>.</p>
           </li>
           <li>
-            <strong>Instagram</strong> (enlaces al perfil y posibles embeds de
-            reels) —{" "}
-            <a
-              href="https://privacycenter.instagram.com/policy"
-              target="_blank"
-              rel="noreferrer"
-            >
-              política de privacidad de Instagram
-            </a>
-            .
+            <p><strong>Instagram:</strong> enlaces al perfil y posibles embeds de reels.</p>
+            <p>Más información: <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer">política de privacidad de Instagram (Meta)</a>.</p>
           </li>
           <li>
-            <strong>WhatsApp</strong> (enlaces directos para iniciar
-            conversación) —{" "}
-            <a
-              href="https://www.whatsapp.com/legal/privacy-policy"
-              target="_blank"
-              rel="noreferrer"
-            >
-              política de privacidad de WhatsApp
-            </a>
-            .
+            <p><strong>WhatsApp:</strong> enlaces directos para iniciar conversación.</p>
+            <p>Más información: <a href="https://www.whatsapp.com/legal/privacy-policy-eea?lang=es_ES" target="_blank" rel="noopener noreferrer">política de privacidad de WhatsApp</a>.</p>
           </li>
         </ul>
       </>
@@ -144,40 +120,16 @@ const sections: LegalSection[] = [
         </p>
         <ul>
           <li>
-            <a
-              href="https://support.google.com/chrome/answer/95647"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Google Chrome
-            </a>
+            <a href="https://support.google.com/accounts/answer/61416?hl=es" target="_blank" rel="noopener noreferrer">Google Chrome</a>
           </li>
           <li>
-            <a
-              href="https://support.mozilla.org/es/kb/proteccion-antirrastreo-mejorada-en-firefox-para-c"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Mozilla Firefox
-            </a>
+            <a href="https://support.mozilla.org/es/kb/Borrar%20cookies" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a>
           </li>
           <li>
-            <a
-              href="https://support.apple.com/es-es/guide/safari/sfri11471/mac"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Apple Safari
-            </a>
+            <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a>
           </li>
           <li>
-            <a
-              href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Microsoft Edge
-            </a>
+            <a href="https://support.microsoft.com/es-es/windows/administrar-cookies-en-microsoft-edge-ver-permitir-bloquear-eliminar-y-usar-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer">Microsoft Edge</a>
           </li>
         </ul>
         <p>
@@ -203,12 +155,14 @@ const sections: LegalSection[] = [
     id: "mas-informacion",
     title: "Más información",
     content: (
-      <p>
-        Para conocer en detalle cómo tratamos tus datos personales puedes
-        consultar nuestra{" "}
-        <Link to="/politica-privacidad">Política de privacidad</Link> o
-        escribirnos a <a href={`mailto:${CLINIC.email}`}>{CLINIC.email}</a>.
-      </p>
+      <>
+        <p>
+          Para conocer en detalle cómo tratamos tus datos personales puedes consultar nuestra <Link to="/politica-privacidad">Política de privacidad</Link>.
+        </p>
+        <p>
+          También puedes escribirnos a <a href={`mailto:${CLINIC.email}`}>{CLINIC.email}</a>.
+        </p>
+      </>
     ),
   },
 ];

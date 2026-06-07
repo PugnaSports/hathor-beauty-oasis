@@ -1,52 +1,29 @@
-## Objetivo
+# Corregir enlaces en /politica-cookies
 
-Añadir tres páginas legales (`/aviso-legal`, `/politica-privacidad`, `/politica-cookies`) con diseño coherente con la web de Hathor, y enlazarlas desde el footer en una zona legal discreta.
+## Problema
+En la página actual, las listas de "Servicios de terceros" y "Cómo configurar o rechazar cookies" mezclan texto narrativo, comas, espacios `{" "}` y enlaces multilínea dentro del mismo `<li>`. Eso, combinado con el wrap responsive y los estilos heredados del contenedor `[&_a]:underline` de `LegalPage`, hace que el área clicable de un enlace solape visualmente con la del siguiente y que algunos textos parezcan enlaces sin serlo. Además varios `href` no son los definitivos pedidos.
 
-## Páginas nuevas
+## Cambios (solo `src/routes/politica-cookies.tsx`)
 
-Estructura común (componente reutilizable o JSX directo dentro de cada ruta):
+1. **Sección "Servicios de terceros"** — convertir cada item en un `<li>` con estructura simple:
+   - Un `<strong>` con el nombre del servicio y su descripción corta como texto plano.
+   - Un único `<a>` aislado en su propia línea (precedido por algo tipo "Más información:") con el enlace oficial. Sin envolver texto adyacente, sin enlaces dentro de enlaces.
+   - Hrefs actualizados:
+     - Google / Google Maps → `https://policies.google.com/privacy?hl=es`
+     - Instagram / Meta → `https://privacycenter.instagram.com/policy/`
+     - WhatsApp → `https://www.whatsapp.com/legal/privacy-policy-eea?lang=es_ES`
 
-- Hero sobrio: eyebrow ("Legal"), `<h1>` con el título, fecha de última actualización.
-- Contenedor de lectura estrecho: `max-w-3xl mx-auto px-6 py-20` para confort de lectura.
-- Índice navegable arriba con anclas (`#titularidad`, `#objeto`, etc.) para escanear rápido.
-- Secciones con `<h2>` (font-display) + cuerpo en `text-ink-muted leading-relaxed`.
-- Bloque final "¿Dudas?" con enlace a `/contacto` y al email.
+2. **Sección "Cómo configurar o rechazar cookies"** — cada `<li>` contendrá **solo** un `<a>` con el nombre del navegador como único contenido clicable. Sin texto suelto antes ni después dentro del mismo `<li>`. Hrefs actualizados:
+   - Chrome → `https://support.google.com/accounts/answer/61416?hl=es`
+   - Firefox → `https://support.mozilla.org/es/kb/Borrar%20cookies`
+   - Safari → `https://support.apple.com/es-es/guide/safari/sfri11471/mac`
+   - Edge → `https://support.microsoft.com/es-es/windows/administrar-cookies-en-microsoft-edge-ver-permitir-bloquear-eliminar-y-usar-168dab11-0753-043d-7c16-ede5947fc64d`
 
-Cada ruta usará `createFileRoute` + `head()` propio con `title`, `description`, `og:title`, `og:description` específicos (sin `og:image`, son páginas legales).
+3. **Atributos uniformes en todos los enlaces externos**: `target="_blank"` + `rel="noopener noreferrer"`. Cada `<a>` se escribe en una sola línea JSX para evitar nodos de texto con espacios colgantes que extiendan el área clicable.
 
-### `/aviso-legal` — `src/routes/aviso-legal.tsx`
-Secciones: Titularidad del sitio · Objeto de la web · Condiciones de uso · Propiedad intelectual e industrial · Responsabilidades · Enlaces externos · Legislación aplicable y jurisdicción · Contacto.
-Placeholders visibles: `[RAZÓN SOCIAL]`, `[NIF/CIF]`, `[DIRECCIÓN FISCAL]`, `[EMAIL DE CONTACTO]` (usa `info@clinicahathor.es` cuando ya lo conocemos), `[DOMINIO WEB]`.
+4. **Sección "Más información"** — mantener el `<Link to="/politica-privacidad">` y el `mailto:` pero en frases separadas, cada enlace aislado.
 
-### `/politica-privacidad` — `src/routes/politica-privacidad.tsx`
-Secciones: Responsable del tratamiento · Datos que recogemos (formulario de contacto, email, teléfono/WhatsApp) · Finalidades · Base legal (consentimiento, interés legítimo, ejecución de relación) · Plazos de conservación · Destinatarios y encargados (`[EMPRESA DE HOSTING]`, proveedor de email, Meta/WhatsApp si se contacta por ahí) · Transferencias internacionales · Derechos del usuario (acceso, rectificación, supresión, oposición, limitación, portabilidad, reclamación AEPD) · Seguridad · Menores de edad · Cómo ejercer derechos (email + dirección postal).
-Refleja explícitamente que la web enlaza a WhatsApp, teléfono, email, Google Maps e Instagram, y que al usar esos canales aplican también las políticas del tercero.
+5. **No tocar**: `LegalPage.tsx` (los estilos `[&_a]:underline` solo decoran, no capturan clics), texto legal, diseño, tipografía, ni el resto de rutas. Verificar tras el cambio que no haya `position: absolute`, `::before/::after` con `pointer-events` ni overlays añadidos.
 
-### `/politica-cookies` — `src/routes/politica-cookies.tsx`
-Secciones: Qué son las cookies · Tipos (técnicas, preferencias, analíticas, marketing) · Cookies utilizadas en este sitio (tabla simple) — declaramos que actualmente solo se usan cookies técnicas estrictamente necesarias · Servicios de terceros que pueden instalar cookies si el usuario interactúa con ellos: Google Maps (mapa embebido), Instagram (enlaces y posibles embeds de reels), enlaces a WhatsApp · Cómo configurar o rechazar cookies en los principales navegadores (Chrome, Firefox, Safari, Edge) con enlaces oficiales · Cambios en la política · Contacto.
-Nota visible: "Actualmente este sitio no instala cookies no técnicas que requieran consentimiento previo. Si en el futuro se incorporan analíticas o marketing, se mostrará un banner de consentimiento". No se añade banner ahora.
-
-## Footer
-
-Editar `src/components/hathor/SiteFooter.tsx`:
-
-- Añadir, debajo de la línea de copyright actual, una fila legal discreta con tipografía pequeña (`text-xs text-ink-muted`) y enlaces separados por `·`:
-  - `Aviso legal` → `/aviso-legal`
-  - `Política de privacidad` → `/politica-privacidad`
-  - `Política de cookies` → `/politica-cookies`
-- Ajustar el copyright a: `© {año} Hathor Clínica. Todos los derechos reservados.`
-
-Los `Link` usan `@tanstack/react-router` para mantener navegación SPA y consistencia con el resto del footer.
-
-## Detalles técnicos
-
-- Rutas planas en `src/routes/`: `aviso-legal.tsx`, `politica-privacidad.tsx`, `politica-cookies.tsx`. El plugin de TanStack regenera `routeTree.gen.ts` automáticamente.
-- Cada `createFileRoute("/aviso-legal")` etc. con `component` que renderiza un layout `<article>` reutilizando estilos existentes (`text-ink`, `text-ink-muted`, `text-gold`, `font-display`, `bg-nude/40` para bandas suaves si hace falta).
-- Sin librerías nuevas. Sin componentes nuevos obligatorios, aunque puede extraerse un pequeño `<LegalPage>` wrapper si reduce duplicación; lo dejo a criterio durante la implementación.
-- Sin cambios en el header.
-
-## Lo que NO se hace
-
-- No se añade banner de cookies (no hay cookies no técnicas activas).
-- No se inventan datos legales: razón social, NIF, dirección fiscal y hosting quedan como placeholders.
-- No se tocan otras páginas ni el diseño global.
+## Verificación manual
+Tras aplicar, abrir `/politica-cookies` en desktop y móvil y comprobar uno a uno que cada enlace abre su URL exacta en nueva pestaña y que el clic en el texto de alrededor no dispara ningún enlace.

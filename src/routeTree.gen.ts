@@ -14,6 +14,7 @@ import { Route as ServiciosRouteImport } from './routes/servicios'
 import { Route as ProductosRouteImport } from './routes/productos'
 import { Route as InstagramRouteImport } from './routes/instagram'
 import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
@@ -41,6 +42,11 @@ const ContactoRoute = ContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,6 +55,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
   '/productos': typeof ProductosRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
   '/productos': typeof ProductosRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
   '/productos': typeof ProductosRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/aviso-legal'
     | '/contacto'
     | '/instagram'
     | '/productos'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/aviso-legal'
     | '/contacto'
     | '/instagram'
     | '/productos'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/aviso-legal'
     | '/contacto'
     | '/instagram'
     | '/productos'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisoLegalRoute: typeof AvisoLegalRoute
   ContactoRoute: typeof ContactoRoute
   InstagramRoute: typeof InstagramRoute
   ProductosRoute: typeof ProductosRoute
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aviso-legal': {
+      id: '/aviso-legal'
+      path: '/aviso-legal'
+      fullPath: '/aviso-legal'
+      preLoaderRoute: typeof AvisoLegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisoLegalRoute: AvisoLegalRoute,
   ContactoRoute: ContactoRoute,
   InstagramRoute: InstagramRoute,
   ProductosRoute: ProductosRoute,
@@ -166,3 +187,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

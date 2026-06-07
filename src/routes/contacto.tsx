@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import type { ReactNode } from "react";
+import { ExternalLink } from "@/components/hathor/ExternalLink";
 import { SectionHeader } from "@/components/hathor/SectionHeader";
 import { CTAAnchor } from "@/components/hathor/CTAButton";
 import { CLINIC } from "@/lib/hathor";
@@ -66,14 +67,12 @@ function ContactoPage() {
                 icon={Instagram}
                 label="Instagram"
                 value={
-                  <a
+                  <ExternalLink
                     href={CLINIC.instagramUrl}
-                    target="_blank"
-                    rel="noreferrer"
                     className="hover:text-ink"
                   >
                     {CLINIC.instagramHandle}
-                  </a>
+                  </ExternalLink>
                 }
               />
             </div>

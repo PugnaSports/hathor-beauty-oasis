@@ -4,7 +4,8 @@ export const CLINIC = {
   address: "Carrer Anselm Clavé 144, Olesa de Montserrat",
   phoneDisplay: "655 55 86 06",
   phoneTel: "+34655558606",
-  whatsapp: "https://wa.me/34655558606",
+  whatsapp:
+    "https://wa.me/34655558606?text=Hola%20Hathor%2C%20me%20gustar%C3%ADa%20pedir%20cita%20para%20una%20valoraci%C3%B3n.",
   email: "info@clinicahathor.es",
   instagramUrl: "https://www.instagram.com/hathor_clinica/",
   instagramHandle: "@hathor_clinica",

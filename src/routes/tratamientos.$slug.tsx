@@ -159,7 +159,7 @@ function TreatmentDetail() {
             Qué puedes esperar
           </h2>
           <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
-            {treatment.experience.map((step, i) => (
+            {treatment.experience.map((step: string, i: number) => (
               <li
                 key={step}
                 className="bg-background p-8 lg:p-10 flex flex-col"

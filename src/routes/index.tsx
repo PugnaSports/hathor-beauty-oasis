@@ -40,16 +40,19 @@ const trustPoints = [
 
 const servicePreview = [
   {
+    slug: "medicina-estetica-facial",
     title: "Medicina estética facial",
     desc: "Tratamientos para realzar tus rasgos de forma natural y armoniosa.",
     img: facialImg,
   },
   {
+    slug: "medicina-capilar",
     title: "Medicina capilar",
     desc: "Diagnóstico y cuidado avanzado para la salud del cuero cabelludo y el cabello.",
     img: capilarImg,
   },
   {
+    slug: "tratamientos-corporales",
     title: "Tratamientos corporales",
     desc: "Protocolos para cuidar la piel y la silueta con resultados visibles.",
     img: corporalImg,
@@ -76,8 +79,8 @@ function Index() {
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <CTALink to="/contacto">Pedir cita</CTALink>
-              <CTALink to="/servicios" variant="outline">
-                Ver servicios
+              <CTALink to="/tratamientos" variant="outline">
+                Ver tratamientos
               </CTALink>
             </div>
 
@@ -129,7 +132,7 @@ function Index() {
                 Cuidado integral con enfoque <span className="italic">médico</span>
               </h2>
             </div>
-            <CTALink to="/servicios" variant="ghost" className="self-start md:self-end">
+            <CTALink to="/tratamientos" variant="ghost" className="self-start md:self-end">
               Ver todos <ArrowUpRight className="h-4 w-4" />
             </CTALink>
           </div>
@@ -137,7 +140,8 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-6">
             {servicePreview.map((s, i) => (
               <Link
-                to="/servicios"
+                to="/tratamientos/$slug"
+                params={{ slug: s.slug }}
                 key={s.title}
                 className={`group block reveal ${i === 1 ? "md:translate-y-8" : ""}`}
               >

@@ -1,30 +1,31 @@
-## Integrar el logo real de Hathor
+# Integrar 10 productos nuevos al catálogo
 
-Has subido el logo vectorizado en PDF. Lo integraré en la web sustituyendo el wordmark de texto actual ("Hathor") por la imagen del logo, manteniendo el estilo premium y minimalista.
+Mismo flujo que con la tanda anterior: recorte automático del producto sobre fondo blanco, cuadrado 600×600, contenedor `aspect-square` uniforme.
 
-### Pasos
+## Mapeo de imágenes
 
-1. **Convertir el PDF a imagen utilizable en web**
-   - Extraer el logo del PDF a PNG transparente de alta resolución (para soportar fondos claros y la cabecera transparente al hacer scroll).
-   - Subirlo a Lovable Assets (CDN) como `hathor-logo.png` con fondo transparente, en lugar de meter el binario en el repo.
+| # | Imagen | Producto | Categoría |
+|---|---|---|---|
+| 25 | `image-25` | **L'ENCLOS PDRN Peel and Repair Set** · Viales profesionales · Ref 00471 · 6×5 ml | Sets |
+| 26 | `image-26` | **Protector Solar Whitening Tone Up** · Crema facial · Ref 00126 · 50 ml | Solar |
+| 27 | `image-27` | **Dr Tufet Cellular Regeneration Program** · Aceite limpiador 150 ml + Serum E3P1 30 ml + Serum FPG 30 ml + Crema PDRN 50 ml · Ref 01045 | Sets |
+| 28 | `image-28` | **Daily Moisturising Sunscreen** · Crema facial/corporal · Ref OV066 · 50 ml | Solar |
+| 29 | `image-29` | **RESISTENCE: Best Spot Treatment Set** — *ya existe*, actualizar con PVP 215 € e imagen mejorada | Sets (update) |
+| 30 | `image-30` | **RESTACNE: Clear and Bright Skincare Set** — *ya existe*, actualizar con PVP 199 € e imagen mejorada | Sets (update) |
+| 31 | `image-31` | **REVERSE: Skin Rejuvenation Set** · Limpiador + Tónico + Sérum + Crema · Ref 00477 · 50 + 100 + 50 + 30 ml · PVP 219 € | Sets |
+| 32 | `image-32` | **Double Intensify Effect Core Sérum** · Sérum facial · Ref 00331 · 50 ml | Facial |
+| 33 | `image-33` | **Egg BP Cell Sérum** · Sérum facial · Ref 00910 | Facial |
+| 34 | `image-34` | **Superb Amazing Result Core Sérum** · Sérum facial · Ref 00328 · 50 ml | Facial |
 
-2. **Cabecera (`SiteHeader.tsx`)**
-   - Reemplazar el texto `Hathor` del enlace al home por `<img src={logo} alt="Hathor" />`.
-   - Altura controlada (~32–36px) para encajar con la barra de 80px actual.
-   - Mantener el mismo enlace a `/`, comportamiento de scroll y menú móvil intactos.
+Además: la categoría **Solar** sustituye los dos placeholders genéricos por los productos reales 26 y 28.
 
-3. **Footer (`SiteFooter.tsx`)**
-   - Sustituir el wordmark grande del bloque izquierdo por el logo (~40–48px de alto).
-   - Mantener el texto descriptivo y el resto del footer sin cambios.
+## Pasos técnicos
 
-4. **Favicon y metadatos sociales (opcional, ligero)**
-   - Si el logo se ve bien en cuadrado, generar también una versión recortada para favicon y `og:image` por defecto. Si no encaja bien por proporciones, lo dejamos para otra iteración y solo cambio cabecera + footer.
+1. **Procesar imágenes 25-34** con el mismo script (detección por color + saturación, recorte al bbox del producto, padding 14%, cuadrado 600×600 sobre fondo blanco). Para casos problemáticos (texto dorado dominante, productos muy claros), override manual del bbox.
+2. **Subir** cada imagen al CDN como `product-<slug>.png.asset.json`.
+3. **`src/lib/hathor.ts`**: añadir imports + entradas nuevas en las categorías correspondientes, actualizar las dos existentes (RESISTENCE 215 € + RESTACNE 199 €) y reemplazar los 2 placeholders de Solar.
+4. **Sin cambios** en estilos, layout, ni en el resto de productos.
 
-### Qué NO se toca
+## Resultado esperado
 
-- Tipografías, colores, paleta nude/oro, estructura de páginas y todas las demás secciones quedan exactamente igual.
-- Tratamientos, productos, FAQ, contacto: sin cambios.
-
-### Pregunta rápida
-
-¿Quieres que aplique también el logo en el favicon y la imagen de compartir social (`og:image`), o de momento solo en cabecera y footer?
+Catálogo ampliado con 8 productos nuevos + 2 actualizados, todos con el mismo aspecto visual uniforme que la tanda anterior.

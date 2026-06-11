@@ -71,12 +71,36 @@ function ProductosPage() {
               </p>
               <ul className="mt-8 divide-y divide-border/60 border-t border-border/60">
                 {cat.products.map((p) => (
-                  <li key={p.name} className="py-5">
-                    <p className="font-display text-lg text-ink">{p.name}</p>
-                    <p className="mt-1.5 text-sm text-ink-muted leading-relaxed">
+                <li key={p.name} className="py-6 flex gap-5">
+                  {p.image ? (
+                    <div className="shrink-0 w-20 sm:w-24 aspect-[3/4] overflow-hidden rounded-xl bg-nude/40 flex items-center justify-center">
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        loading="lazy"
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                  ) : null}
+                  <div className="min-w-0 flex-1">
+                    <p className="font-display text-lg text-ink leading-snug">
+                      {p.name}
+                    </p>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-gold">
+                      {p.format}
+                    </p>
+                    {(p.ref || p.size) && (
+                      <p className="mt-1 text-xs text-ink-muted">
+                        {p.ref ? <>Ref. {p.ref}</> : null}
+                        {p.ref && p.size ? " · " : null}
+                        {p.size ?? null}
+                      </p>
+                    )}
+                    <p className="mt-2 text-sm text-ink-muted leading-relaxed">
                       {p.description}
                     </p>
-                  </li>
+                  </div>
+                </li>
                 ))}
               </ul>
             </div>

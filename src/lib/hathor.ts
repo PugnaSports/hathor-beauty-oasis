@@ -4,6 +4,16 @@ import laserImg from "@/assets/hathor-laser.jpg";
 import capilarImg from "@/assets/hathor-capilar.jpg";
 import aparatologiaImg from "@/assets/hathor-aparatologia.jpg";
 import asesoramientoImg from "@/assets/hathor-asesoramiento.jpg";
+import productEggShampoo from "@/assets/product-egg-shampoo.png.asset.json";
+import productEyeWrinkle from "@/assets/product-eye-wrinkle.png.asset.json";
+import productProbio6Shampoo from "@/assets/product-probio6-shampoo.png.asset.json";
+import productDaywearBb from "@/assets/product-daywear-bb.png.asset.json";
+import productPowerActive from "@/assets/product-power-active.png.asset.json";
+import productAdvancedBrilliant from "@/assets/product-advanced-brilliant.png.asset.json";
+import productBoostingCream from "@/assets/product-boosting-cream.png.asset.json";
+import productRestorationMechanism from "@/assets/product-restoration-mechanism.png.asset.json";
+import productProbio6Body from "@/assets/product-probio6-body.png.asset.json";
+import productTurm9 from "@/assets/product-turm9.png.asset.json";
 
 export const CLINIC = {
   name: "Hathor",
@@ -265,7 +275,16 @@ export type ProductCategory = {
   slug: "facial" | "capilar" | "corporal" | "solar";
   name: string;
   description: string;
-  products: { name: string; description: string }[];
+  products: Product[];
+};
+
+export type Product = {
+  name: string;
+  format: string;
+  ref?: string;
+  size?: string;
+  description: string;
+  image?: string;
 };
 
 export const PRODUCTS: ProductCategory[] = [
@@ -276,24 +295,49 @@ export const PRODUCTS: ProductCategory[] = [
       "Packs y rutinas profesionales pensadas para cuidar la piel en casa y mantener los resultados de cabina.",
     products: [
       {
-        name: "Pack antiacné",
+        name: "Eye Wrinkle Smooth Out",
+        format: "Crema · Contorno de ojos",
+        ref: "00348",
+        size: "30 ml",
         description:
-          "Rutina para pieles con tendencia acneica que ayuda a equilibrar y cuidar la piel día a día.",
+          "Difumina arrugas, bolsas y ojeras. Contorno de ojos de fórmula vanguardista a base de ADN de salmón, un complejo de 6 péptidos, adenosina y fitoesteroles de granada.",
+        image: productEyeWrinkle.url,
       },
       {
-        name: "Pack antimanchas",
+        name: "Daywear BB Expert Cream #23 / #29",
+        format: "Crema · Facial",
+        ref: "01044 / 00354",
+        size: "45 ml / 40 ml",
         description:
-          "Productos pensados para unificar el tono y trabajar las manchas con constancia.",
+          "Tiene una triple función: antienvejecimiento, antiarrugas y despigmentante. Alta protección solar, base de maquillaje con cobertura editable y tratamiento de la piel en una sola crema.",
+        image: productDaywearBb.url,
       },
       {
-        name: "Pack células madre",
+        name: "Advanced Brilliant Recovery Cream",
+        format: "Crema · Facial",
+        ref: "00370",
+        size: "30 ml",
         description:
-          "Rutina revitalizante para apoyar los tratamientos faciales con células madre.",
+          "Crema antiedad con péptidos y numerosos extractos botánicos.",
+        image: productAdvancedBrilliant.url,
       },
       {
-        name: "Pack Dr. Tufet",
+        name: "Restoration Mechanism Apply Cream",
+        format: "Crema · Facial",
+        ref: "00370",
+        size: "30 ml",
         description:
-          "Selección profesional para una rutina facial completa, recomendada según valoración.",
+          "Crema para piel irritada y para el acné. Contiene Jaswongo, un ungüento a base de una mezcla de hierbas usado en medicina tradicional, un producto multiusos para aliviar los síntomas de las alteraciones más severas de la piel.",
+        image: productRestorationMechanism.url,
+      },
+      {
+        name: "Türm 9 Gentle For Man",
+        format: "Esencia y crema · Facial",
+        ref: "00410",
+        size: "50 ml",
+        description:
+          "Crema para hombre antiedad que además previene alteraciones en la piel por los efectos de la radiación solar y elimina daños ya producidos por el sol. Pensada para quien busca una rutina sencilla: es un \"todo en uno\" que combina Esencia y Crema.",
+        image: productTurm9.url,
       },
     ],
   },
@@ -304,14 +348,22 @@ export const PRODUCTS: ProductCategory[] = [
       "Productos profesionales para cuidar el cuero cabelludo y la salud del cabello en casa.",
     products: [
       {
-        name: "Champú anticaída",
+        name: "EGG Neural Cell Enhancing Shampoo",
+        format: "Champú · Capilar",
+        ref: "02227",
+        size: "500 g",
         description:
-          "Limpieza suave que complementa los tratamientos capilares de la clínica.",
+          "Nutre y fortalece la raíz del cabello y el cuero cabelludo, ayudando a reducir y ralentizar la pérdida de pelo.",
+        image: productEggShampoo.url,
       },
       {
-        name: "Tónico capilar",
+        name: "Probio 6 — Melanocell Shampoo",
+        format: "Champú · Capilar",
+        ref: "02226",
+        size: "400 g",
         description:
-          "Tratamiento de uso diario para apoyar el cuidado del cuero cabelludo.",
+          "Champú anticaída de acción probiótica que equilibra el microbioma del cuero cabelludo, estimula el crecimiento del cabello y ayuda a prevenir el encanecimiento prematuro, todo en un solo paso.",
+        image: productProbio6Shampoo.url,
       },
     ],
   },
@@ -322,14 +374,31 @@ export const PRODUCTS: ProductCategory[] = [
       "Cremas para prolongar y mantener en casa los resultados de los protocolos corporales.",
     products: [
       {
-        name: "Crema corporal anticelulítica",
+        name: "Power Active Cream",
+        format: "Crema · Corporal",
+        ref: "00367 / 00366",
+        size: "70 ml / 280 ml",
         description:
-          "Apoyo diario para los tratamientos corporales centrados en celulitis.",
+          "Crema anticelulítica con efecto calor que actúa activando la circulación. Excelente para remodelar la silueta por su potente efecto quemagrasas, anticelulítico, reafirmante, antiinflamatorio y activador de la circulación. Sus efectos se notan desde la primera aplicación.",
+        image: productPowerActive.url,
       },
       {
-        name: "Crema corporal reafirmante",
+        name: "Boosting Cream",
+        format: "Crema · Facial y corporal",
+        ref: "00367 / 00366",
+        size: "80 ml / 520 ml",
         description:
-          "Hidratación y cuidado para ayudar a mantener la firmeza de la piel.",
+          "Crema hidratante y reafirmante, la pareja perfecta de la Power Active Cream para tratamientos corporales. La sinergia de ambas cremas potencia sus propiedades reafirmantes y tensoras. Incluye lípidos con la misma estructura química que los lípidos naturales de la piel, que penetran en las capas más profundas reparando los daños que pudieran haber.",
+        image: productBoostingCream.url,
+      },
+      {
+        name: "Probio 6 Body Lotion",
+        format: "Loción · Corporal",
+        ref: "00376",
+        size: "300 ml",
+        description:
+          "Loción hidratante con prebióticos. Hidrata la piel de forma inmediata y mejora su luminosidad, uniformidad, firmeza y textura a medio y largo plazo.",
+        image: productProbio6Body.url,
       },
     ],
   },
@@ -341,11 +410,13 @@ export const PRODUCTS: ProductCategory[] = [
     products: [
       {
         name: "Protector solar SPF 50 para pieles sensibles",
+        format: "Protector solar · Facial",
         description:
           "Alta protección de uso diario, formulada para pieles sensibles o reactivas.",
       },
       {
         name: "Crema con color con protector solar",
+        format: "Crema con color · Facial",
         description:
           "Unifica el tono y aporta protección solar en un solo gesto.",
       },

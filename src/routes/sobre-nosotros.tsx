@@ -107,18 +107,36 @@ function SobrePage() {
               Laura · Fundadora
             </p>
             <h2 className="font-display text-3xl md:text-4xl leading-[1.1]">
-              Una mirada de enfermera al cuidado estético
+              Te doy la bienvenida a Hathor
             </h2>
             <p className="mt-6 text-ink-muted leading-relaxed">
-              Laura es enfermera y fundadora de Hathor. Tras años acompañando a
-              pacientes en el ámbito sanitario, crea este espacio para unir el
-              rigor clínico con la atención personalizada en medicina estética y
-              capilar.
+              Soy Laura, enfermera y fundadora de esta clínica de medicina
+              estética y capilar en Olesa de Montserrat.
             </p>
             <p className="mt-4 text-ink-muted leading-relaxed">
-              Su forma de entender la estética parte siempre de la valoración,
-              la naturalidad y el acompañamiento. Sin promesas exageradas: solo
-              recomendaciones honestas, seguras y adaptadas a cada persona.
+              Este proyecto nace de mi vocación por el cuidado de las personas
+              y de mi deseo de crear un espacio donde la atención profesional,
+              la cercanía y la confianza sean tan importantes como los propios
+              tratamientos. A lo largo de mi experiencia sanitaria he aprendido
+              que sentirse bien con uno mismo influye directamente en la
+              autoestima, el bienestar y la calidad de vida.
+            </p>
+            <p className="mt-4 text-ink-muted leading-relaxed">
+              Con esa filosofía decidí crear una clínica en la que cada paciente
+              reciba una valoración personalizada y un acompañamiento cercano
+              durante todo el proceso. Para ofrecer la máxima calidad
+              asistencial, contamos además con un médico especialista en
+              medicina capilar, lo que nos permite abordar cada caso desde una
+              perspectiva médica y profesional.
+            </p>
+            <p className="mt-4 text-ink-muted leading-relaxed">
+              Nuestro objetivo es ayudarte a conseguir resultados naturales,
+              seguros y adaptados a tus necesidades, siempre desde la
+              honestidad, la formación continua y el compromiso con tu
+              bienestar.
+            </p>
+            <p className="mt-4 text-ink-muted leading-relaxed">
+              Te damos la bienvenida a un espacio creado para cuidar de ti.
             </p>
           </div>
         </div>

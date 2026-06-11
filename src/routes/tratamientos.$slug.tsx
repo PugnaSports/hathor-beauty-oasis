@@ -159,7 +159,7 @@ function TreatmentDetail() {
               Tratamientos disponibles
             </h2>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
-              {treatment.items.map((item) => (
+              {treatment.items.map((item: string) => (
                 <li
                   key={item}
                   className="bg-background p-6 lg:p-8 flex items-start gap-4"

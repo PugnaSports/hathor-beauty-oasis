@@ -415,6 +415,42 @@ export const PRODUCTS: ProductCategory[] = [
           "Sérum antiedad efecto lifting. Contiene tripéptidos con efecto \"bótox\", además de pantenol, extractos botánicos, ácido hialurónico y vitaminas.",
         image: productSuperbCoreSerum.url,
       },
+      {
+        name: "Brilliant Skin Restore EF Core Sérum",
+        format: "Sérum · Facial",
+        ref: "00361",
+        size: "50 ml",
+        description:
+          "Sérum antiedad con Hialuronato de sodio, polipéptidos y extractos botánicos. Ingredientes que presentan una gran efectividad en la regeneración de la piel dañada o envejecida.",
+        image: productBrilliantSkinSerum.url,
+      },
+      {
+        name: "Derma Melazero",
+        format: "Sérum · Facial",
+        ref: "00351",
+        size: "30 ml",
+        description:
+          "Sérum antimanchas: sérum fermentado elaborado con una fórmula despigmentante avanzada que trata diversos tipos de la edad como arrugas o flacidez, aunque su propiedad más potente es la despigmentante debido al gran número de activos despigmentantes patentados de última generación como el Melazero y Gigawhite. Inhibe la producción de melanina y elimina la ya existente en pocos días.",
+        image: productDermaMelazero.url,
+      },
+      {
+        name: "Metabolism Active Propolis Sérum",
+        format: "Sérum · Facial",
+        ref: "00329",
+        size: "50 ml",
+        description:
+          "Sérum facial ideal para piel sensible: este sérum antiedad y despigmentante, enriquecido con el complejo patentado NAFLEX™ 7, calma, protege y revitaliza tu piel, proporcionando luminosidad y fortaleciendo la barrera cutánea.",
+        image: productMetabolismPropolisSerum.url,
+      },
+      {
+        name: "Hydra Radiance Essence Mist",
+        format: "Tónico · Facial",
+        ref: "00341",
+        size: "100 ml",
+        description:
+          "Tiene propiedades reafirmantes, antienvejecimiento y despigmentantes. Ideal para llevar en el bolso. Se puede aplicar en cualquier momento del día y sobre el maquillaje.",
+        image: productHydraRadianceMist.url,
+      },
     ],
   },
   {

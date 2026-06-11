@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/hathor";
+import logoAsset from "@/assets/hathor-logo.png.asset.json";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -32,10 +33,15 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link
           to="/"
-          className="font-display text-2xl tracking-[0.18em] uppercase text-ink"
+          className="flex items-center"
           onClick={() => setOpen(false)}
+          aria-label="Hathor — Inicio"
         >
-          Hathor
+          <img
+            src={logoAsset.url}
+            alt="Hathor Clínica de Medicina Estética y Capilar"
+            className="h-9 sm:h-10 w-auto"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">

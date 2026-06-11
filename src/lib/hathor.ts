@@ -583,6 +583,15 @@ export const PRODUCTS: ProductCategory[] = [
           "Champú anticaída de acción probiótica que equilibra el microbioma del cuero cabelludo, estimula el crecimiento del cabello y ayuda a prevenir el encanecimiento prematuro, todo en un solo paso.",
         image: productProbio6Shampoo.url,
       },
+      {
+        name: "EGG Neural Cell Scalp Revitalizer",
+        format: "Tónico capilar · Capilar",
+        ref: "00232",
+        size: "120 ml",
+        description:
+          "Revitaliza el cuero cabelludo, evitando la pérdida de cabello. Es un tónico para el cuero cabelludo que puede utilizarse todos los días. Reduce la temperatura del cuero cabelludo y regula la producción de sebo, lo que contribuye a detener la caída de pelo. Contiene Biotinoyl Tetrapéptido 5, que fortalece la raíz del pelo.",
+        image: productEggScalpRevitalizer.url,
+      },
     ],
   },
   {

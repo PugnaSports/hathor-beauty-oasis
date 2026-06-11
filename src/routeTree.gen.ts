@@ -21,6 +21,7 @@ import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TratamientosIndexRouteImport } from './routes/tratamientos.index'
 import { Route as TratamientosSlugRouteImport } from './routes/tratamientos.$slug'
+import { Route as ProductosCategoriaRouteImport } from './routes/productos.$categoria'
 
 const TratamientosRoute = TratamientosRouteImport.update({
   id: '/tratamientos',
@@ -82,6 +83,11 @@ const TratamientosSlugRoute = TratamientosSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => TratamientosRoute,
 } as any)
+const ProductosCategoriaRoute = ProductosCategoriaRouteImport.update({
+  id: '/$categoria',
+  path: '/$categoria',
+  getParentRoute: () => ProductosRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -90,10 +96,11 @@ export interface FileRoutesByFullPath {
   '/instagram': typeof InstagramRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
-  '/productos': typeof ProductosRoute
+  '/productos': typeof ProductosRouteWithChildren
   '/servicios': typeof ServiciosRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/tratamientos': typeof TratamientosRouteWithChildren
+  '/productos/$categoria': typeof ProductosCategoriaRoute
   '/tratamientos/$slug': typeof TratamientosSlugRoute
   '/tratamientos/': typeof TratamientosIndexRoute
 }
@@ -104,9 +111,10 @@ export interface FileRoutesByTo {
   '/instagram': typeof InstagramRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
-  '/productos': typeof ProductosRoute
+  '/productos': typeof ProductosRouteWithChildren
   '/servicios': typeof ServiciosRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/productos/$categoria': typeof ProductosCategoriaRoute
   '/tratamientos/$slug': typeof TratamientosSlugRoute
   '/tratamientos': typeof TratamientosIndexRoute
 }
@@ -118,10 +126,11 @@ export interface FileRoutesById {
   '/instagram': typeof InstagramRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
-  '/productos': typeof ProductosRoute
+  '/productos': typeof ProductosRouteWithChildren
   '/servicios': typeof ServiciosRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/tratamientos': typeof TratamientosRouteWithChildren
+  '/productos/$categoria': typeof ProductosCategoriaRoute
   '/tratamientos/$slug': typeof TratamientosSlugRoute
   '/tratamientos/': typeof TratamientosIndexRoute
 }
@@ -138,6 +147,7 @@ export interface FileRouteTypes {
     | '/servicios'
     | '/sobre-nosotros'
     | '/tratamientos'
+    | '/productos/$categoria'
     | '/tratamientos/$slug'
     | '/tratamientos/'
   fileRoutesByTo: FileRoutesByTo
@@ -151,6 +161,7 @@ export interface FileRouteTypes {
     | '/productos'
     | '/servicios'
     | '/sobre-nosotros'
+    | '/productos/$categoria'
     | '/tratamientos/$slug'
     | '/tratamientos'
   id:
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/servicios'
     | '/sobre-nosotros'
     | '/tratamientos'
+    | '/productos/$categoria'
     | '/tratamientos/$slug'
     | '/tratamientos/'
   fileRoutesById: FileRoutesById
@@ -176,7 +188,7 @@ export interface RootRouteChildren {
   InstagramRoute: typeof InstagramRoute
   PoliticaCookiesRoute: typeof PoliticaCookiesRoute
   PoliticaPrivacidadRoute: typeof PoliticaPrivacidadRoute
-  ProductosRoute: typeof ProductosRoute
+  ProductosRoute: typeof ProductosRouteWithChildren
   ServiciosRoute: typeof ServiciosRoute
   SobreNosotrosRoute: typeof SobreNosotrosRoute
   TratamientosRoute: typeof TratamientosRouteWithChildren
@@ -268,8 +280,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TratamientosSlugRouteImport
       parentRoute: typeof TratamientosRoute
     }
+    '/productos/$categoria': {
+      id: '/productos/$categoria'
+      path: '/$categoria'
+      fullPath: '/productos/$categoria'
+      preLoaderRoute: typeof ProductosCategoriaRouteImport
+      parentRoute: typeof ProductosRoute
+    }
   }
 }
+
+interface ProductosRouteChildren {
+  ProductosCategoriaRoute: typeof ProductosCategoriaRoute
+}
+
+const ProductosRouteChildren: ProductosRouteChildren = {
+  ProductosCategoriaRoute: ProductosCategoriaRoute,
+}
+
+const ProductosRouteWithChildren = ProductosRoute._addFileChildren(
+  ProductosRouteChildren,
+)
 
 interface TratamientosRouteChildren {
   TratamientosSlugRoute: typeof TratamientosSlugRoute
@@ -292,7 +323,7 @@ const rootRouteChildren: RootRouteChildren = {
   InstagramRoute: InstagramRoute,
   PoliticaCookiesRoute: PoliticaCookiesRoute,
   PoliticaPrivacidadRoute: PoliticaPrivacidadRoute,
-  ProductosRoute: ProductosRoute,
+  ProductosRoute: ProductosRouteWithChildren,
   ServiciosRoute: ServiciosRoute,
   SobreNosotrosRoute: SobreNosotrosRoute,
   TratamientosRoute: TratamientosRouteWithChildren,
@@ -300,3 +331,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

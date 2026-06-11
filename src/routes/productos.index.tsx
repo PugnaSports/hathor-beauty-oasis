@@ -5,7 +5,7 @@ import { CTALink } from "@/components/hathor/CTAButton";
 import productosImg from "@/assets/hathor-productos.jpg";
 import { PRODUCTS } from "@/lib/hathor";
 
-export const Route = createFileRoute("/productos")({
+export const Route = createFileRoute("/productos/")({
   head: () => ({
     meta: [
       { title: "Productos profesionales — Hathor Clínica" },

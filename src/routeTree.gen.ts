@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TratamientosRouteImport } from './routes/tratamientos'
 import { Route as SobreNosotrosRouteImport } from './routes/sobre-nosotros'
 import { Route as ServiciosRouteImport } from './routes/servicios'
-import { Route as ProductosRouteImport } from './routes/productos'
 import { Route as PoliticaPrivacidadRouteImport } from './routes/politica-privacidad'
 import { Route as PoliticaCookiesRouteImport } from './routes/politica-cookies'
 import { Route as InstagramRouteImport } from './routes/instagram'
@@ -20,6 +19,7 @@ import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TratamientosIndexRouteImport } from './routes/tratamientos.index'
+import { Route as ProductosIndexRouteImport } from './routes/productos.index'
 import { Route as TratamientosSlugRouteImport } from './routes/tratamientos.$slug'
 import { Route as ProductosCategoriaRouteImport } from './routes/productos.$categoria'
 
@@ -36,11 +36,6 @@ const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
 const ServiciosRoute = ServiciosRouteImport.update({
   id: '/servicios',
   path: '/servicios',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductosRoute = ProductosRouteImport.update({
-  id: '/productos',
-  path: '/productos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PoliticaPrivacidadRoute = PoliticaPrivacidadRouteImport.update({
@@ -78,15 +73,20 @@ const TratamientosIndexRoute = TratamientosIndexRouteImport.update({
   path: '/',
   getParentRoute: () => TratamientosRoute,
 } as any)
+const ProductosIndexRoute = ProductosIndexRouteImport.update({
+  id: '/productos/',
+  path: '/productos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TratamientosSlugRoute = TratamientosSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => TratamientosRoute,
 } as any)
 const ProductosCategoriaRoute = ProductosCategoriaRouteImport.update({
-  id: '/$categoria',
-  path: '/$categoria',
-  getParentRoute: () => ProductosRoute,
+  id: '/productos/$categoria',
+  path: '/productos/$categoria',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -96,12 +96,12 @@ export interface FileRoutesByFullPath {
   '/instagram': typeof InstagramRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
-  '/productos': typeof ProductosRouteWithChildren
   '/servicios': typeof ServiciosRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/tratamientos': typeof TratamientosRouteWithChildren
   '/productos/$categoria': typeof ProductosCategoriaRoute
   '/tratamientos/$slug': typeof TratamientosSlugRoute
+  '/productos/': typeof ProductosIndexRoute
   '/tratamientos/': typeof TratamientosIndexRoute
 }
 export interface FileRoutesByTo {
@@ -111,11 +111,11 @@ export interface FileRoutesByTo {
   '/instagram': typeof InstagramRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
-  '/productos': typeof ProductosRouteWithChildren
   '/servicios': typeof ServiciosRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/productos/$categoria': typeof ProductosCategoriaRoute
   '/tratamientos/$slug': typeof TratamientosSlugRoute
+  '/productos': typeof ProductosIndexRoute
   '/tratamientos': typeof TratamientosIndexRoute
 }
 export interface FileRoutesById {
@@ -126,12 +126,12 @@ export interface FileRoutesById {
   '/instagram': typeof InstagramRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
-  '/productos': typeof ProductosRouteWithChildren
   '/servicios': typeof ServiciosRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/tratamientos': typeof TratamientosRouteWithChildren
   '/productos/$categoria': typeof ProductosCategoriaRoute
   '/tratamientos/$slug': typeof TratamientosSlugRoute
+  '/productos/': typeof ProductosIndexRoute
   '/tratamientos/': typeof TratamientosIndexRoute
 }
 export interface FileRouteTypes {
@@ -143,12 +143,12 @@ export interface FileRouteTypes {
     | '/instagram'
     | '/politica-cookies'
     | '/politica-privacidad'
-    | '/productos'
     | '/servicios'
     | '/sobre-nosotros'
     | '/tratamientos'
     | '/productos/$categoria'
     | '/tratamientos/$slug'
+    | '/productos/'
     | '/tratamientos/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -158,11 +158,11 @@ export interface FileRouteTypes {
     | '/instagram'
     | '/politica-cookies'
     | '/politica-privacidad'
-    | '/productos'
     | '/servicios'
     | '/sobre-nosotros'
     | '/productos/$categoria'
     | '/tratamientos/$slug'
+    | '/productos'
     | '/tratamientos'
   id:
     | '__root__'
@@ -172,12 +172,12 @@ export interface FileRouteTypes {
     | '/instagram'
     | '/politica-cookies'
     | '/politica-privacidad'
-    | '/productos'
     | '/servicios'
     | '/sobre-nosotros'
     | '/tratamientos'
     | '/productos/$categoria'
     | '/tratamientos/$slug'
+    | '/productos/'
     | '/tratamientos/'
   fileRoutesById: FileRoutesById
 }
@@ -188,10 +188,11 @@ export interface RootRouteChildren {
   InstagramRoute: typeof InstagramRoute
   PoliticaCookiesRoute: typeof PoliticaCookiesRoute
   PoliticaPrivacidadRoute: typeof PoliticaPrivacidadRoute
-  ProductosRoute: typeof ProductosRouteWithChildren
   ServiciosRoute: typeof ServiciosRoute
   SobreNosotrosRoute: typeof SobreNosotrosRoute
   TratamientosRoute: typeof TratamientosRouteWithChildren
+  ProductosCategoriaRoute: typeof ProductosCategoriaRoute
+  ProductosIndexRoute: typeof ProductosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -215,13 +216,6 @@ declare module '@tanstack/react-router' {
       path: '/servicios'
       fullPath: '/servicios'
       preLoaderRoute: typeof ServiciosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/productos': {
-      id: '/productos'
-      path: '/productos'
-      fullPath: '/productos'
-      preLoaderRoute: typeof ProductosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/politica-privacidad': {
@@ -273,6 +267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TratamientosIndexRouteImport
       parentRoute: typeof TratamientosRoute
     }
+    '/productos/': {
+      id: '/productos/'
+      path: '/productos'
+      fullPath: '/productos/'
+      preLoaderRoute: typeof ProductosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tratamientos/$slug': {
       id: '/tratamientos/$slug'
       path: '/$slug'
@@ -282,25 +283,13 @@ declare module '@tanstack/react-router' {
     }
     '/productos/$categoria': {
       id: '/productos/$categoria'
-      path: '/$categoria'
+      path: '/productos/$categoria'
       fullPath: '/productos/$categoria'
       preLoaderRoute: typeof ProductosCategoriaRouteImport
-      parentRoute: typeof ProductosRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface ProductosRouteChildren {
-  ProductosCategoriaRoute: typeof ProductosCategoriaRoute
-}
-
-const ProductosRouteChildren: ProductosRouteChildren = {
-  ProductosCategoriaRoute: ProductosCategoriaRoute,
-}
-
-const ProductosRouteWithChildren = ProductosRoute._addFileChildren(
-  ProductosRouteChildren,
-)
 
 interface TratamientosRouteChildren {
   TratamientosSlugRoute: typeof TratamientosSlugRoute
@@ -323,11 +312,22 @@ const rootRouteChildren: RootRouteChildren = {
   InstagramRoute: InstagramRoute,
   PoliticaCookiesRoute: PoliticaCookiesRoute,
   PoliticaPrivacidadRoute: PoliticaPrivacidadRoute,
-  ProductosRoute: ProductosRouteWithChildren,
   ServiciosRoute: ServiciosRoute,
   SobreNosotrosRoute: SobreNosotrosRoute,
   TratamientosRoute: TratamientosRouteWithChildren,
+  ProductosCategoriaRoute: ProductosCategoriaRoute,
+  ProductosIndexRoute: ProductosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

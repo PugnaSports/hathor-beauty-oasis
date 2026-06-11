@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ChevronLeft } from "lucide-react";
 import { CTALink } from "@/components/hathor/CTAButton";
-import { getProductCategoryBySlug, PRODUCTS } from "@/lib/hathor";
+import { getProductCategoryBySlug, PRODUCTS, type Product } from "@/lib/hathor";
 
 export const Route = createFileRoute("/productos/$categoria")({
   loader: ({ params }) => {
@@ -76,7 +76,7 @@ function CategoriaPage() {
 
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {category.products.map((p, i) => (
+          {category.products.map((p: Product, i: number) => (
             <article
               key={p.name}
               className="reveal rounded-3xl border border-border/60 bg-background p-6 flex flex-col"

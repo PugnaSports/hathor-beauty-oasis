@@ -294,6 +294,10 @@ export function getTreatmentBySlug(slug: string) {
   return TREATMENTS.find((t) => t.slug === slug);
 }
 
+export function getProductCategoryBySlug(slug: string) {
+  return PRODUCTS.find((c) => c.slug === slug);
+}
+
 export type ProductCategory = {
   slug: "facial" | "capilar" | "corporal" | "solar" | "limpieza" | "sets";
   name: string;

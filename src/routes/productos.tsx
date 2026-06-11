@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/hathor/SectionHeader";
 import { CTALink } from "@/components/hathor/CTAButton";
 import productosImg from "@/assets/hathor-productos.jpg";
@@ -53,58 +54,49 @@ function ProductosPage() {
       </section>
 
       <section className="px-6 pb-28">
-        <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-8">
-          {PRODUCTS.map((cat, i) => (
-            <div
-              key={cat.slug}
-              className="reveal rounded-3xl border border-border/60 bg-background p-8 lg:p-10 flex flex-col"
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              <div className="flex items-baseline gap-3">
-                <span className="font-mono text-[11px] tracking-widest text-gold">
-                  0{i + 1}
+        <div className="mx-auto max-w-7xl grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+          {PRODUCTS.map((cat, i) => {
+            const cover = cat.products.find((p) => p.image)?.image;
+            return (
+              <Link
+                key={cat.slug}
+                to="/productos/$categoria"
+                params={{ categoria: cat.slug }}
+                className={`group block reveal ${i % 2 === 1 ? "md:translate-y-10" : ""}`}
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                <div className="overflow-hidden rounded-2xl bg-white border border-border/60 aspect-[4/5] flex items-center justify-center p-8">
+                  {cover ? (
+                    <img
+                      src={cover}
+                      alt={cat.name}
+                      loading="lazy"
+                      className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <span className="font-display text-3xl text-ink-muted">
+                      {cat.name}
+                    </span>
+                  )}
+                </div>
+                <div className="mt-6 flex items-baseline gap-3">
+                  <span className="font-mono text-[11px] tracking-widest text-gold">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h2 className="font-display text-2xl">{cat.name}</h2>
+                </div>
+                <p className="mt-3 text-sm text-ink-muted leading-relaxed">
+                  {cat.description}
+                </p>
+                <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-ink-muted/80">
+                  {cat.products.length} productos
+                </p>
+                <span className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink group-hover:text-gold">
+                  Ver productos <ArrowUpRight className="h-3.5 w-3.5" />
                 </span>
-                <h3 className="font-display text-2xl">{cat.name}</h3>
-              </div>
-              <p className="mt-3 text-sm text-ink-muted leading-relaxed">
-                {cat.description}
-              </p>
-              <ul className="mt-8 divide-y divide-border/60 border-t border-border/60">
-                {cat.products.map((p) => (
-                <li key={p.name} className="py-6 flex gap-5">
-                  {p.image ? (
-                    <div className="shrink-0 w-24 sm:w-28 aspect-square overflow-hidden rounded-xl bg-white border border-border/60 flex items-center justify-center p-2">
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        loading="lazy"
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-                  ) : null}
-                  <div className="min-w-0 flex-1">
-                    <p className="font-display text-lg text-ink leading-snug">
-                      {p.name}
-                    </p>
-                    <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-gold">
-                      {p.format}
-                    </p>
-                    {(p.ref || p.size) && (
-                      <p className="mt-1 text-xs text-ink-muted">
-                        {p.ref ? <>Ref. {p.ref}</> : null}
-                        {p.ref && p.size ? " · " : null}
-                        {p.size ?? null}
-                      </p>
-                    )}
-                    <p className="mt-2 text-sm text-ink-muted leading-relaxed">
-                      {p.description}
-                    </p>
-                  </div>
-                </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+              </Link>
+            );
+          })}
         </div>
 
         <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-ink-muted leading-relaxed">

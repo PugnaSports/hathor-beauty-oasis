@@ -282,7 +282,7 @@ export function getTreatmentBySlug(slug: string) {
 }
 
 export type ProductCategory = {
-  slug: "facial" | "capilar" | "corporal" | "solar";
+  slug: "facial" | "capilar" | "corporal" | "solar" | "limpieza" | "sets";
   name: string;
   description: string;
   products: Product[];
@@ -348,6 +348,112 @@ export const PRODUCTS: ProductCategory[] = [
         description:
           "Crema para hombre antiedad que además previene alteraciones en la piel por los efectos de la radiación solar y elimina daños ya producidos por el sol. Pensada para quien busca una rutina sencilla: es un \"todo en uno\" que combina Esencia y Crema.",
         image: productTurm9.url,
+      },
+      {
+        name: "Sakuradin Texture Cream",
+        format: "Crema · Facial",
+        ref: "00443",
+        size: "35 g",
+        description:
+          "Crema facial regenerante especial para pieles sensibles con acción regenerante. Restaura la barrera cutánea. Especial para pieles sensibles.",
+        image: productSakuradin.url,
+      },
+      {
+        name: "Timeslip Cica Gel Cream",
+        format: "Crema · Facial",
+        ref: "00360 / 00418",
+        size: "70 ml / 250 ml",
+        description:
+          "Antiacné y piel sensible. Para pieles secas, acneicas e irritadas. Hidrata y devuelve juventud a la piel. Contiene Centella asiática, Asioticosida y Madecassoside, GABA, Dipéptido-15.",
+        image: productTimeslipCica.url,
+      },
+      {
+        name: "Ultra Hydrating Cream",
+        format: "Crema · Facial",
+        ref: "00381",
+        size: "30 ml",
+        description:
+          "Crema hidratante. Repara la piel, protege la barrera cutánea evitando la pérdida de agua transepidérmica.",
+        image: productUltraHydrating.url,
+      },
+    ],
+  },
+  {
+    slug: "limpieza",
+    name: "Limpieza",
+    description:
+      "Limpiadores faciales y corporales para preparar la piel y mantenerla equilibrada.",
+    products: [
+      {
+        name: "EGG BP Cell Expert Bubble Oil Soap",
+        format: "Jabón limpiador · Facial y corporal",
+        ref: "01122",
+        size: "90 ml",
+        description:
+          "Jabón con doble acción limpiadora y nutritiva: remueve el maquillaje (incluso el resistente al agua) y las impurezas, manteniendo la piel hidratada, protegida y revitalizada gracias a sus excelentes propiedades antioxidantes y regenerativas. Se presenta en un envase de 90 ml dentro de un recipiente de 60 ml para poder ser rellenado.",
+        image: productEggBubble.url,
+      },
+      {
+        name: "Rose Water Cleansing Milk",
+        format: "Leche limpiadora · Facial y corporal",
+        ref: "UC008 / UC005",
+        size: "2x 100 ml / 520 ml",
+        description:
+          "Leche limpiadora con agua y extracto de rosas. Limpieza e hidratación.",
+        image: productRoseWaterMilk.url,
+      },
+    ],
+  },
+  {
+    slug: "sets",
+    name: "Rutinas y sets",
+    description:
+      "Rutinas completas con limpiador, tónico, sérum y crema para resultados visibles y duraderos.",
+    products: [
+      {
+        name: "Hydrate & Glow Skincare Set",
+        format: "Tónico + Sérum + Crema · Facial",
+        ref: "00226",
+        size: "30 ml + 50 ml + 100 ml",
+        description:
+          "Set de productos con función principalmente hidratante. Reúne los tres pasos del skincare de la rutina coreana: tónico, sérum y crema. Su sinergia consigue una hidratación profunda y duradera. PVP 136 €.",
+        image: productHydrateGlowSet.url,
+      },
+      {
+        name: "Multi-Recovery Skincare Set",
+        format: "Tónico + Sérum + Crema · Facial",
+        ref: "00280",
+        size: "30 ml + 50 ml + 60 ml",
+        description:
+          "Productos con función principalmente antiedad, reafirmantes y despigmentantes. Se encuentran los tres pasos del skincare de la rutina coreana: tónico, sérum y crema. PVP 195 €.",
+        image: productMultiRecoverySet.url,
+      },
+      {
+        name: "RESTACNE: Clear and Bright Skincare Set",
+        format: "Limpiador + Tónico + Sérum + Crema · Facial",
+        ref: "00010",
+        size: "50 + 100 + 50 + 50 ml",
+        description:
+          "Rutina de skincare con tendencia acneica. Contiene un limpiador facial de la línea SAVIA, junto a un tónico, sérum y crema facial de la línea OVACO.",
+        image: productRestacneSet.url,
+      },
+      {
+        name: "RESISTENCE: Best Spot Treatment Set",
+        format: "Limpiador + Tónico + Sérum + Crema · Facial",
+        ref: "00478",
+        size: "90 + 100 + 50 + 50 ml",
+        description:
+          "Pack para básicos antimanchas. Descubre una piel más luminosa y saludable. Contiene un limpiador facial de la línea SAVIA, un tónico, sérum y crema facial de la línea OVACO.",
+        image: productResistenceSet.url,
+      },
+      {
+        name: "EGG BP Cell Routine Set — Cofre",
+        format: "Viales + Sérum + Crema · Facial",
+        ref: "02058",
+        size: "5x 7 ml + 1x 50 ml + 1x 50 ml",
+        description:
+          "Regenerante. La concentración de péptidos y factores de crecimiento es muy elevada, lo que le hace un producto potentísimo para tratar con la máxima eficacia pieles envejecidas y con diversas alteraciones: queratosis actínica crónica, psoriasis, dermatitis, eczemas, pieles atópicas, etc.",
+        image: productEggRoutineSet.url,
       },
     ],
   },

@@ -5,7 +5,7 @@ import { CTALink } from "@/components/hathor/CTAButton";
 import productosImg from "@/assets/hathor-productos.jpg";
 import { PRODUCTS } from "@/lib/hathor";
 
-export const Route = createFileRoute("/productos")({
+export const Route = createFileRoute("/productos/")({
   head: () => ({
     meta: [
       { title: "Productos profesionales — Hathor Clínica" },
@@ -62,7 +62,7 @@ function ProductosPage() {
                 key={cat.slug}
                 to="/productos/$categoria"
                 params={{ categoria: cat.slug }}
-                className={`group block reveal ${i % 2 === 1 ? "md:translate-y-10" : ""}`}
+                className="group block reveal"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="overflow-hidden rounded-2xl bg-white border border-border/60 aspect-[4/5] flex items-center justify-center p-8">

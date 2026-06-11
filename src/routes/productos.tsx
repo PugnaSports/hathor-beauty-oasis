@@ -73,7 +73,7 @@ function ProductosPage() {
                 {cat.products.map((p) => (
                 <li key={p.name} className="py-6 flex gap-5">
                   {p.image ? (
-                    <div className="shrink-0 w-20 sm:w-24 aspect-[3/4] overflow-hidden rounded-xl bg-nude/40 flex items-center justify-center">
+                    <div className="shrink-0 w-24 sm:w-28 aspect-square overflow-hidden rounded-xl bg-white border border-border/60 flex items-center justify-center p-2">
                       <img
                         src={p.image}
                         alt={p.name}

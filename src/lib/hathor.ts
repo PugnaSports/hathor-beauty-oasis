@@ -32,6 +32,11 @@ import productReverseSet from "@/assets/product-reverse-set.png.asset.json";
 import productDoubleIntensifySerum from "@/assets/product-double-intensify-serum.png.asset.json";
 import productEggBpSerum from "@/assets/product-egg-bp-serum.png.asset.json";
 import productSuperbCoreSerum from "@/assets/product-superb-core-serum.png.asset.json";
+import productBrilliantSkinSerum from "@/assets/product-brilliant-skin-serum.png.asset.json";
+import productDermaMelazero from "@/assets/product-derma-melazero.png.asset.json";
+import productMetabolismPropolisSerum from "@/assets/product-metabolism-propolis-serum.png.asset.json";
+import productEggScalpRevitalizer from "@/assets/product-egg-scalp-revitalizer.png.asset.json";
+import productHydraRadianceMist from "@/assets/product-hydra-radiance-mist.png.asset.json";
 
 export const CLINIC = {
   name: "Hathor",

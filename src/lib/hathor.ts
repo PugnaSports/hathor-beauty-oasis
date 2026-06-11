@@ -56,6 +56,7 @@ export type Treatment = {
   indications: string[];
   experience: string[];
   whatsappMessage: string;
+  items?: string[];
 };
 
 export const TREATMENTS: Treatment[] = [
@@ -86,6 +87,15 @@ export const TREATMENTS: Treatment[] = [
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para medicina estética facial.",
+    items: [
+      "Hollywood peel",
+      "Biorregeneración facial",
+      "Tratamientos con células madre",
+      "Tratamientos con células madre premium",
+      "Tratamientos con exosomas",
+      "Peeling químico suave",
+      "Tratamiento de ojeras",
+    ],
   },
   {
     slug: "tratamientos-corporales",
@@ -114,6 +124,7 @@ export const TREATMENTS: Treatment[] = [
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para un tratamiento corporal.",
+    items: ["Eliminación de celulitis", "Reafirmación corporal"],
   },
   {
     slug: "laser",
@@ -142,6 +153,7 @@ export const TREATMENTS: Treatment[] = [
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para un tratamiento láser.",
+    items: ["Láser corporal indoloro", "Eliminación de tatuajes"],
   },
   {
     slug: "medicina-capilar",
@@ -170,6 +182,11 @@ export const TREATMENTS: Treatment[] = [
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para un tratamiento capilar.",
+    items: [
+      "Láser capilar",
+      "Vitaminas capilares",
+      "Seguimiento y valoración especializada",
+    ],
   },
   {
     slug: "aparatologia-avanzada",
@@ -198,6 +215,11 @@ export const TREATMENTS: Treatment[] = [
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para una valoración con aparatología avanzada.",
+    items: [
+      "Diagnóstico y seguimiento",
+      "Personalización de protocolos",
+      "Tecnología de apoyo al tratamiento (Prysm iO)",
+    ],
   },
   {
     slug: "asesoramiento-personalizado",
@@ -226,12 +248,110 @@ export const TREATMENTS: Treatment[] = [
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para un asesoramiento personalizado.",
+    items: [
+      "Valoración previa",
+      "Rutina recomendada",
+      "Acompañamiento durante el proceso",
+      "Plan adaptado a cada persona",
+    ],
   },
 ];
 
 export function getTreatmentBySlug(slug: string) {
   return TREATMENTS.find((t) => t.slug === slug);
 }
+
+export type ProductCategory = {
+  slug: "facial" | "capilar" | "corporal" | "solar";
+  name: string;
+  description: string;
+  products: { name: string; description: string }[];
+};
+
+export const PRODUCTS: ProductCategory[] = [
+  {
+    slug: "facial",
+    name: "Facial",
+    description:
+      "Packs y rutinas profesionales pensadas para cuidar la piel en casa y mantener los resultados de cabina.",
+    products: [
+      {
+        name: "Pack antiacné",
+        description:
+          "Rutina para pieles con tendencia acneica que ayuda a equilibrar y cuidar la piel día a día.",
+      },
+      {
+        name: "Pack antimanchas",
+        description:
+          "Productos pensados para unificar el tono y trabajar las manchas con constancia.",
+      },
+      {
+        name: "Pack células madre",
+        description:
+          "Rutina revitalizante para apoyar los tratamientos faciales con células madre.",
+      },
+      {
+        name: "Pack Dr. Tufet",
+        description:
+          "Selección profesional para una rutina facial completa, recomendada según valoración.",
+      },
+    ],
+  },
+  {
+    slug: "capilar",
+    name: "Capilar",
+    description:
+      "Productos profesionales para cuidar el cuero cabelludo y la salud del cabello en casa.",
+    products: [
+      {
+        name: "Champú anticaída",
+        description:
+          "Limpieza suave que complementa los tratamientos capilares de la clínica.",
+      },
+      {
+        name: "Tónico capilar",
+        description:
+          "Tratamiento de uso diario para apoyar el cuidado del cuero cabelludo.",
+      },
+    ],
+  },
+  {
+    slug: "corporal",
+    name: "Corporal",
+    description:
+      "Cremas para prolongar y mantener en casa los resultados de los protocolos corporales.",
+    products: [
+      {
+        name: "Crema corporal anticelulítica",
+        description:
+          "Apoyo diario para los tratamientos corporales centrados en celulitis.",
+      },
+      {
+        name: "Crema corporal reafirmante",
+        description:
+          "Hidratación y cuidado para ayudar a mantener la firmeza de la piel.",
+      },
+    ],
+  },
+  {
+    slug: "solar",
+    name: "Solar",
+    description:
+      "Fotoprotección de uso diario, imprescindible para cuidar la piel y mantener cualquier tratamiento.",
+    products: [
+      {
+        name: "Protector solar SPF 50 para pieles sensibles",
+        description:
+          "Alta protección de uso diario, formulada para pieles sensibles o reactivas.",
+      },
+      {
+        name: "Crema con color con protector solar",
+        description:
+          "Unifica el tono y aporta protección solar en un solo gesto.",
+      },
+    ],
+  },
+];
 
 export const FAQ_ITEMS: { question: string; answer: string }[] = [
   {

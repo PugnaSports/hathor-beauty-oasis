@@ -132,6 +132,11 @@ function Index() {
               <h2 className="font-display text-3xl md:text-5xl leading-tight">
                 Cuidado integral con enfoque <span className="italic">médico</span>
               </h2>
+              <p className="mt-5 text-ink-muted leading-relaxed">
+                Medicina estética facial, medicina capilar, tratamientos
+                corporales y aparatología avanzada bajo un mismo enfoque
+                personalizado.
+              </p>
             </div>
             <CTALink to="/tratamientos" variant="ghost" className="self-start md:self-end">
               Ver todos <ArrowUpRight className="h-4 w-4" />

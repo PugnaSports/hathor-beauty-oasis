@@ -149,6 +149,32 @@ function TreatmentDetail() {
         </div>
       </section>
 
+      {treatment.items && treatment.items.length > 0 && (
+        <section className="px-6 pb-8">
+          <div className="mx-auto max-w-7xl reveal">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
+              Qué incluye
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl mb-10 max-w-2xl">
+              Tratamientos disponibles
+            </h2>
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
+              {treatment.items.map((item) => (
+                <li
+                  key={item}
+                  className="bg-background p-6 lg:p-8 flex items-start gap-4"
+                >
+                  <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-nude">
+                    <Check className="h-3.5 w-3.5 text-gold" />
+                  </span>
+                  <span className="text-ink leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Qué esperar */}
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-7xl reveal">

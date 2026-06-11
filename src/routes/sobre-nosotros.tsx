@@ -47,8 +47,8 @@ function SobrePage() {
           <div className="lg:col-span-6">
             <SectionHeader
               eyebrow="Sobre Hathor"
-              title="Un espacio donde la estética se une al cuidado"
-              description="Hathor nace para ofrecer un espacio de confianza donde cuidar la estética, la piel y el cabello desde un enfoque profesional, personalizado y cercano."
+              title="Donde la enfermería se une a la medicina estética y capilar"
+              description="Hathor nace de la mano de Laura, enfermera y fundadora, como un espacio donde unir la atención sanitaria con la medicina estética y capilar desde un enfoque profesional, cercano y de confianza."
             />
             <p className="mt-6 text-ink-muted leading-relaxed reveal">
               Cada tratamiento se valora de forma individual para adaptar la
@@ -85,6 +85,41 @@ function SobrePage() {
                 <p className="mt-3 text-sm text-ink-muted leading-relaxed">{v.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Laura */}
+      <section className="px-6 pb-24">
+        <div className="mx-auto max-w-7xl grid lg:grid-cols-12 gap-14 items-center">
+          <div className="lg:col-span-5 reveal order-2 lg:order-1">
+            <img
+              src={sobreImg}
+              alt="Laura, enfermera y fundadora de Hathor Clínica"
+              loading="lazy"
+              width={1024}
+              height={1280}
+              className="w-full aspect-[4/5] object-cover rounded-3xl"
+            />
+          </div>
+          <div className="lg:col-span-7 reveal order-1 lg:order-2">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
+              Laura · Fundadora
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl leading-[1.1]">
+              Una mirada de enfermera al cuidado estético
+            </h2>
+            <p className="mt-6 text-ink-muted leading-relaxed">
+              Laura es enfermera y fundadora de Hathor. Tras años acompañando a
+              pacientes en el ámbito sanitario, crea este espacio para unir el
+              rigor clínico con la atención personalizada en medicina estética y
+              capilar.
+            </p>
+            <p className="mt-4 text-ink-muted leading-relaxed">
+              Su forma de entender la estética parte siempre de la valoración,
+              la naturalidad y el acompañamiento. Sin promesas exageradas: solo
+              recomendaciones honestas, seguras y adaptadas a cada persona.
+            </p>
           </div>
         </div>
       </section>

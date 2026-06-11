@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeader } from "@/components/hathor/SectionHeader";
 import { CTALink } from "@/components/hathor/CTAButton";
 import productosImg from "@/assets/hathor-productos.jpg";
+import { PRODUCTS } from "@/lib/hathor";
 
 export const Route = createFileRoute("/productos")({
   head: () => ({
@@ -22,25 +23,6 @@ export const Route = createFileRoute("/productos")({
   }),
   component: ProductosPage,
 });
-
-const categories = [
-  {
-    title: "Cuidado facial",
-    desc: "Limpiadores, sérums, hidratantes y rutinas adaptadas a tu tipo de piel y objetivos.",
-  },
-  {
-    title: "Capilar",
-    desc: "Productos profesionales para el cuidado del cuero cabelludo y la salud del cabello.",
-  },
-  {
-    title: "Corporal",
-    desc: "Cremas y tratamientos para complementar los protocolos de cabina en casa.",
-  },
-  {
-    title: "Protección solar",
-    desc: "Fotoprotección de uso diario, esencial para cuidar y mantener cualquier tratamiento.",
-  },
-];
 
 function ProductosPage() {
   return (
@@ -71,18 +53,32 @@ function ProductosPage() {
       </section>
 
       <section className="px-6 pb-28">
-        <div className="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
-          {categories.map((c, i) => (
+        <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-8">
+          {PRODUCTS.map((cat, i) => (
             <div
-              key={c.title}
-              className="bg-background p-8 lg:p-10 flex flex-col reveal"
+              key={cat.slug}
+              className="reveal rounded-3xl border border-border/60 bg-background p-8 lg:p-10 flex flex-col"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <span className="font-mono text-[11px] tracking-widest text-gold">
-                0{i + 1}
-              </span>
-              <h3 className="mt-5 font-display text-2xl">{c.title}</h3>
-              <p className="mt-3 text-sm text-ink-muted leading-relaxed">{c.desc}</p>
+              <div className="flex items-baseline gap-3">
+                <span className="font-mono text-[11px] tracking-widest text-gold">
+                  0{i + 1}
+                </span>
+                <h3 className="font-display text-2xl">{cat.name}</h3>
+              </div>
+              <p className="mt-3 text-sm text-ink-muted leading-relaxed">
+                {cat.description}
+              </p>
+              <ul className="mt-8 divide-y divide-border/60 border-t border-border/60">
+                {cat.products.map((p) => (
+                  <li key={p.name} className="py-5">
+                    <p className="font-display text-lg text-ink">{p.name}</p>
+                    <p className="mt-1.5 text-sm text-ink-muted leading-relaxed">
+                      {p.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

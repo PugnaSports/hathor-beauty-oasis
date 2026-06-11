@@ -63,6 +63,11 @@ function TratamientosIndex() {
                 <h2 className="font-display text-2xl">{t.name}</h2>
               </div>
               <p className="mt-3 text-sm text-ink-muted leading-relaxed">{t.short}</p>
+              {t.items && t.items.length > 0 && (
+                <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-ink-muted/80">
+                  {t.items.slice(0, 3).join(" · ")}
+                </p>
+              )}
               <span className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink group-hover:text-gold">
                 Ver más <ArrowUpRight className="h-3.5 w-3.5" />
               </span>

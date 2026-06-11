@@ -73,7 +73,7 @@ export function NavDropdownItem({ to, label, entries }: Props) {
     >
       <div className="flex items-center gap-1">
         <Link
-          to={to}
+          to={to as never}
           className={`text-[11px] font-medium uppercase tracking-[0.22em] transition-colors hover:text-ink ${
             isActive ? "text-ink" : "text-ink-muted"
           }`}
@@ -108,7 +108,7 @@ export function NavDropdownItem({ to, label, entries }: Props) {
             {entries.map((e) => (
               <Link
                 key={`${e.to}-${e.label}`}
-                to={e.to}
+                to={e.to as never}
                 params={e.params as never}
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-3 py-2.5 hover:bg-nude/50 transition-colors"
@@ -143,7 +143,7 @@ export function MobileNavGroup({ to, label, entries, onNavigate }: MobileProps) 
     <div className="border-b border-border/50">
       <div className="flex items-center justify-between py-4">
         <Link
-          to={to}
+          to={to as never}
           onClick={onNavigate}
           className="font-display text-2xl text-ink"
         >
@@ -170,7 +170,7 @@ export function MobileNavGroup({ to, label, entries, onNavigate }: MobileProps) 
           {entries.map((e) => (
             <Link
               key={`${e.to}-${e.label}`}
-              to={e.to}
+              to={e.to as never}
               params={e.params as never}
               onClick={onNavigate}
               className="py-2 text-base text-ink-muted hover:text-ink"

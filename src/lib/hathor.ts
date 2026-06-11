@@ -14,6 +14,16 @@ import productBoostingCream from "@/assets/product-boosting-cream.png.asset.json
 import productRestorationMechanism from "@/assets/product-restoration-mechanism.png.asset.json";
 import productProbio6Body from "@/assets/product-probio6-body.png.asset.json";
 import productTurm9 from "@/assets/product-turm9.png.asset.json";
+import productSakuradin from "@/assets/product-sakuradin.png.asset.json";
+import productTimeslipCica from "@/assets/product-timeslip-cica.png.asset.json";
+import productUltraHydrating from "@/assets/product-ultra-hydrating.png.asset.json";
+import productEggBubble from "@/assets/product-egg-bubble.png.asset.json";
+import productHydrateGlowSet from "@/assets/product-hydrate-glow-set.png.asset.json";
+import productRoseWaterMilk from "@/assets/product-rose-water-milk.png.asset.json";
+import productRestacneSet from "@/assets/product-restacne-set.png.asset.json";
+import productMultiRecoverySet from "@/assets/product-multi-recovery-set.png.asset.json";
+import productResistenceSet from "@/assets/product-resistence-set.png.asset.json";
+import productEggRoutineSet from "@/assets/product-egg-routine-set.png.asset.json";
 
 export const CLINIC = {
   name: "Hathor",

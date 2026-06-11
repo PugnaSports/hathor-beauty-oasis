@@ -384,6 +384,32 @@ export const PRODUCTS: ProductCategory[] = [
           "Crema hidratante. Repara la piel, protege la barrera cutánea evitando la pérdida de agua transepidérmica.",
         image: productUltraHydrating.url,
       },
+      {
+        name: "Double Intensify Effect Core Sérum",
+        format: "Sérum · Facial",
+        ref: "00331",
+        size: "50 ml",
+        description:
+          "Sérum antiacné. Especialmente indicado para pieles acneicas y sensibles, pieles con rojeces, rosácea, picor, ardor, etc.",
+        image: productDoubleIntensifySerum.url,
+      },
+      {
+        name: "Egg BP Cell Sérum",
+        format: "Sérum · Facial",
+        ref: "00910",
+        description:
+          "Sérum facial antiedad con acción antienvejecimiento y efecto despigmentante. Difumina arrugas, repara en profundidad y devuelve luminosidad a la piel. Sérum para el rostro a partir de células madre pluripotentes.",
+        image: productEggBpSerum.url,
+      },
+      {
+        name: "Superb Amazing Result Core Sérum",
+        format: "Sérum · Facial",
+        ref: "00328",
+        size: "50 ml",
+        description:
+          "Sérum antiedad efecto lifting. Contiene tripéptidos con efecto \"bótox\", además de pantenol, extractos botánicos, ácido hialurónico y vitaminas.",
+        image: productSuperbCoreSerum.url,
+      },
     ],
   },
   {
@@ -442,7 +468,7 @@ export const PRODUCTS: ProductCategory[] = [
         ref: "00010",
         size: "50 + 100 + 50 + 50 ml",
         description:
-          "Rutina de skincare con tendencia acneica. Contiene un limpiador facial de la línea SAVIA, junto a un tónico, sérum y crema facial de la línea OVACO.",
+          "Rutina de skincare indicada para piel con tendencia acneica. Contiene un limpiador facial de la línea SAVIA, junto a un tónico, sérum y crema facial de la línea OVACO. PVP 199 €.",
         image: productRestacneSet.url,
       },
       {
@@ -451,7 +477,7 @@ export const PRODUCTS: ProductCategory[] = [
         ref: "00478",
         size: "90 + 100 + 50 + 50 ml",
         description:
-          "Pack para básicos antimanchas. Descubre una piel más luminosa y saludable. Contiene un limpiador facial de la línea SAVIA, un tónico, sérum y crema facial de la línea OVACO.",
+          "Descubre en este pack los básicos antimanchas y devuelve a tu piel su tono más luminoso y saludable. Contiene un limpiador facial de la línea SAVIA, un tónico, sérum y crema facial de la línea OVACO. PVP 215 €.",
         image: productResistenceSet.url,
       },
       {
@@ -462,6 +488,33 @@ export const PRODUCTS: ProductCategory[] = [
         description:
           "Regenerante. La concentración de péptidos y factores de crecimiento es muy elevada, lo que le hace un producto potentísimo para tratar con la máxima eficacia pieles envejecidas y con diversas alteraciones: queratosis actínica crónica, psoriasis, dermatitis, eczemas, pieles atópicas, etc.",
         image: productEggRoutineSet.url,
+      },
+      {
+        name: "REVERSE: Skin Rejuvenation Set",
+        format: "Limpiador + Tónico + Sérum + Crema · Facial",
+        ref: "00477",
+        size: "50 + 100 + 50 + 30 ml",
+        description:
+          "Los cuatro productos del SET REVERSE rejuvenecen la piel, difuminando arrugas y devolviéndole su luminosidad natural. Este set contiene un limpiador facial de la línea SAVIA, un tónico, sérum y crema facial de la línea OVACO. PVP 219 €.",
+        image: productReverseSet.url,
+      },
+      {
+        name: "L'ENCLOS PDRN Peel and Repair Set",
+        format: "Viales profesionales · Facial",
+        ref: "00471",
+        size: "6x 5 ml",
+        description:
+          "Set profesional de renovación y reparación celular con tecnología biotecnológica avanzada para pieles sensibles, apagadas y/o envejecidas.",
+        image: productLenclosPdrn.url,
+      },
+      {
+        name: "Dr Tufet Cellular Regeneration Program",
+        format: "Aceite + Sérum + Sérum + Crema · Facial",
+        ref: "01045",
+        size: "Aceite 150 ml + Sérum E3P1 30 ml + Sérum FPG 30 ml + Crema PDRN 50 ml",
+        description:
+          "Pack de regeneración celular basado en el poder de las células madre del huevo reprogramadas (componente patentado por el Instituto de Ciencias Médicas de Corea e introducido por primera vez en el mundo en las líneas POOMI). Incluye EXOSOMAS provenientes de estas células (la fuente del auténtico exosoma), PDRN y CPN, MMN principalmente.",
+        image: productDrTufetSet.url,
       },
     ],
   },
@@ -533,16 +586,22 @@ export const PRODUCTS: ProductCategory[] = [
       "Fotoprotección de uso diario, imprescindible para cuidar la piel y mantener cualquier tratamiento.",
     products: [
       {
-        name: "Protector solar SPF 50 para pieles sensibles",
-        format: "Protector solar · Facial",
+        name: "Protector Solar Whitening Tone Up",
+        format: "Crema con color · Facial",
+        ref: "00126",
+        size: "50 ml",
         description:
-          "Alta protección de uso diario, formulada para pieles sensibles o reactivas.",
+          "La mejor protección frente a los nocivos efectos del sol: filtros físicos, ingredientes reparadores y antiedad. Alto contenido en extracto de cactus y phytolipo, que calman y humectan hasta las pieles más sensibles.",
+        image: productToneUpSolar.url,
       },
       {
-        name: "Crema con color con protector solar",
-        format: "Crema con color · Facial",
+        name: "Daily Moisturising Sunscreen",
+        format: "Crema · Facial y corporal",
+        ref: "OV066",
+        size: "50 ml",
         description:
-          "Unifica el tono y aporta protección solar en un solo gesto.",
+          "Emulsión fotoprotectora de última generación que combina los últimos avances con ingredientes hidratantes, calmantes y antiedad. Esta fórmula está protegida con UVA y UVB de amplio espectro, reforzar la barrera cutánea, y cuidar incluso las pieles más sensibles.",
+        image: productDailySunscreen.url,
       },
     ],
   },

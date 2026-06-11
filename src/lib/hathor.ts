@@ -232,3 +232,35 @@ export const TREATMENTS: Treatment[] = [
 export function getTreatmentBySlug(slug: string) {
   return TREATMENTS.find((t) => t.slug === slug);
 }
+
+export const FAQ_ITEMS: { question: string; answer: string }[] = [
+  {
+    question: "¿Necesito pedir cita previa?",
+    answer:
+      "Sí, trabajamos con cita previa para poder dedicarte el tiempo y la atención que necesitas.",
+  },
+  {
+    question: "¿Puedo pedir información antes de reservar?",
+    answer:
+      "Sí, puedes escribirnos por WhatsApp y te orientaremos según tus necesidades.",
+  },
+  {
+    question: "¿Los tratamientos son personalizados?",
+    answer:
+      "Sí, cada tratamiento se adapta a tu piel, tus objetivos y el estado en el que te encuentres.",
+  },
+  {
+    question: "¿Dónde está ubicado Hathor?",
+    answer: `Hathor está ubicado en ${CLINIC.address}.`,
+  },
+  {
+    question: "¿Cómo puedo reservar cita?",
+    answer:
+      "Puedes reservar directamente desde los botones de la web, que te llevarán a WhatsApp con un mensaje preparado.",
+  },
+  {
+    question: "¿Qué tratamiento me recomendáis si no sé cuál elegir?",
+    answer:
+      "Escríbenos por WhatsApp y te ayudaremos a escoger el tratamiento más adecuado para ti.",
+  },
+];

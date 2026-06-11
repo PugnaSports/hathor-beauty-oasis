@@ -6,6 +6,7 @@ import facialImg from "@/assets/hathor-facial.jpg";
 import capilarImg from "@/assets/hathor-capilar.jpg";
 import corporalImg from "@/assets/hathor-corporal.jpg";
 import { CTAAnchor, CTALink } from "@/components/hathor/CTAButton";
+import { FaqSection } from "@/components/hathor/FaqSection";
 import { CLINIC } from "@/lib/hathor";
 
 export const Route = createFileRoute("/")({
@@ -206,6 +207,8 @@ function Index() {
       </section>
 
       {/* CTA bottom */}
+      <FaqSection className="bg-nude/30" />
+
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl rounded-3xl bg-ink text-background px-8 py-16 md:p-20 reveal">
           <div className="grid md:grid-cols-12 gap-10 items-center">

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/hathor/SectionHeader";
+import { FaqSection } from "@/components/hathor/FaqSection";
 import { TREATMENTS } from "@/lib/hathor";
 
 export const Route = createFileRoute("/tratamientos/")({
@@ -69,6 +70,8 @@ function TratamientosIndex() {
           ))}
         </div>
       </section>
+
+      <FaqSection className="bg-nude/30" />
     </>
   );
 }

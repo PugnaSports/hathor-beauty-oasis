@@ -24,6 +24,14 @@ import productRestacneSet from "@/assets/product-restacne-set.png.asset.json";
 import productMultiRecoverySet from "@/assets/product-multi-recovery-set.png.asset.json";
 import productResistenceSet from "@/assets/product-resistence-set.png.asset.json";
 import productEggRoutineSet from "@/assets/product-egg-routine-set.png.asset.json";
+import productLenclosPdrn from "@/assets/product-lenclos-pdrn.png.asset.json";
+import productToneUpSolar from "@/assets/product-tone-up-solar.png.asset.json";
+import productDrTufetSet from "@/assets/product-dr-tufet-set.png.asset.json";
+import productDailySunscreen from "@/assets/product-daily-sunscreen.png.asset.json";
+import productReverseSet from "@/assets/product-reverse-set.png.asset.json";
+import productDoubleIntensifySerum from "@/assets/product-double-intensify-serum.png.asset.json";
+import productEggBpSerum from "@/assets/product-egg-bp-serum.png.asset.json";
+import productSuperbCoreSerum from "@/assets/product-superb-core-serum.png.asset.json";
 
 export const CLINIC = {
   name: "Hathor",

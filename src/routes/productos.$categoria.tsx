@@ -125,7 +125,7 @@ function CategoriaPage() {
             ¿Necesitas asesoramiento?
           </p>
           <h2 className="font-display text-3xl md:text-4xl leading-[1.1] max-w-2xl mx-auto">
-            Te recomendamos los productos adecuados tras una valoración personalizada.
+            ¿Tienes dudas sobre tu rutina? Te orientamos en clínica.
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <CTALink to="/contacto">Solicita asesoramiento</CTALink>

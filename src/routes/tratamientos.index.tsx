@@ -11,13 +11,13 @@ export const Route = createFileRoute("/tratamientos/")({
       {
         name: "description",
         content:
-          "Todos los tratamientos de Hathor: medicina estética facial, corporales, láser, capilar, aparatología avanzada y asesoramiento personalizado en Olesa de Montserrat.",
+          "Tratamientos de Hathor en Olesa de Montserrat: cada plan parte de una valoración personalizada con criterio sanitario.",
       },
       { property: "og:title", content: "Tratamientos — Hathor Clínica" },
       {
         property: "og:description",
         content:
-          "Descubre todos los tratamientos disponibles en Hathor: faciales, corporales, capilares y aparatología avanzada.",
+          "Medicina estética facial, capilar, corporal, láser y aparatología avanzada con valoración previa.",
       },
     ],
   }),
@@ -31,8 +31,8 @@ function TratamientosIndex() {
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             eyebrow="Tratamientos"
-            title="Todos nuestros tratamientos"
-            description="Cada tratamiento parte de una valoración individual. Explora todo lo que podemos hacer por ti."
+            title="Cuidamos tu piel y tu cabello con criterio sanitario"
+            description="Antes de proponerte cualquier tratamiento, hacemos una valoración para entender qué te gustaría mejorar. Aquí puedes ver con calma lo que ofrecemos en clínica."
           />
         </div>
       </section>

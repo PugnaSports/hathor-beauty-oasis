@@ -156,7 +156,7 @@ function TreatmentDetail() {
               Qué incluye
             </p>
             <h2 className="font-display text-3xl md:text-4xl mb-10 max-w-2xl">
-              Tratamientos disponibles
+              Lo que puede incluir tu plan
             </h2>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
               {treatment.items.map((item: string) => (
@@ -209,11 +209,10 @@ function TreatmentDetail() {
                 Reserva tu cita
               </p>
               <h2 className="font-display text-3xl md:text-5xl leading-tight text-background">
-                ¿Te interesa {treatment.name.toLowerCase()}?
+                Cuéntanos qué te gustaría mejorar
               </h2>
               <p className="mt-5 max-w-xl text-background/70 leading-relaxed">
-                Escríbenos por WhatsApp y reservamos una valoración personalizada
-                para ti.
+                Tras una valoración inicial te propondremos un plan adaptado a ti, sin compromiso. Escríbenos por WhatsApp y te orientamos.
               </p>
             </div>
             <div className="md:col-span-4 flex md:justify-end flex-wrap gap-3">

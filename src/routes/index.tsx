@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Clínica de medicina estética y capilar en Olesa de Montserrat. Tratamientos faciales, corporales y capilares con enfoque personalizado.",
+          "Clínica de medicina estética y capilar en Olesa de Montserrat. Cuidamos tu piel y tu cabello con criterio sanitario, escucha y un plan a tu medida.",
       },
       {
         property: "og:title",
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Tratamientos faciales, corporales y capilares con un enfoque cercano, profesional y personalizado.",
+          "Estética natural y cuidado capilar con criterio sanitario, valoración personalizada y acompañamiento cercano.",
       },
     ],
   }),
@@ -33,29 +33,29 @@ export const Route = createFileRoute("/")({
 });
 
 const trustPoints = [
-  { icon: HeartPulse, label: "Atención personalizada" },
-  { icon: Sparkles, label: "Medicina estética" },
-  { icon: ShieldCheck, label: "Tratamientos capilares" },
-  { icon: Cpu, label: "Aparatología avanzada" },
+  { icon: HeartPulse, label: "Valoración personalizada" },
+  { icon: ShieldCheck, label: "Criterio sanitario" },
+  { icon: Sparkles, label: "Resultados naturales" },
+  { icon: Cpu, label: "Tecnología avanzada" },
 ];
 
 const servicePreview = [
   {
     slug: "medicina-estetica-facial",
     title: "Medicina estética facial",
-    desc: "Tratamientos para realzar tus rasgos de forma natural y armoniosa.",
+    desc: "Cuidamos tu rostro respetando tus rasgos, con un enfoque natural y sin cambios bruscos.",
     img: facialImg,
   },
   {
     slug: "medicina-capilar",
     title: "Medicina capilar",
-    desc: "Diagnóstico y cuidado avanzado para la salud del cuero cabelludo y el cabello.",
+    desc: "Valoración capilar con criterio médico para acompañar la salud de tu cuero cabelludo y tu cabello.",
     img: capilarImg,
   },
   {
     slug: "tratamientos-corporales",
     title: "Tratamientos corporales",
-    desc: "Protocolos para cuidar la piel y la silueta con resultados visibles.",
+    desc: "Protocolos progresivos para cuidar la piel y trabajar zonas concretas con seguimiento.",
     img: corporalImg,
   },
 ];
@@ -75,8 +75,7 @@ function Index() {
               <span className="italic">Olesa de Montserrat</span>
             </h1>
             <p className="mt-7 max-w-xl text-base md:text-lg text-ink-muted leading-relaxed">
-              Tratamientos faciales, corporales y capilares con un enfoque cercano,
-              profesional y personalizado para cuidar tu piel y tu cabello.
+              Una clínica donde escuchamos primero, valoramos con criterio sanitario y diseñamos contigo un plan adaptado a tu piel, tu cabello y tu momento.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <CTALink to="/contacto">Pedir cita</CTALink>
@@ -130,12 +129,10 @@ function Index() {
                 Especialidades
               </p>
               <h2 className="font-display text-3xl md:text-5xl leading-tight">
-                Cuidado integral con enfoque <span className="italic">médico</span>
+                Primero escuchamos. Después <span className="italic">cuidamos</span>.
               </h2>
               <p className="mt-5 text-ink-muted leading-relaxed">
-                Medicina estética facial, medicina capilar, tratamientos
-                corporales y aparatología avanzada bajo un mismo enfoque
-                personalizado.
+                Reunimos medicina estética facial, medicina capilar, tratamientos corporales y aparatología avanzada bajo el mismo enfoque: valoración previa, criterio sanitario y un plan honesto a tu medida.
               </p>
             </div>
             <CTALink to="/tratamientos" variant="ghost" className="self-start md:self-end">
@@ -190,17 +187,14 @@ function Index() {
               Sobre Hathor
             </p>
             <h2 className="font-display text-3xl md:text-5xl leading-[1.05]">
-              Un espacio donde cuidar tu piel,{" "}
-              <span className="italic">tu cabello y tu confianza</span>
+              Un espacio creado para{" "}
+              <span className="italic">cuidar de ti</span>
             </h2>
             <p className="mt-6 text-ink-muted text-lg leading-relaxed">
-              Hathor nace para ofrecer un espacio de confianza donde cuidar la
-              estética, la piel y el cabello desde un enfoque profesional,
-              personalizado y cercano.
+              Hathor nace de la mano de Laura, enfermera y fundadora, para unir el cuidado sanitario con la medicina estética y capilar en un entorno cercano y de confianza.
             </p>
             <p className="mt-4 text-ink-muted leading-relaxed">
-              Cada tratamiento se valora de forma individual para adaptar la
-              recomendación a las necesidades reales de cada persona.
+              Cada valoración es individual y cada plan se ajusta a tus necesidades reales: trabajamos con honestidad, criterio sanitario y un seguimiento cercano durante todo el proceso.
             </p>
             <div className="mt-9">
               <CTALink to="/sobre-nosotros" variant="outline">
@@ -222,11 +216,10 @@ function Index() {
                 Reserva tu valoración
               </p>
               <h2 className="font-display text-3xl md:text-5xl leading-tight text-background">
-                Hablemos de lo que quieres mejorar.
+                Cuéntanos qué te gustaría mejorar.
               </h2>
               <p className="mt-5 max-w-xl text-background/70 leading-relaxed">
-                Te atendemos en {CLINIC.address}. Reserva una valoración y diseñamos
-                contigo un plan a medida.
+                Te atendemos en {CLINIC.address}. Reserva una valoración y diseñamos contigo un plan adaptado a tu piel, tu cabello y tus tiempos.
               </p>
             </div>
             <div className="md:col-span-4 flex md:justify-end flex-wrap gap-3">

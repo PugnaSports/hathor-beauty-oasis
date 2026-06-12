@@ -97,26 +97,26 @@ export const TREATMENTS: Treatment[] = [
     slug: "medicina-estetica-facial",
     name: "Medicina estética facial",
     short:
-      "Tratamientos para realzar tus rasgos de forma natural y armoniosa.",
+      "Cuidamos tu rostro con criterio sanitario, respetando tus rasgos y buscando un resultado natural.",
     image: facialImg,
     description:
-      "Protocolos médicos para hidratar, revitalizar y armonizar el rostro respetando tus rasgos. Cada plan parte de una valoración personalizada para recomendarte solo lo que realmente necesitas.",
+      "Trabajamos el rostro desde un enfoque sanitario: primero te escuchamos, valoramos tu piel y, a partir de ahí, te proponemos solo lo que tiene sentido para ti. El objetivo es cuidar la calidad de la piel y suavizar lo que te preocupa sin perder naturalidad ni cambiar tu expresión.",
     benefits: [
-      "Resultados naturales y armoniosos",
-      "Mejora de la calidad e hidratación de la piel",
-      "Prevención del envejecimiento facial",
-      "Planes adaptados a tu edad y objetivos",
+      "Enfoque natural, sin perder expresión",
+      "Mejor calidad e hidratación de la piel",
+      "Prevención y cuidado del envejecimiento",
+      "Plan adaptado a tu edad y a tu momento",
     ],
     indications: [
-      "Personas que buscan rejuvenecimiento facial sin perder naturalidad",
-      "Pieles apagadas, deshidratadas o con signos de fatiga",
-      "Quien quiere prevenir o suavizar líneas de expresión",
+      "Quien busca un cuidado facial sin cambios bruscos",
+      "Pieles apagadas, deshidratadas o con signos de cansancio",
+      "Personas que quieren prevenir o suavizar líneas de expresión",
     ],
     experience: [
-      "Valoración inicial y análisis del rostro",
-      "Diseño de un plan personalizado",
+      "Valoración inicial y escucha de tus objetivos",
+      "Análisis del rostro y propuesta de plan",
       "Sesión en clínica con técnicas mínimamente invasivas",
-      "Seguimiento de la evolución",
+      "Seguimiento cercano de tu evolución",
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para medicina estética facial.",
@@ -134,26 +134,26 @@ export const TREATMENTS: Treatment[] = [
     slug: "tratamientos-corporales",
     name: "Tratamientos corporales",
     short:
-      "Cuida la piel y la silueta con protocolos personalizados y resultados visibles.",
+      "Protocolos corporales pensados para tu piel y tus objetivos, con una evolución progresiva.",
     image: corporalImg,
     description:
-      "Protocolos corporales para mantener la firmeza, mejorar la textura de la piel y trabajar zonas concretas según tus objetivos. Combinamos aparatología y rutinas adaptadas para resultados sostenibles.",
+      "Trabajamos el cuerpo con un enfoque progresivo: valoramos la zona, escuchamos lo que quieres mejorar y combinamos aparatología y rutina en casa para acompañar la evolución de tu piel. Sin promesas, con un plan realista y un seguimiento cercano.",
     benefits: [
-      "Mejora de la firmeza y elasticidad",
-      "Trabajo de zonas específicas",
+      "Cuidado de la firmeza y la elasticidad",
+      "Trabajo enfocado en zonas concretas",
       "Protocolos progresivos y no invasivos",
-      "Resultados visibles y mantenidos en el tiempo",
+      "Evolución gradual con seguimiento",
     ],
     indications: [
-      "Personas que quieren mejorar la calidad de su piel corporal",
+      "Quien quiere cuidar la calidad de su piel corporal",
       "Zonas con flacidez, retención o irregularidades",
-      "Quien busca un plan de mantenimiento corporal",
+      "Personas que buscan un plan de mantenimiento",
     ],
     experience: [
-      "Valoración corporal y análisis de objetivos",
+      "Valoración corporal y escucha de objetivos",
       "Plan de sesiones a medida",
-      "Tratamientos en cabina con aparatología avanzada",
-      "Recomendaciones de cuidado en casa",
+      "Trabajo en cabina con aparatología profesional",
+      "Pautas y recomendaciones para casa",
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para un tratamiento corporal.",
@@ -163,26 +163,26 @@ export const TREATMENTS: Treatment[] = [
     slug: "laser",
     name: "Láser",
     short:
-      "Aplicaciones láser adaptadas a cada fototipo y objetivo, con valoración previa.",
+      "Tratamientos láser con valoración previa de tu piel, tu fototipo y la zona a tratar.",
     image: laserImg,
     description:
-      "Trabajamos con tecnología láser para distintos objetivos estéticos. Cada protocolo se valora antes de empezar, teniendo en cuenta tu fototipo, tu piel y el resultado que buscas.",
+      "Antes de empezar cualquier sesión de láser hacemos una valoración para revisar el estado de tu piel, tu fototipo y la zona que quieres tratar. A partir de ahí te explicamos con claridad qué se puede hacer, cuántas sesiones suelen ser necesarias y los cuidados que conlleva.",
     benefits: [
-      "Tratamientos precisos y controlados",
-      "Resultados progresivos sesión a sesión",
-      "Protocolos seguros, adaptados a tu fototipo",
-      "Mínima alteración de la rutina diaria",
+      "Aplicación precisa y controlada",
+      "Evolución progresiva sesión a sesión",
+      "Protocolo adaptado a tu fototipo",
+      "Compatible con tu rutina diaria",
     ],
     indications: [
-      "Personas que buscan tratamientos estéticos con láser",
-      "Pieles con manchas, lesiones superficiales o vello no deseado",
-      "Quien prefiere protocolos no invasivos",
+      "Quien quiere tratar vello no deseado de forma estable",
+      "Pieles con manchas o lesiones superficiales valorables",
+      "Personas que prefieren tratamientos no invasivos",
     ],
     experience: [
-      "Valoración previa del fototipo y la zona",
-      "Explicación de la pauta y número de sesiones",
+      "Valoración previa de la piel y la zona",
+      "Explicación de la pauta y de las sesiones",
       "Sesiones en cabina con tecnología profesional",
-      "Cuidados post-tratamiento personalizados",
+      "Pautas de cuidado posteriores personalizadas",
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para un tratamiento láser.",
@@ -192,26 +192,26 @@ export const TREATMENTS: Treatment[] = [
     slug: "medicina-capilar",
     name: "Medicina capilar",
     short:
-      "Diagnóstico y cuidado avanzado para la salud del cuero cabelludo y el cabello.",
+      "Valoración capilar con criterio médico para cuidar la salud de tu cuero cabelludo y tu cabello.",
     image: capilarImg,
     description:
-      "Valoramos el estado del cuero cabelludo y el cabello para diseñar un plan adaptado: prevención de caída, mejora de la densidad y cuidado integral con seguimiento médico.",
+      "Contamos con un médico especialista en medicina capilar que valora el estado de tu cuero cabelludo y de tu cabello antes de proponerte nada. A partir de ese diagnóstico diseñamos un plan adaptado para acompañar la caída, cuidar la densidad y mantener el cuero cabelludo en buen estado.",
     benefits: [
-      "Diagnóstico capilar profesional",
-      "Planes para prevenir y frenar la caída",
-      "Cuidado del cuero cabelludo",
-      "Seguimiento de la evolución",
+      "Diagnóstico capilar con criterio médico",
+      "Plan para acompañar y cuidar la caída",
+      "Cuidado específico del cuero cabelludo",
+      "Revisión y seguimiento periódicos",
     ],
     indications: [
       "Personas con caída del cabello o pérdida de densidad",
       "Cuero cabelludo sensible, graso o con irritación",
-      "Quien busca prevenir y cuidar la salud capilar",
+      "Quien quiere prevenir y cuidar su salud capilar",
     ],
     experience: [
       "Diagnóstico capilar con aparatología",
-      "Diseño de un plan personalizado",
+      "Valoración con el médico especialista",
       "Tratamientos en clínica y pautas en casa",
-      "Revisión y seguimiento periódico",
+      "Revisión periódica de la evolución",
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para un tratamiento capilar.",
@@ -225,23 +225,23 @@ export const TREATMENTS: Treatment[] = [
     slug: "aparatologia-avanzada",
     name: "Aparatología avanzada",
     short:
-      "Tecnología Prysm iO para diagnóstico, seguimiento y personalización de cada tratamiento.",
+      "Usamos la tecnología Prysm iO para diagnosticar y ajustar cada plan a la evolución real de tu piel y tu cabello.",
     image: aparatologiaImg,
     description:
-      "Trabajamos con aparatología avanzada como Prysm iO para diagnosticar, hacer seguimiento y personalizar tratamientos estéticos y capilares. Nos permite ajustar cada sesión a la evolución real de tu piel y tu cabello.",
+      "La aparatología Prysm iO nos permite hacer un análisis objetivo de tu piel y tu cuero cabelludo, ver cómo evolucionan con cada sesión y ajustar el plan en función de datos reales, no de impresiones. Es una herramienta de apoyo, no un tratamiento en sí: nos ayuda a recomendarte solo lo que de verdad necesitas.",
     benefits: [
       "Análisis detallado de la piel",
-      "Seguimiento objetivo de la evolución",
-      "Protocolos personalizados según los resultados",
+      "Seguimiento objetivo de tu evolución",
+      "Plan ajustado a partir de datos reales",
       "Valoración capilar avanzada",
     ],
     indications: [
-      "Personas que quieren un diagnóstico estético objetivo",
-      "Quien busca un plan estético o capilar a medida",
+      "Quien quiere un diagnóstico estético objetivo",
+      "Personas con un plan estético o capilar a medida",
       "Tratamientos que requieren seguimiento preciso",
     ],
     experience: [
-      "Análisis con aparatología avanzada",
+      "Análisis con aparatología Prysm iO",
       "Lectura de resultados y recomendaciones",
       "Plan personalizado de sesiones",
       "Revisión periódica de la evolución",
@@ -258,26 +258,26 @@ export const TREATMENTS: Treatment[] = [
     slug: "asesoramiento-personalizado",
     name: "Asesoramiento personalizado",
     short:
-      "Valoración inicial individualizada para diseñar el plan que mejor se adapta a ti.",
+      "Una primera conversación para escucharte y orientarte sin compromiso.",
     image: asesoramientoImg,
     description:
-      "Empezamos siempre por escucharte. La valoración personalizada nos permite recomendarte un plan realista, adaptado a tus objetivos, tu rutina y tu momento vital.",
+      "Empezamos siempre por escucharte. La valoración personalizada nos sirve para entender qué te gustaría mejorar, revisar tu piel y/o tu cabello y proponerte un plan realista adaptado a tu momento, tu rutina y tus tiempos. Si no es necesario hacer nada, también te lo decimos.",
     benefits: [
-      "Recomendaciones honestas y sin compromiso",
-      "Plan adaptado a tus objetivos reales",
+      "Recomendaciones honestas, sin compromiso",
+      "Plan ajustado a tus objetivos reales",
       "Visión integral: estética, piel y cabello",
       "Información clara sobre cada tratamiento",
     ],
     indications: [
       "Personas que no saben por dónde empezar",
-      "Quien quiere una segunda opinión profesional",
-      "Quien busca un plan a medida, no estándar",
+      "Quien quiere una segunda opinión sanitaria",
+      "Quien prefiere un plan a medida y no un protocolo estándar",
     ],
     experience: [
-      "Conversación inicial sobre tus objetivos",
+      "Conversación inicial para escucharte",
       "Valoración de piel y/o cabello",
       "Propuesta de plan personalizado",
-      "Resolución de dudas sin compromiso",
+      "Resolución de dudas con calma",
     ],
     whatsappMessage:
       "Hola! Me gustaría pedir cita para un asesoramiento personalizado.",
@@ -319,7 +319,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "facial",
     name: "Facial",
     description:
-      "Packs y rutinas profesionales pensadas para cuidar la piel en casa y mantener los resultados de cabina.",
+      "Cremas, sérums y rutinas para cuidar la piel del rostro en casa entre sesiones.",
     products: [
       {
         name: "Eye Wrinkle Smooth Out",
@@ -461,7 +461,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "limpieza",
     name: "Limpieza",
     description:
-      "Limpiadores faciales y corporales para preparar la piel y mantenerla equilibrada.",
+      "Limpiadores que preparan la piel y la mantienen en equilibrio antes y después de cualquier rutina.",
     products: [
       {
         name: "EGG BP Cell Expert Bubble Oil Soap",
@@ -487,7 +487,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "sets",
     name: "Rutinas y sets",
     description:
-      "Rutinas completas con limpiador, tónico, sérum y crema para resultados visibles y duraderos.",
+      "Rutinas completas pensadas para acompañar tu plan en clínica paso a paso en casa.",
     products: [
       {
         name: "Hydrate & Glow Skincare Set",
@@ -567,7 +567,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "capilar",
     name: "Capilar",
     description:
-      "Productos profesionales para cuidar el cuero cabelludo y la salud del cabello en casa.",
+      "Champús y tónicos para cuidar el cuero cabelludo y acompañar los tratamientos capilares en casa.",
     products: [
       {
         name: "EGG Neural Cell Enhancing Shampoo",
@@ -602,7 +602,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "corporal",
     name: "Corporal",
     description:
-      "Cremas para prolongar y mantener en casa los resultados de los protocolos corporales.",
+      "Cremas y lociones para mantener el trabajo corporal entre sesiones.",
     products: [
       {
         name: "Power Active Cream",
@@ -637,7 +637,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "solar",
     name: "Solar",
     description:
-      "Fotoprotección de uso diario, imprescindible para cuidar la piel y mantener cualquier tratamiento.",
+      "Fotoprotección de uso diario: el paso imprescindible para cuidar la piel y mantener cualquier tratamiento.",
     products: [
       {
         name: "Protector Solar Whitening Tone Up",
@@ -665,30 +665,30 @@ export const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: "¿Necesito pedir cita previa?",
     answer:
-      "Sí, trabajamos con cita previa para poder dedicarte el tiempo y la atención que necesitas.",
+      "Sí, trabajamos siempre con cita previa para poder dedicarte el tiempo y la atención que cada valoración merece.",
   },
   {
     question: "¿Puedo pedir información antes de reservar?",
     answer:
-      "Sí, puedes escribirnos por WhatsApp y te orientaremos según tus necesidades.",
+      "Por supuesto. Puedes escribirnos por WhatsApp o llamarnos y te orientamos sin compromiso antes de reservar.",
   },
   {
     question: "¿Los tratamientos son personalizados?",
     answer:
-      "Sí, cada tratamiento se adapta a tu piel, tus objetivos y el estado en el que te encuentres.",
+      "Sí. Antes de proponerte cualquier tratamiento hacemos una valoración con criterio sanitario para entender tu piel, tu cabello y lo que te gustaría mejorar. A partir de ahí diseñamos un plan adaptado a ti.",
   },
   {
     question: "¿Dónde está ubicado Hathor?",
-    answer: `Hathor está ubicado en ${CLINIC.address}.`,
+    answer: `Estamos en ${CLINIC.address}, en el centro de Olesa de Montserrat.`,
   },
   {
     question: "¿Cómo puedo reservar cita?",
     answer:
-      "Puedes reservar directamente desde los botones de la web, que te llevarán a WhatsApp con un mensaje preparado.",
+      "Desde cualquier botón de la web te llevamos directamente a WhatsApp con un mensaje preparado. También puedes llamarnos al teléfono de la clínica.",
   },
   {
     question: "¿Qué tratamiento me recomendáis si no sé cuál elegir?",
     answer:
-      "Escríbenos por WhatsApp y te ayudaremos a escoger el tratamiento más adecuado para ti.",
+      "No te preocupes: lo habitual es no saberlo. Escríbenos por WhatsApp o reserva una valoración personalizada y te orientamos según lo que quieras mejorar.",
   },
 ];

@@ -37,7 +37,7 @@ function InstagramPage() {
           <SectionHeader
             eyebrow="Síguenos"
             title="@hathor_clinica"
-            description="Mira nuestros últimos reels y publicaciones. Te enseñamos tratamientos, tecnología y el día a día de la clínica."
+            description="Te enseñamos cómo trabajamos, novedades de la clínica y consejos reales sobre el cuidado de la piel y el cabello."
           />
           <div className="mt-8">
             <CTAAnchor href={CLINIC.instagramUrl} target="_blank" rel="noreferrer">

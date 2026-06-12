@@ -12,13 +12,13 @@ export const Route = createFileRoute("/productos/")({
       {
         name: "description",
         content:
-          "Asesoramiento experto en productos profesionales para el cuidado facial, capilar, corporal y solar.",
+          "Productos profesionales que recomendamos en clínica para acompañar tu rutina facial, capilar, corporal y solar tras una valoración personalizada.",
       },
       { property: "og:title", content: "Productos profesionales — Hathor Clínica" },
       {
         property: "og:description",
         content:
-          "Recomendamos productos de cuidado facial, corporal y capilar según cada caso, con asesoramiento experto.",
+          "Solo recomendamos lo que tiene sentido para tu piel y tu cabello, siempre tras una valoración en clínica.",
       },
     ],
   }),
@@ -33,8 +33,8 @@ function ProductosPage() {
           <div className="lg:col-span-6">
             <SectionHeader
               eyebrow="Productos profesionales"
-              title="Asesoramiento experto, no venta agresiva"
-              description="Te recomendamos productos de cuidado facial, corporal y capilar según tu valoración. El objetivo es prolongar y cuidar los resultados conseguidos en clínica, sin sobrecargar tu rutina."
+              title="Productos recomendados tras tu valoración"
+              description="Solo te aconsejamos lo que de verdad complementa tu plan en clínica. El objetivo es cuidar tu piel y tu cabello en casa sin sobrecargar tu rutina."
             />
             <div className="mt-9">
               <CTALink to="/contacto">Solicita asesoramiento</CTALink>
@@ -100,8 +100,7 @@ function ProductosPage() {
         </div>
 
         <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-ink-muted leading-relaxed">
-          Las recomendaciones de producto siempre se realizan tras una valoración
-          personalizada en clínica.
+          Cualquier recomendación de producto la hacemos en clínica, tras una valoración personalizada.
         </p>
       </section>
     </>

@@ -319,7 +319,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "facial",
     name: "Facial",
     description:
-      "Packs y rutinas profesionales pensadas para cuidar la piel en casa y mantener los resultados de cabina.",
+      "Cremas, sérums y rutinas para cuidar la piel del rostro en casa entre sesiones.",
     products: [
       {
         name: "Eye Wrinkle Smooth Out",
@@ -461,7 +461,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "limpieza",
     name: "Limpieza",
     description:
-      "Limpiadores faciales y corporales para preparar la piel y mantenerla equilibrada.",
+      "Limpiadores que preparan la piel y la mantienen en equilibrio antes y después de cualquier rutina.",
     products: [
       {
         name: "EGG BP Cell Expert Bubble Oil Soap",
@@ -487,7 +487,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "sets",
     name: "Rutinas y sets",
     description:
-      "Rutinas completas con limpiador, tónico, sérum y crema para resultados visibles y duraderos.",
+      "Rutinas completas pensadas para acompañar tu plan en clínica paso a paso en casa.",
     products: [
       {
         name: "Hydrate & Glow Skincare Set",
@@ -567,7 +567,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "capilar",
     name: "Capilar",
     description:
-      "Productos profesionales para cuidar el cuero cabelludo y la salud del cabello en casa.",
+      "Champús y tónicos para cuidar el cuero cabelludo y acompañar los tratamientos capilares en casa.",
     products: [
       {
         name: "EGG Neural Cell Enhancing Shampoo",
@@ -602,7 +602,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "corporal",
     name: "Corporal",
     description:
-      "Cremas para prolongar y mantener en casa los resultados de los protocolos corporales.",
+      "Cremas y lociones para mantener el trabajo corporal entre sesiones.",
     products: [
       {
         name: "Power Active Cream",
@@ -637,7 +637,7 @@ export const PRODUCTS: ProductCategory[] = [
     slug: "solar",
     name: "Solar",
     description:
-      "Fotoprotección de uso diario, imprescindible para cuidar la piel y mantener cualquier tratamiento.",
+      "Fotoprotección de uso diario: el paso imprescindible para cuidar la piel y mantener cualquier tratamiento.",
     products: [
       {
         name: "Protector Solar Whitening Tone Up",

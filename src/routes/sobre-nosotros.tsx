@@ -11,13 +11,13 @@ export const Route = createFileRoute("/sobre-nosotros")({
       {
         name: "description",
         content:
-          "Conoce Hathor: un espacio de confianza para cuidar la estética, la piel y el cabello desde un enfoque profesional y personalizado.",
+          "Conoce Hathor: una clínica de medicina estética y capilar en Olesa de Montserrat fundada por Laura, enfermera, con un médico especialista en medicina capilar.",
       },
       { property: "og:title", content: "Sobre nosotros — Hathor Clínica" },
       {
         property: "og:description",
         content:
-          "Un espacio de confianza para cuidar tu estética, piel y cabello en Olesa de Montserrat.",
+          "Enfermería, criterio sanitario y medicina capilar al servicio de un cuidado estético natural y cercano.",
       },
     ],
   }),
@@ -27,15 +27,15 @@ export const Route = createFileRoute("/sobre-nosotros")({
 const values = [
   {
     title: "Cercanía",
-    desc: "Te escuchamos primero. Cada plan parte de una conversación honesta sobre lo que buscas mejorar.",
+    desc: "Te escuchamos antes de proponerte nada. Queremos entender qué te gustaría mejorar y acompañarte con calma.",
   },
   {
     title: "Profesionalidad",
-    desc: "Trabajamos con criterio médico y aparatología contrastada, sin promesas exageradas.",
+    desc: "Trabajamos con criterio sanitario, formación continua y aparatología contrastada. Sin promesas exageradas.",
   },
   {
     title: "Personalización",
-    desc: "Ningún tratamiento es estándar. Adaptamos cada protocolo a tu piel, tu cabello y tus tiempos.",
+    desc: "Ningún protocolo es estándar: adaptamos cada plan a tu piel, tu cabello, tu rutina y tu momento vital.",
   },
 ];
 
@@ -48,13 +48,10 @@ function SobrePage() {
             <SectionHeader
               eyebrow="Sobre Hathor"
               title="Donde la enfermería se une a la medicina estética y capilar"
-              description="Hathor nace de la mano de Laura, enfermera y fundadora, como un espacio donde unir la atención sanitaria con la medicina estética y capilar desde un enfoque profesional, cercano y de confianza."
+              description="Hathor nace de la mano de Laura, enfermera y fundadora, para unir el cuidado sanitario con la medicina estética y capilar en un entorno cercano, profesional y de confianza."
             />
             <p className="mt-6 text-ink-muted leading-relaxed reveal">
-              Cada tratamiento se valora de forma individual para adaptar la
-              recomendación a las necesidades reales de cada persona. Creemos en los
-              resultados naturales, sostenibles y siempre alineados con lo que tú
-              quieres mejorar.
+              Cada valoración es individual y cada plan se adapta a las necesidades reales de cada persona. Creemos en los resultados naturales, en el acompañamiento honesto y en hacer solo lo que de verdad tiene sentido para ti.
             </p>
             <div className="mt-9 reveal">
               <CTALink to="/contacto">Reserva tu valoración</CTALink>

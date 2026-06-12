@@ -16,9 +16,7 @@ export function SiteFooter() {
               className="h-12 w-auto"
             />
             <p className="mt-4 max-w-sm text-sm text-ink-muted leading-relaxed">
-              Clínica de medicina estética y capilar en Olesa de Montserrat.
-              Cuidamos tu piel y tu cabello desde un enfoque profesional, cercano y
-              personalizado.
+              Medicina estética y capilar en Olesa de Montserrat. Acompañamos cada caso desde la escucha, el criterio sanitario y la cercanía.
             </p>
             <ExternalLink
               href={CLINIC.instagramUrl}

@@ -665,30 +665,30 @@ export const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: "¿Necesito pedir cita previa?",
     answer:
-      "Sí, trabajamos con cita previa para poder dedicarte el tiempo y la atención que necesitas.",
+      "Sí, trabajamos siempre con cita previa para poder dedicarte el tiempo y la atención que cada valoración merece.",
   },
   {
     question: "¿Puedo pedir información antes de reservar?",
     answer:
-      "Sí, puedes escribirnos por WhatsApp y te orientaremos según tus necesidades.",
+      "Por supuesto. Puedes escribirnos por WhatsApp o llamarnos y te orientamos sin compromiso antes de reservar.",
   },
   {
     question: "¿Los tratamientos son personalizados?",
     answer:
-      "Sí, cada tratamiento se adapta a tu piel, tus objetivos y el estado en el que te encuentres.",
+      "Sí. Antes de proponerte cualquier tratamiento hacemos una valoración con criterio sanitario para entender tu piel, tu cabello y lo que te gustaría mejorar. A partir de ahí diseñamos un plan adaptado a ti.",
   },
   {
     question: "¿Dónde está ubicado Hathor?",
-    answer: `Hathor está ubicado en ${CLINIC.address}.`,
+    answer: `Estamos en ${CLINIC.address}, en el centro de Olesa de Montserrat.`,
   },
   {
     question: "¿Cómo puedo reservar cita?",
     answer:
-      "Puedes reservar directamente desde los botones de la web, que te llevarán a WhatsApp con un mensaje preparado.",
+      "Desde cualquier botón de la web te llevamos directamente a WhatsApp con un mensaje preparado. También puedes llamarnos al teléfono de la clínica.",
   },
   {
     question: "¿Qué tratamiento me recomendáis si no sé cuál elegir?",
     answer:
-      "Escríbenos por WhatsApp y te ayudaremos a escoger el tratamiento más adecuado para ti.",
+      "No te preocupes: lo habitual es no saberlo. Escríbenos por WhatsApp o reserva una valoración personalizada y te orientamos según lo que quieras mejorar.",
   },
 ];

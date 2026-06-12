@@ -33,8 +33,8 @@ function ContactoPage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             eyebrow="Contacto"
-            title="Pide cita o visítanos en clínica"
-            description="Estamos en el centro de Olesa de Montserrat. Llámanos, escríbenos por WhatsApp o ven a conocernos."
+            title="Hablemos con calma de lo que necesitas"
+            description="Atendemos siempre con cita previa para poder dedicarte el tiempo que cada valoración merece. Llámanos, escríbenos por WhatsApp o pásate a conocernos por la clínica."
           />
         </div>
       </section>

@@ -35,13 +35,13 @@ const sections: LegalSection[] = [
           sitio web:
         </p>
         <ul>
-          <li><strong>Titular:</strong> [RAZÓN SOCIAL]</li>
-          <li><strong>NIF / CIF:</strong> [NIF/CIF]</li>
-          <li><strong>Domicilio fiscal:</strong> [DIRECCIÓN FISCAL]</li>
+          <li><strong>Titular:</strong> Laura Prieto Borges</li>
+          <li><strong>DNI / NIF:</strong> 47880327P</li>
+          <li><strong>Domicilio fiscal:</strong> {CLINIC.address}</li>
           <li><strong>Dirección de la clínica:</strong> {CLINIC.address}</li>
           <li><strong>Email de contacto:</strong> {CLINIC.email}</li>
           <li><strong>Teléfono:</strong> {CLINIC.phoneDisplay}</li>
-          <li><strong>Sitio web:</strong> [DOMINIO WEB]</li>
+          <li><strong>Sitio web:</strong> https://clinicahathor.es/</li>
         </ul>
       </>
     ),
@@ -86,7 +86,7 @@ const sections: LegalSection[] = [
       <p>
         Todos los contenidos del sitio (textos, fotografías, gráficos, imágenes,
         iconos, tecnología, software, así como su diseño gráfico y códigos
-        fuente) son propiedad de [RAZÓN SOCIAL] o de terceros que han autorizado
+        fuente) son propiedad de Laura Prieto Borges o de terceros que han autorizado
         su uso, y se encuentran protegidos por la normativa española e
         internacional sobre propiedad intelectual e industrial. Queda prohibida
         su reproducción, distribución, comunicación pública o transformación,

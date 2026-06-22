@@ -28,9 +28,9 @@ const sections: LegalSection[] = [
     title: "Responsable del tratamiento",
     content: (
       <ul>
-        <li><strong>Responsable:</strong> [RAZÓN SOCIAL]</li>
-        <li><strong>NIF / CIF:</strong> [NIF/CIF]</li>
-        <li><strong>Domicilio:</strong> [DIRECCIÓN FISCAL]</li>
+        <li><strong>Responsable:</strong> Laura Prieto Borges</li>
+        <li><strong>DNI / NIF:</strong> 47880327P</li>
+        <li><strong>Domicilio:</strong> {CLINIC.address}</li>
         <li><strong>Email de contacto:</strong> {CLINIC.email}</li>
         <li><strong>Teléfono:</strong> {CLINIC.phoneDisplay}</li>
       </ul>

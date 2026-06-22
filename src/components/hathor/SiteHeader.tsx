@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Menu, X } from "lucide-react";
+import hathorLogo from "@/assets/hathor-logo.png";
 import { NAV_LINKS, TREATMENTS, PRODUCTS } from "@/lib/hathor";
 import {
   NavDropdownItem,
@@ -68,9 +69,11 @@ export function SiteHeader() {
           onClick={() => setOpen(false)}
           aria-label="Hathor — Inicio"
         >
-          <span className="font-display text-2xl leading-none text-ink sm:text-[28px]">
-            Hathor
-          </span>
+          <img
+            src={hathorLogo}
+            alt="Hathor"
+            className="h-10 w-auto max-w-[150px] object-contain sm:h-11 sm:max-w-[180px]"
+          />
           <span className="ml-3 hidden max-w-[150px] text-[9px] font-medium uppercase leading-[1.35] tracking-[0.18em] text-ink-muted sm:block xl:max-w-[190px]">
             Clínica de medicina estética y capilar
           </span>

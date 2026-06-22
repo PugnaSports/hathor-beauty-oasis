@@ -4,39 +4,39 @@ import laserImg from "@/assets/hathor-laser.jpg";
 import capilarImg from "@/assets/hathor-capilar.jpg";
 import aparatologiaImg from "@/assets/hathor-aparatologia.jpg";
 import asesoramientoImg from "@/assets/hathor-asesoramiento.jpg";
-import productEggShampoo from "@/assets/product-egg-shampoo.png.asset.json";
-import productEyeWrinkle from "@/assets/product-eye-wrinkle.png.asset.json";
-import productProbio6Shampoo from "@/assets/product-probio6-shampoo.png.asset.json";
-import productDaywearBb from "@/assets/product-daywear-bb.png.asset.json";
-import productPowerActive from "@/assets/product-power-active.png.asset.json";
-import productAdvancedBrilliant from "@/assets/product-advanced-brilliant.png.asset.json";
-import productBoostingCream from "@/assets/product-boosting-cream.png.asset.json";
-import productRestorationMechanism from "@/assets/product-restoration-mechanism.png.asset.json";
-import productProbio6Body from "@/assets/product-probio6-body.png.asset.json";
-import productTurm9 from "@/assets/product-turm9.png.asset.json";
-import productSakuradin from "@/assets/product-sakuradin.png.asset.json";
-import productTimeslipCica from "@/assets/product-timeslip-cica.png.asset.json";
-import productUltraHydrating from "@/assets/product-ultra-hydrating.png.asset.json";
-import productEggBubble from "@/assets/product-egg-bubble.png.asset.json";
-import productHydrateGlowSet from "@/assets/product-hydrate-glow-set.png.asset.json";
-import productRoseWaterMilk from "@/assets/product-rose-water-milk.png.asset.json";
-import productRestacneSet from "@/assets/product-restacne-set.png.asset.json";
-import productMultiRecoverySet from "@/assets/product-multi-recovery-set.png.asset.json";
-import productResistenceSet from "@/assets/product-resistence-set.png.asset.json";
-import productEggRoutineSet from "@/assets/product-egg-routine-set.png.asset.json";
-import productLenclosPdrn from "@/assets/product-lenclos-pdrn.png.asset.json";
-import productToneUpSolar from "@/assets/product-tone-up-solar.png.asset.json";
-import productDrTufetSet from "@/assets/product-dr-tufet-set.png.asset.json";
-import productDailySunscreen from "@/assets/product-daily-sunscreen.png.asset.json";
-import productReverseSet from "@/assets/product-reverse-set.png.asset.json";
-import productDoubleIntensifySerum from "@/assets/product-double-intensify-serum.png.asset.json";
-import productEggBpSerum from "@/assets/product-egg-bp-serum.png.asset.json";
-import productSuperbCoreSerum from "@/assets/product-superb-core-serum.png.asset.json";
-import productBrilliantSkinSerum from "@/assets/product-brilliant-skin-serum.png.asset.json";
-import productDermaMelazero from "@/assets/product-derma-melazero.png.asset.json";
-import productMetabolismPropolisSerum from "@/assets/product-metabolism-propolis-serum.png.asset.json";
-import productEggScalpRevitalizer from "@/assets/product-egg-scalp-revitalizer.png.asset.json";
-import productHydraRadianceMist from "@/assets/product-hydra-radiance-mist.png.asset.json";
+import productEggShampoo from "@/assets/product-egg-shampoo.png";
+import productEyeWrinkle from "@/assets/product-eye-wrinkle.png";
+import productProbio6Shampoo from "@/assets/product-probio6-shampoo.png";
+import productDaywearBb from "@/assets/product-daywear-bb.png";
+import productPowerActive from "@/assets/product-power-active.png";
+import productAdvancedBrilliant from "@/assets/product-advanced-brilliant.png";
+import productBoostingCream from "@/assets/product-boosting-cream.png";
+import productRestorationMechanism from "@/assets/product-restoration-mechanism.png";
+import productProbio6Body from "@/assets/product-probio6-body.png";
+import productTurm9 from "@/assets/product-turm9.png";
+import productSakuradin from "@/assets/product-sakuradin.png";
+import productTimeslipCica from "@/assets/product-timeslip-cica.png";
+import productUltraHydrating from "@/assets/product-ultra-hydrating.png";
+import productEggBubble from "@/assets/product-egg-bubble.png";
+import productHydrateGlowSet from "@/assets/product-hydrate-glow-set.png";
+import productRoseWaterMilk from "@/assets/product-rose-water-milk.png";
+import productRestacneSet from "@/assets/product-restacne-set.png";
+import productMultiRecoverySet from "@/assets/product-multi-recovery-set.png";
+import productResistenceSet from "@/assets/product-resistence-set.png";
+import productEggRoutineSet from "@/assets/product-egg-routine-set.png";
+import productLenclosPdrn from "@/assets/product-lenclos-pdrn.png";
+import productToneUpSolar from "@/assets/product-tone-up-solar.png";
+import productDrTufetSet from "@/assets/product-dr-tufet-set.png";
+import productDailySunscreen from "@/assets/product-daily-sunscreen.png";
+import productReverseSet from "@/assets/product-reverse-set.png";
+import productDoubleIntensifySerum from "@/assets/product-double-intensify-serum.png";
+import productEggBpSerum from "@/assets/product-egg-bp-serum.png";
+import productSuperbCoreSerum from "@/assets/product-superb-core-serum.png";
+import productBrilliantSkinSerum from "@/assets/product-brilliant-skin-serum.png";
+import productDermaMelazero from "@/assets/product-derma-melazero.png";
+import productMetabolismPropolisSerum from "@/assets/product-metabolism-propolis-serum.png";
+import productEggScalpRevitalizer from "@/assets/product-egg-scalp-revitalizer.png";
+import productHydraRadianceMist from "@/assets/product-hydra-radiance-mist.png";
 
 export const CLINIC = {
   name: "Hathor",
@@ -328,7 +328,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "30 ml",
         description:
           "Difumina arrugas, bolsas y ojeras. Contorno de ojos de fórmula vanguardista a base de ADN de salmón, un complejo de 6 péptidos, adenosina y fitoesteroles de granada.",
-        image: productEyeWrinkle.url,
+        image: productEyeWrinkle,
       },
       {
         name: "Daywear BB Expert Cream #23 / #29",
@@ -337,7 +337,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "45 ml / 40 ml",
         description:
           "Tiene una triple función: antienvejecimiento, antiarrugas y despigmentante. Alta protección solar, base de maquillaje con cobertura editable y tratamiento de la piel en una sola crema.",
-        image: productDaywearBb.url,
+        image: productDaywearBb,
       },
       {
         name: "Advanced Brilliant Recovery Cream",
@@ -346,7 +346,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "30 ml",
         description:
           "Crema antiedad con péptidos y numerosos extractos botánicos.",
-        image: productAdvancedBrilliant.url,
+        image: productAdvancedBrilliant,
       },
       {
         name: "Restoration Mechanism Apply Cream",
@@ -355,7 +355,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "30 ml",
         description:
           "Crema para piel irritada y para el acné. Contiene Jaswongo, un ungüento a base de una mezcla de hierbas usado en medicina tradicional, un producto multiusos para aliviar los síntomas de las alteraciones más severas de la piel.",
-        image: productRestorationMechanism.url,
+        image: productRestorationMechanism,
       },
       {
         name: "Türm 9 Gentle For Man",
@@ -364,7 +364,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 ml",
         description:
           "Crema para hombre antiedad que además previene alteraciones en la piel por los efectos de la radiación solar y elimina daños ya producidos por el sol. Pensada para quien busca una rutina sencilla: es un \"todo en uno\" que combina Esencia y Crema.",
-        image: productTurm9.url,
+        image: productTurm9,
       },
       {
         name: "Sakuradin Texture Cream",
@@ -373,7 +373,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "35 g",
         description:
           "Crema facial regenerante especial para pieles sensibles con acción regenerante. Restaura la barrera cutánea. Especial para pieles sensibles.",
-        image: productSakuradin.url,
+        image: productSakuradin,
       },
       {
         name: "Timeslip Cica Gel Cream",
@@ -382,7 +382,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "70 ml / 250 ml",
         description:
           "Antiacné y piel sensible. Para pieles secas, acneicas e irritadas. Hidrata y devuelve juventud a la piel. Contiene Centella asiática, Asioticosida y Madecassoside, GABA, Dipéptido-15.",
-        image: productTimeslipCica.url,
+        image: productTimeslipCica,
       },
       {
         name: "Ultra Hydrating Cream",
@@ -391,7 +391,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "30 ml",
         description:
           "Crema hidratante. Repara la piel, protege la barrera cutánea evitando la pérdida de agua transepidérmica.",
-        image: productUltraHydrating.url,
+        image: productUltraHydrating,
       },
       {
         name: "Double Intensify Effect Core Sérum",
@@ -400,7 +400,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 ml",
         description:
           "Sérum antiacné. Especialmente indicado para pieles acneicas y sensibles, pieles con rojeces, rosácea, picor, ardor, etc.",
-        image: productDoubleIntensifySerum.url,
+        image: productDoubleIntensifySerum,
       },
       {
         name: "Egg BP Cell Sérum",
@@ -408,7 +408,7 @@ export const PRODUCTS: ProductCategory[] = [
         ref: "00910",
         description:
           "Sérum facial antiedad con acción antienvejecimiento y efecto despigmentante. Difumina arrugas, repara en profundidad y devuelve luminosidad a la piel. Sérum para el rostro a partir de células madre pluripotentes.",
-        image: productEggBpSerum.url,
+        image: productEggBpSerum,
       },
       {
         name: "Superb Amazing Result Core Sérum",
@@ -417,7 +417,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 ml",
         description:
           "Sérum antiedad efecto lifting. Contiene tripéptidos con efecto \"bótox\", además de pantenol, extractos botánicos, ácido hialurónico y vitaminas.",
-        image: productSuperbCoreSerum.url,
+        image: productSuperbCoreSerum,
       },
       {
         name: "Brilliant Skin Restore EF Core Sérum",
@@ -426,7 +426,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 ml",
         description:
           "Sérum antiedad con Hialuronato de sodio, polipéptidos y extractos botánicos. Ingredientes que presentan una gran efectividad en la regeneración de la piel dañada o envejecida.",
-        image: productBrilliantSkinSerum.url,
+        image: productBrilliantSkinSerum,
       },
       {
         name: "Derma Melazero",
@@ -435,7 +435,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "30 ml",
         description:
           "Sérum antimanchas: sérum fermentado elaborado con una fórmula despigmentante avanzada que trata diversos tipos de la edad como arrugas o flacidez, aunque su propiedad más potente es la despigmentante debido al gran número de activos despigmentantes patentados de última generación como el Melazero y Gigawhite. Inhibe la producción de melanina y elimina la ya existente en pocos días.",
-        image: productDermaMelazero.url,
+        image: productDermaMelazero,
       },
       {
         name: "Metabolism Active Propolis Sérum",
@@ -444,7 +444,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 ml",
         description:
           "Sérum facial ideal para piel sensible: este sérum antiedad y despigmentante, enriquecido con el complejo patentado NAFLEX™ 7, calma, protege y revitaliza tu piel, proporcionando luminosidad y fortaleciendo la barrera cutánea.",
-        image: productMetabolismPropolisSerum.url,
+        image: productMetabolismPropolisSerum,
       },
       {
         name: "Hydra Radiance Essence Mist",
@@ -453,7 +453,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "100 ml",
         description:
           "Tiene propiedades reafirmantes, antienvejecimiento y despigmentantes. Ideal para llevar en el bolso. Se puede aplicar en cualquier momento del día y sobre el maquillaje.",
-        image: productHydraRadianceMist.url,
+        image: productHydraRadianceMist,
       },
     ],
   },
@@ -470,7 +470,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "90 ml",
         description:
           "Jabón con doble acción limpiadora y nutritiva: remueve el maquillaje (incluso el resistente al agua) y las impurezas, manteniendo la piel hidratada, protegida y revitalizada gracias a sus excelentes propiedades antioxidantes y regenerativas. Se presenta en un envase de 90 ml dentro de un recipiente de 60 ml para poder ser rellenado.",
-        image: productEggBubble.url,
+        image: productEggBubble,
       },
       {
         name: "Rose Water Cleansing Milk",
@@ -479,7 +479,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "2x 100 ml / 520 ml",
         description:
           "Leche limpiadora con agua y extracto de rosas. Limpieza e hidratación.",
-        image: productRoseWaterMilk.url,
+        image: productRoseWaterMilk,
       },
     ],
   },
@@ -496,7 +496,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "30 ml + 50 ml + 100 ml",
         description:
           "Set de productos con función principalmente hidratante. Reúne los tres pasos del skincare de la rutina coreana: tónico, sérum y crema. Su sinergia consigue una hidratación profunda y duradera. PVP 136 €.",
-        image: productHydrateGlowSet.url,
+        image: productHydrateGlowSet,
       },
       {
         name: "Multi-Recovery Skincare Set",
@@ -505,7 +505,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "30 ml + 50 ml + 60 ml",
         description:
           "Productos con función principalmente antiedad, reafirmantes y despigmentantes. Se encuentran los tres pasos del skincare de la rutina coreana: tónico, sérum y crema. PVP 195 €.",
-        image: productMultiRecoverySet.url,
+        image: productMultiRecoverySet,
       },
       {
         name: "RESTACNE: Clear and Bright Skincare Set",
@@ -514,7 +514,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 + 100 + 50 + 50 ml",
         description:
           "Rutina de skincare indicada para piel con tendencia acneica. Contiene un limpiador facial de la línea SAVIA, junto a un tónico, sérum y crema facial de la línea OVACO. PVP 199 €.",
-        image: productRestacneSet.url,
+        image: productRestacneSet,
       },
       {
         name: "RESISTENCE: Best Spot Treatment Set",
@@ -523,7 +523,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "90 + 100 + 50 + 50 ml",
         description:
           "Descubre en este pack los básicos antimanchas y devuelve a tu piel su tono más luminoso y saludable. Contiene un limpiador facial de la línea SAVIA, un tónico, sérum y crema facial de la línea OVACO. PVP 215 €.",
-        image: productResistenceSet.url,
+        image: productResistenceSet,
       },
       {
         name: "EGG BP Cell Routine Set — Cofre",
@@ -532,7 +532,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "5x 7 ml + 1x 50 ml + 1x 50 ml",
         description:
           "Regenerante. La concentración de péptidos y factores de crecimiento es muy elevada, lo que le hace un producto potentísimo para tratar con la máxima eficacia pieles envejecidas y con diversas alteraciones: queratosis actínica crónica, psoriasis, dermatitis, eczemas, pieles atópicas, etc.",
-        image: productEggRoutineSet.url,
+        image: productEggRoutineSet,
       },
       {
         name: "REVERSE: Skin Rejuvenation Set",
@@ -541,7 +541,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 + 100 + 50 + 30 ml",
         description:
           "Los cuatro productos del SET REVERSE rejuvenecen la piel, difuminando arrugas y devolviéndole su luminosidad natural. Este set contiene un limpiador facial de la línea SAVIA, un tónico, sérum y crema facial de la línea OVACO. PVP 219 €.",
-        image: productReverseSet.url,
+        image: productReverseSet,
       },
       {
         name: "L'ENCLOS PDRN Peel and Repair Set",
@@ -550,7 +550,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "6x 5 ml",
         description:
           "Set profesional de renovación y reparación celular con tecnología biotecnológica avanzada para pieles sensibles, apagadas y/o envejecidas.",
-        image: productLenclosPdrn.url,
+        image: productLenclosPdrn,
       },
       {
         name: "Dr Tufet Cellular Regeneration Program",
@@ -559,7 +559,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "Aceite 150 ml + Sérum E3P1 30 ml + Sérum FPG 30 ml + Crema PDRN 50 ml",
         description:
           "Pack de regeneración celular basado en el poder de las células madre del huevo reprogramadas (componente patentado por el Instituto de Ciencias Médicas de Corea e introducido por primera vez en el mundo en las líneas POOMI). Incluye EXOSOMAS provenientes de estas células (la fuente del auténtico exosoma), PDRN y CPN, MMN principalmente.",
-        image: productDrTufetSet.url,
+        image: productDrTufetSet,
       },
     ],
   },
@@ -576,7 +576,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "500 g",
         description:
           "Nutre y fortalece la raíz del cabello y el cuero cabelludo, ayudando a reducir y ralentizar la pérdida de pelo.",
-        image: productEggShampoo.url,
+        image: productEggShampoo,
       },
       {
         name: "Probio 6 — Melanocell Shampoo",
@@ -585,7 +585,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "400 g",
         description:
           "Champú anticaída de acción probiótica que equilibra el microbioma del cuero cabelludo, estimula el crecimiento del cabello y ayuda a prevenir el encanecimiento prematuro, todo en un solo paso.",
-        image: productProbio6Shampoo.url,
+        image: productProbio6Shampoo,
       },
       {
         name: "EGG Neural Cell Scalp Revitalizer",
@@ -594,7 +594,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "120 ml",
         description:
           "Revitaliza el cuero cabelludo, evitando la pérdida de cabello. Es un tónico para el cuero cabelludo que puede utilizarse todos los días. Reduce la temperatura del cuero cabelludo y regula la producción de sebo, lo que contribuye a detener la caída de pelo. Contiene Biotinoyl Tetrapéptido 5, que fortalece la raíz del pelo.",
-        image: productEggScalpRevitalizer.url,
+        image: productEggScalpRevitalizer,
       },
     ],
   },
@@ -611,7 +611,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "70 ml / 280 ml",
         description:
           "Crema anticelulítica con efecto calor que actúa activando la circulación. Excelente para remodelar la silueta por su potente efecto quemagrasas, anticelulítico, reafirmante, antiinflamatorio y activador de la circulación. Sus efectos se notan desde la primera aplicación.",
-        image: productPowerActive.url,
+        image: productPowerActive,
       },
       {
         name: "Boosting Cream",
@@ -620,7 +620,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "80 ml / 520 ml",
         description:
           "Crema hidratante y reafirmante, la pareja perfecta de la Power Active Cream para tratamientos corporales. La sinergia de ambas cremas potencia sus propiedades reafirmantes y tensoras. Incluye lípidos con la misma estructura química que los lípidos naturales de la piel, que penetran en las capas más profundas reparando los daños que pudieran haber.",
-        image: productBoostingCream.url,
+        image: productBoostingCream,
       },
       {
         name: "Probio 6 Body Lotion",
@@ -629,7 +629,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "300 ml",
         description:
           "Loción hidratante con prebióticos. Hidrata la piel de forma inmediata y mejora su luminosidad, uniformidad, firmeza y textura a medio y largo plazo.",
-        image: productProbio6Body.url,
+        image: productProbio6Body,
       },
     ],
   },
@@ -646,7 +646,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 ml",
         description:
           "La mejor protección frente a los nocivos efectos del sol: filtros físicos, ingredientes reparadores y antiedad. Alto contenido en extracto de cactus y phytolipo, que calman y humectan hasta las pieles más sensibles.",
-        image: productToneUpSolar.url,
+        image: productToneUpSolar,
       },
       {
         name: "Daily Moisturising Sunscreen",
@@ -655,7 +655,7 @@ export const PRODUCTS: ProductCategory[] = [
         size: "50 ml",
         description:
           "Emulsión fotoprotectora de última generación que combina los últimos avances con ingredientes hidratantes, calmantes y antiedad. Esta fórmula está protegida con UVA y UVB de amplio espectro, reforzar la barrera cutánea, y cuidar incluso las pieles más sensibles.",
-        image: productDailySunscreen.url,
+        image: productDailySunscreen,
       },
     ],
   },

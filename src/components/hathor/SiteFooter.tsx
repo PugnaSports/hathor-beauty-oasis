@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { ExternalLink } from "@/components/hathor/ExternalLink";
 import { CLINIC, NAV_LINKS } from "@/lib/hathor";
-import logoAsset from "@/assets/hathor-logo.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -10,11 +9,14 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <img
-              src={logoAsset.url}
-              alt="Hathor Clínica de Medicina Estética y Capilar"
-              className="h-12 w-auto"
-            />
+            <div>
+              <span className="font-display text-3xl leading-none text-ink">
+                Hathor
+              </span>
+              <p className="mt-2 text-[10px] font-medium uppercase leading-relaxed tracking-[0.22em] text-ink-muted">
+                Clínica de medicina estética y capilar
+              </p>
+            </div>
             <p className="mt-4 max-w-sm text-sm text-ink-muted leading-relaxed">
               Medicina estética y capilar en Olesa de Montserrat. Acompañamos cada caso desde la escucha, el criterio sanitario y la cercanía.
             </p>

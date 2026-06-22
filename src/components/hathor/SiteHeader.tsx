@@ -7,7 +7,6 @@ import {
   MobileNavGroup,
   type DropdownEntry,
 } from "./NavDropdownItem";
-import logoAsset from "@/assets/hathor-logo.png.asset.json";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -65,15 +64,16 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link
           to="/"
-          className="flex items-center"
+          className="flex min-w-0 items-center"
           onClick={() => setOpen(false)}
           aria-label="Hathor — Inicio"
         >
-          <img
-            src={logoAsset.url}
-            alt="Hathor Clínica de Medicina Estética y Capilar"
-            className="h-9 sm:h-10 w-auto"
-          />
+          <span className="font-display text-2xl leading-none text-ink sm:text-[28px]">
+            Hathor
+          </span>
+          <span className="ml-3 hidden max-w-[150px] text-[9px] font-medium uppercase leading-[1.35] tracking-[0.18em] text-ink-muted sm:block xl:max-w-[190px]">
+            Clínica de medicina estética y capilar
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
@@ -106,7 +106,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             to="/contacto"
-            className="hidden sm:inline-flex items-center rounded-full bg-ink px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-background transition-colors hover:bg-gold"
+            className="hidden h-11 items-center justify-center rounded-full bg-ink px-5 text-[10px] font-semibold uppercase leading-none tracking-[0.18em] text-background transition-colors hover:bg-gold sm:inline-flex xl:px-6"
           >
             Pedir cita
           </Link>

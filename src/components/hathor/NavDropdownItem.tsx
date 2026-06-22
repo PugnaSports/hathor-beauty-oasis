@@ -74,7 +74,7 @@ export function NavDropdownItem({ to, label, entries }: Props) {
       <div className="flex items-center gap-1">
         <Link
           to={to as never}
-          className={`text-[11px] font-medium uppercase tracking-[0.22em] transition-colors hover:text-ink ${
+          className={`whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.18em] transition-colors hover:text-ink xl:text-[11px] xl:tracking-[0.22em] ${
             isActive ? "text-ink" : "text-ink-muted"
           }`}
         >

@@ -62,7 +62,7 @@ export function SiteHeader() {
           : "bg-background/40 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex h-20 w-full max-w-[1880px] items-center justify-between gap-8 px-8 lg:h-[88px] lg:px-12 2xl:px-16">
+      <div className="mx-auto flex h-20 w-full max-w-[1880px] items-center justify-between gap-5 px-6 lg:h-[88px] lg:px-8 2xl:px-12">
         <Link
           to="/"
           className="flex shrink-0 items-center"
@@ -72,11 +72,11 @@ export function SiteHeader() {
           <img
             src={hathorLogo}
             alt="Hathor"
-            className="h-10 w-auto max-w-[190px] object-contain sm:h-12 sm:max-w-[260px] lg:h-[58px] lg:max-w-[340px]"
+            className="h-10 w-auto max-w-[190px] object-contain sm:h-12 sm:max-w-[260px] lg:h-[54px] lg:max-w-[280px] 2xl:h-[58px] 2xl:max-w-[340px]"
           />
         </Link>
 
-        <nav className="hidden flex-1 items-center justify-center gap-7 lg:flex xl:gap-10 2xl:gap-12">
+        <nav className="hidden flex-1 items-center justify-center gap-5 lg:flex xl:gap-7 2xl:gap-11">
           {NAV_LINKS.map((link) => {
             const entries = dropdownFor(link.to);
             if (entries) {
@@ -93,7 +93,7 @@ export function SiteHeader() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.22em] text-ink-muted transition-colors hover:text-ink"
+                className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.18em] text-ink-muted transition-colors hover:text-ink xl:text-[11px] xl:tracking-[0.22em]"
                 activeProps={{ className: "text-ink" }}
                 activeOptions={{ exact: link.to === "/" }}
               >
@@ -106,7 +106,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             to="/contacto"
-            className="hidden h-12 min-w-[148px] shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-ink px-7 text-[11px] font-semibold uppercase leading-none tracking-[0.18em] text-background transition-colors hover:bg-gold sm:inline-flex"
+            className="hidden h-11 min-w-[132px] shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-ink px-5 text-[10px] font-semibold uppercase leading-none tracking-[0.16em] text-background transition-colors hover:bg-gold xl:h-12 xl:min-w-[148px] xl:px-7 xl:text-[11px] xl:tracking-[0.18em] sm:inline-flex"
           >
             Pedir cita
           </Link>

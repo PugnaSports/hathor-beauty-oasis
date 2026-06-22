@@ -33,7 +33,9 @@ jobs:
         run: bun run build
 
       - name: Prepare Pages artifact
-        run: touch dist/client/.nojekyll
+        run: |
+          touch dist/client/.nojekyll
+          echo "clinicahathor.es" > dist/client/CNAME
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

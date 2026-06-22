@@ -62,24 +62,21 @@ export function SiteHeader() {
           : "bg-background/40 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 w-full max-w-[1880px] items-center justify-between gap-8 px-8 lg:h-[88px] lg:px-12 2xl:px-16">
         <Link
           to="/"
-          className="flex min-w-0 items-center"
+          className="flex shrink-0 items-center"
           onClick={() => setOpen(false)}
           aria-label="Hathor — Inicio"
         >
           <img
             src={hathorLogo}
             alt="Hathor"
-            className="h-10 w-auto max-w-[150px] object-contain sm:h-11 sm:max-w-[180px]"
+            className="h-10 w-auto max-w-[190px] object-contain sm:h-12 sm:max-w-[260px] lg:h-[58px] lg:max-w-[340px]"
           />
-          <span className="ml-3 hidden max-w-[150px] text-[9px] font-medium uppercase leading-[1.35] tracking-[0.18em] text-ink-muted sm:block xl:max-w-[190px]">
-            Clínica de medicina estética y capilar
-          </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-9">
+        <nav className="hidden flex-1 items-center justify-center gap-7 lg:flex xl:gap-10 2xl:gap-12">
           {NAV_LINKS.map((link) => {
             const entries = dropdownFor(link.to);
             if (entries) {
@@ -96,7 +93,7 @@ export function SiteHeader() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-[11px] font-medium uppercase tracking-[0.22em] text-ink-muted transition-colors hover:text-ink"
+                className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.22em] text-ink-muted transition-colors hover:text-ink"
                 activeProps={{ className: "text-ink" }}
                 activeOptions={{ exact: link.to === "/" }}
               >
@@ -109,7 +106,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             to="/contacto"
-            className="hidden h-11 items-center justify-center rounded-full bg-ink px-5 text-[10px] font-semibold uppercase leading-none tracking-[0.18em] text-background transition-colors hover:bg-gold sm:inline-flex xl:px-6"
+            className="hidden h-12 min-w-[148px] shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-ink px-7 text-[11px] font-semibold uppercase leading-none tracking-[0.18em] text-background transition-colors hover:bg-gold sm:inline-flex"
           >
             Pedir cita
           </Link>

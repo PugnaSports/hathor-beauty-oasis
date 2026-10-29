@@ -14,6 +14,7 @@ import { Route as SobreNosotrosRouteImport } from './routes/sobre-nosotros'
 import { Route as ServiciosRouteImport } from './routes/servicios'
 import { Route as PoliticaPrivacidadRouteImport } from './routes/politica-privacidad'
 import { Route as PoliticaCookiesRouteImport } from './routes/politica-cookies'
+import { Route as NuestroEspacioRouteImport } from './routes/nuestro-espacio'
 import { Route as InstagramRouteImport } from './routes/instagram'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
@@ -46,6 +47,11 @@ const PoliticaPrivacidadRoute = PoliticaPrivacidadRouteImport.update({
 const PoliticaCookiesRoute = PoliticaCookiesRouteImport.update({
   id: '/politica-cookies',
   path: '/politica-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NuestroEspacioRoute = NuestroEspacioRouteImport.update({
+  id: '/nuestro-espacio',
+  path: '/nuestro-espacio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InstagramRoute = InstagramRouteImport.update({
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
+  '/nuestro-espacio': typeof NuestroEspacioRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/servicios': typeof ServiciosRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
+  '/nuestro-espacio': typeof NuestroEspacioRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/servicios': typeof ServiciosRoute
@@ -124,6 +132,7 @@ export interface FileRoutesById {
   '/aviso-legal': typeof AvisoLegalRoute
   '/contacto': typeof ContactoRoute
   '/instagram': typeof InstagramRoute
+  '/nuestro-espacio': typeof NuestroEspacioRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
   '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/servicios': typeof ServiciosRoute
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/contacto'
     | '/instagram'
+    | '/nuestro-espacio'
     | '/politica-cookies'
     | '/politica-privacidad'
     | '/servicios'
@@ -156,6 +166,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/contacto'
     | '/instagram'
+    | '/nuestro-espacio'
     | '/politica-cookies'
     | '/politica-privacidad'
     | '/servicios'
@@ -170,6 +181,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/contacto'
     | '/instagram'
+    | '/nuestro-espacio'
     | '/politica-cookies'
     | '/politica-privacidad'
     | '/servicios'
@@ -186,6 +198,7 @@ export interface RootRouteChildren {
   AvisoLegalRoute: typeof AvisoLegalRoute
   ContactoRoute: typeof ContactoRoute
   InstagramRoute: typeof InstagramRoute
+  NuestroEspacioRoute: typeof NuestroEspacioRoute
   PoliticaCookiesRoute: typeof PoliticaCookiesRoute
   PoliticaPrivacidadRoute: typeof PoliticaPrivacidadRoute
   ServiciosRoute: typeof ServiciosRoute
@@ -230,6 +243,13 @@ declare module '@tanstack/react-router' {
       path: '/politica-cookies'
       fullPath: '/politica-cookies'
       preLoaderRoute: typeof PoliticaCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nuestro-espacio': {
+      id: '/nuestro-espacio'
+      path: '/nuestro-espacio'
+      fullPath: '/nuestro-espacio'
+      preLoaderRoute: typeof NuestroEspacioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/instagram': {
@@ -310,6 +330,7 @@ const rootRouteChildren: RootRouteChildren = {
   AvisoLegalRoute: AvisoLegalRoute,
   ContactoRoute: ContactoRoute,
   InstagramRoute: InstagramRoute,
+  NuestroEspacioRoute: NuestroEspacioRoute,
   PoliticaCookiesRoute: PoliticaCookiesRoute,
   PoliticaPrivacidadRoute: PoliticaPrivacidadRoute,
   ServiciosRoute: ServiciosRoute,

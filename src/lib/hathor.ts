@@ -70,7 +70,7 @@ export const NAV_LINKS = [
   { to: "/", label: "Inicio" },
   { to: "/tratamientos", label: "Tratamientos" },
   { to: "/productos", label: "Productos" },
-  { to: "/sobre-nosotros", label: "Sobre nosotros" },
+  { to: "/nuestro-espacio", label: "Nuestro espacio" },
   { to: "/instagram", label: "Instagram" },
   { to: "/contacto", label: "Contacto" },
 ] as const;

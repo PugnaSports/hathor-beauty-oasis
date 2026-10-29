@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeader } from "@/components/hathor/SectionHeader";
 import { CTALink } from "@/components/hathor/CTAButton";
-import sobreImg from "@/assets/hathor-sobre.jpg";
-import heroImg from "@/assets/hathor-hero.jpg";
+import bienvenidaImg from "@/assets/espacio-bienestar-horizontal.jpg";
+import lauraSectionImg from "@/assets/espacio-bienestar-vertical-1.jpg";
+import cabinaImg from "@/assets/espacio-tecnologia-horizontal.jpg";
 
 export const Route = createFileRoute("/sobre-nosotros")({
   head: () => ({
@@ -59,8 +60,8 @@ function SobrePage() {
           </div>
           <div className="lg:col-span-6 reveal">
             <img
-              src={sobreImg}
-              alt="Recepción luminosa de la clínica Hathor"
+              src={bienvenidaImg}
+              alt="Cabina de bienestar de la clínica Hathor"
               loading="lazy"
               width={1280}
               height={1600}
@@ -91,8 +92,8 @@ function SobrePage() {
         <div className="mx-auto max-w-7xl grid lg:grid-cols-12 gap-14 items-center">
           <div className="lg:col-span-5 reveal order-2 lg:order-1">
             <img
-              src={sobreImg}
-              alt="Laura, enfermera y fundadora de Hathor Clínica"
+              src={lauraSectionImg}
+              alt="Cabina de tratamientos de Hathor Clínica"
               loading="lazy"
               width={1024}
               height={1280}
@@ -142,8 +143,8 @@ function SobrePage() {
       <section className="px-6 pb-28">
         <div className="mx-auto max-w-7xl relative overflow-hidden rounded-3xl">
           <img
-            src={heroImg}
-            alt="Cabina de tratamiento en la clínica Hathor"
+            src={cabinaImg}
+            alt="Cabina con aparatología de la clínica Hathor"
             loading="lazy"
             width={1280}
             height={1600}

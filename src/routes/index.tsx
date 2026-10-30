@@ -12,7 +12,7 @@ import { CLINIC } from "@/lib/hathor";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hathor — Medicina estética y capilar en Olesa de Montserrat" },
+      { title: "Hathor - Medicina estética y capilar en Olesa de Montserrat" },
       {
         name: "description",
         content:
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Hathor — Medicina estética y capilar en Olesa de Montserrat",
+        content: "Hathor - Medicina estética y capilar en Olesa de Montserrat",
       },
       {
         property: "og:description",
@@ -100,10 +100,10 @@ function Index() {
             <div className="relative">
               <img
                 src={heroImg}
-                alt="Interior luminoso de la clínica Hathor con detalles en beige y dorado"
+                alt="Fachada y entrada de la clínica Hathor en Olesa de Montserrat"
                 width={1280}
                 height={1600}
-                className="w-full aspect-[4/5] object-cover rounded-3xl"
+                className="w-full aspect-[4/5] rounded-3xl object-cover object-[50%_38%] brightness-[1.06] saturate-[1.14] contrast-[0.98]"
               />
               <div className="absolute -bottom-8 -left-8 hidden md:block w-44 h-44 lg:w-52 lg:h-52 rounded-2xl border-[10px] border-background overflow-hidden">
                 <img
@@ -179,7 +179,7 @@ function Index() {
               loading="lazy"
               width={1280}
               height={1600}
-              className="w-full aspect-[4/5] object-cover rounded-3xl"
+              className="w-full aspect-[4/5] rounded-3xl object-cover object-[50%_36%]"
             />
           </div>
           <div className="lg:col-span-6 reveal">

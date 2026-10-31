@@ -30,7 +30,9 @@ import productDrTufetSet from "@/assets/product-dr-tufet-set.png";
 import productDailySunscreen from "@/assets/product-daily-sunscreen.png";
 import productReverseSet from "@/assets/product-reverse-set.png";
 import productDoubleIntensifySerum from "@/assets/product-double-intensify-serum.png";
-import productEggBpSerum from "@/assets/product-egg-bp-serum.png";
+import productEggBpSerum from "@/assets/product-egg-bp-serum.jpg";
+import productEggBpCellExpert from "@/assets/product-egg-bp-cell-expert.jpg";
+import productLenclosEfCellVipSet from "@/assets/product-lenclos-ef-cell-vip-set.jpg";
 import productSuperbCoreSerum from "@/assets/product-superb-core-serum.png";
 import productBrilliantSkinSerum from "@/assets/product-brilliant-skin-serum.png";
 import productDermaMelazero from "@/assets/product-derma-melazero.png";
@@ -535,6 +537,14 @@ export const PRODUCTS: ProductCategory[] = [
         image: productEggRoutineSet,
       },
       {
+        name: "OVACO Egg B.P Cell Expert — Rebooting Edition",
+        format: "Viales profesionales · Facial",
+        size: "Viales de 5 ml",
+        description:
+          "Tratamiento profesional concentrado de la línea Egg B.P Cell de OVACO, formulado con células madre pluripotentes a 60.000 ppm.",
+        image: productEggBpCellExpert,
+      },
+      {
         name: "REVERSE: Skin Rejuvenation Set",
         format: "Limpiador + Tónico + Sérum + Crema · Facial",
         ref: "00477",
@@ -551,6 +561,13 @@ export const PRODUCTS: ProductCategory[] = [
         description:
           "Set profesional de renovación y reparación celular con tecnología biotecnológica avanzada para pieles sensibles, apagadas y/o envejecidas.",
         image: productLenclosPdrn,
+      },
+      {
+        name: "L'ENCLOS E.F Cell — Triple Master Awards VIP Set",
+        format: "Set profesional de triple protocolo · Facial",
+        description:
+          "Set profesional E.F Cell de L'ENCLOS con tres protocolos de viales y aplicadores, presentado como tratamiento con exosomas.",
+        image: productLenclosEfCellVipSet,
       },
       {
         name: "Dr Tufet Cellular Regeneration Program",

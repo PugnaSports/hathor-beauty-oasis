@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Sparkles, ShieldCheck, HeartPulse, Cpu } from "lucide-react";
+import { ArrowUpRight, Sparkles, ShieldCheck, HeartPulse, Cpu, Star } from "lucide-react";
 import heroImg from "@/assets/hathor-hero-retouched.png";
 import sobreImg from "@/assets/hathor-sobre.jpg";
 import facialImg from "@/assets/hathor-facial.jpg";
@@ -42,6 +42,27 @@ const trustPoints = [
   { icon: ShieldCheck, label: "Criterio sanitario" },
   { icon: Sparkles, label: "Resultados naturales" },
   { icon: Cpu, label: "Tecnología avanzada" },
+];
+
+const GOOGLE_REVIEWS_URL = "https://share.google/Y7CfQAcYIzimOohoK";
+
+const googleReviews = [
+  {
+    author: "Mitxel Ballet",
+    quote: "Trato inmejorable e instalaciones impecables.",
+  },
+  {
+    author: "Marc Martínez Luque",
+    quote: "Excelente servicio. Lo recomiendo al 100%.",
+  },
+  {
+    author: "Abel González García",
+    quote: "Laura me ayudó de manera muy profesional.",
+  },
+  {
+    author: "Rosina Mendez Mendez",
+    quote: "Trato espectacular y excelente profesional.",
+  },
 ];
 
 function Index() {
@@ -206,6 +227,80 @@ function Index() {
               </CTALink>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Google reviews */}
+      <section className="overflow-hidden border-y border-ink/10 bg-background px-6 py-24 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+          <div className="reveal lg:pt-2">
+            <p className="mb-5 text-[10px] uppercase tracking-[0.32em] text-gold">
+              Opiniones en Google
+            </p>
+            <div className="flex items-end gap-4">
+              <strong className="font-display text-6xl font-normal leading-none text-ink md:text-7xl">
+                5,0
+              </strong>
+              <div className="pb-1.5">
+                <div className="flex gap-1 text-gold" aria-label="5 de 5 estrellas">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={index} className="h-4 w-4 fill-current" aria-hidden="true" />
+                  ))}
+                </div>
+                <p className="mt-2 text-sm text-ink-muted">Más de 23 reseñas</p>
+              </div>
+            </div>
+            <h2 className="mt-8 max-w-md font-display text-3xl leading-[1.08] md:text-5xl">
+              La confianza también se <span className="italic">comparte</span>.
+            </h2>
+            <p className="mt-5 max-w-md leading-relaxed text-ink-muted">
+              Experiencias reales de personas que han confiado en Hathor para cuidar su piel y su
+              cabello.
+            </p>
+            <div className="mt-8">
+              <CTAAnchor href={GOOGLE_REVIEWS_URL} variant="outline">
+                Ver todas en Google <ArrowUpRight className="h-4 w-4" />
+              </CTAAnchor>
+            </div>
+          </div>
+
+          <Carousel opts={{ align: "start", loop: true }} className="reveal min-w-0">
+            <CarouselContent className="-ml-6">
+              {googleReviews.map((review) => (
+                <CarouselItem key={review.author} className="basis-[88%] pl-6 sm:basis-[68%]">
+                  <a
+                    href={GOOGLE_REVIEWS_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex min-h-72 flex-col justify-between border-l border-ink/15 py-2 pl-7 pr-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4 md:min-h-80 md:pl-9"
+                    aria-label={`Ver las reseñas de Google, incluida la de ${review.author}`}
+                  >
+                    <span className="font-display text-7xl leading-none text-nude-deep transition-colors duration-200 group-hover:text-gold motion-reduce:transition-none">
+                      “
+                    </span>
+                    <blockquote className="font-display text-3xl leading-tight text-ink md:text-4xl">
+                      {review.quote}
+                    </blockquote>
+                    <footer className="mt-10 flex items-center justify-between gap-4 border-t border-ink/10 pt-5">
+                      <div>
+                        <p className="text-sm font-semibold text-ink">{review.author}</p>
+                        <p className="mt-1 text-xs text-ink-muted">Opinión publicada en Google</p>
+                      </div>
+                      <div className="flex gap-0.5 text-gold" aria-hidden="true">
+                        {Array.from({ length: 5 }).map((_, index) => (
+                          <Star key={index} className="h-3.5 w-3.5 fill-current" />
+                        ))}
+                      </div>
+                    </footer>
+                  </a>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="mt-8 flex gap-2">
+              <CarouselPrevious className="static h-11 w-11 translate-y-0 border-ink/15 bg-background hover:border-gold hover:bg-background" />
+              <CarouselNext className="static h-11 w-11 translate-y-0 border-ink/15 bg-background hover:border-gold hover:bg-background" />
+            </div>
+          </Carousel>
         </div>
       </section>
 

@@ -41,6 +41,9 @@ import productEggScalpRevitalizer from "@/assets/product-egg-scalp-revitalizer.p
 import productHydraRadianceMist from "@/assets/product-hydra-radiance-mist.png";
 import facialHollywoodVideo from "@/assets/hathor-facial-hollywood-peel.mp4";
 import facialHollywoodResultVideo from "@/assets/hathor-facial-hollywood-resultado.mp4";
+import corporalResultVideo from "@/assets/hathor-corporal-resultado-3cm.mp4";
+import capilarValoracionVideo from "@/assets/hathor-capilar-valoracion.mp4";
+import asesoramientoVideo from "@/assets/hathor-asesoramiento-personalizado.mp4";
 
 export const CLINIC = {
   name: "Hathor",
@@ -177,6 +180,14 @@ export const TREATMENTS: Treatment[] = [
     ],
     whatsappMessage: "Hola! Me gustaría pedir cita para un tratamiento corporal.",
     items: ["Eliminación de celulitis", "Reafirmación corporal"],
+    media: [
+      {
+        src: corporalResultVideo,
+        title: "Evolución corporal real",
+        description:
+          "Un resultado real que muestra la evolución conseguida con un protocolo personalizado.",
+      },
+    ],
   },
   {
     slug: "laser",
@@ -232,6 +243,14 @@ export const TREATMENTS: Treatment[] = [
     ],
     whatsappMessage: "Hola! Me gustaría pedir cita para un tratamiento capilar.",
     items: ["Láser capilar", "Vitaminas capilares", "Seguimiento y valoración especializada"],
+    media: [
+      {
+        src: capilarValoracionVideo,
+        title: "Valoración capilar en consulta",
+        description:
+          "Analizamos el cuero cabelludo y el cabello antes de definir cualquier tratamiento.",
+      },
+    ],
   },
   {
     slug: "aparatologia-avanzada",
@@ -295,6 +314,14 @@ export const TREATMENTS: Treatment[] = [
       "Rutina recomendada",
       "Acompañamiento durante el proceso",
       "Plan adaptado a cada persona",
+    ],
+    media: [
+      {
+        src: asesoramientoVideo,
+        title: "Una valoración pensada para ti",
+        description:
+          "Una primera conversación para entender qué necesitas y explicarte las opciones con claridad.",
+      },
     ],
   },
 ];

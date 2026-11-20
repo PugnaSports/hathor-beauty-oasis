@@ -1,11 +1,5 @@
 import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Check,
-  MessageCircle,
-  Phone,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, MessageCircle, Phone } from "lucide-react";
 import { CTAAnchor, CTALink } from "@/components/hathor/CTAButton";
 import { TreatmentVideo } from "@/components/hathor/TreatmentVideo";
 import { CLINIC, getTreatmentBySlug, whatsappUrlFor } from "@/lib/hathor";
@@ -76,128 +70,203 @@ function TreatmentDetail() {
     return <FacialTreatmentDetail treatment={treatment} waUrl={waUrl} />;
   }
 
+  return <EditorialTreatmentDetail treatment={treatment} waUrl={waUrl} />;
+}
+
+const treatmentEditorial: Record<
+  string,
+  { label: string; headline: string; processTitle: string; imagePosition?: string }
+> = {
+  "tratamientos-corporales": {
+    label: "Cuidado corporal",
+    headline: "Tu cuerpo cambia a su ritmo. El plan también.",
+    processTitle: "Un protocolo que evoluciona contigo",
+    imagePosition: "object-center",
+  },
+  laser: {
+    label: "Precisión y cuidado",
+    headline: "Tecnología láser con una valoración que va primero.",
+    processTitle: "Cada sesión empieza entendiendo tu piel",
+    imagePosition: "object-center",
+  },
+  "medicina-capilar": {
+    label: "Salud capilar",
+    headline: "Entender el origen antes de cuidar el cabello.",
+    processTitle: "Diagnóstico, tratamiento y seguimiento",
+    imagePosition: "object-center",
+  },
+  "aparatologia-avanzada": {
+    label: "Diagnóstico avanzado",
+    headline: "Datos reales para recomendarte solo lo necesario.",
+    processTitle: "Medir, entender y ajustar cada decisión",
+    imagePosition: "object-center",
+  },
+  "asesoramiento-personalizado": {
+    label: "Tu primera visita",
+    headline: "Antes de recomendarte nada, te escuchamos.",
+    processTitle: "Una conversación clara, sin prisas ni compromiso",
+    imagePosition: "object-center",
+  },
+};
+
+function EditorialTreatmentDetail({
+  treatment,
+  waUrl,
+}: {
+  treatment: NonNullable<ReturnType<typeof getTreatmentBySlug>>;
+  waUrl: string;
+}) {
+  const editorial = treatmentEditorial[treatment.slug];
+  const media = treatment.media?.[0];
+
   return (
-    <>
-      {/* Hero */}
-      <section className="px-6 pt-12 pb-16 md:pt-16">
+    <main className="overflow-hidden bg-[#fbfaf8] text-[#24221f]">
+      <section className="px-5 pb-12 pt-7 sm:px-6 md:pb-16 md:pt-10">
         <div className="mx-auto max-w-7xl">
           <Link
             to="/tratamientos"
-            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink-muted hover:text-gold"
+            className="inline-flex min-h-11 items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#77716a] transition-colors duration-200 hover:text-[#24221f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d8177]"
           >
-            <ArrowLeft className="h-3.5 w-3.5" /> Tratamientos
+            <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" /> Tratamientos
           </Link>
 
-          <div className="mt-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 reveal">
-              <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Tratamiento</p>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance">
+          <div className="mt-10 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="reveal py-6 lg:py-12">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#9b8b7c]">
+                {editorial.label}
+              </p>
+              <h1 className="mt-6 max-w-2xl font-display text-[clamp(2.75rem,5vw,4.75rem)] leading-[1.02] tracking-[-0.03em] text-balance">
                 {treatment.name}
               </h1>
-              <p className="mt-6 text-ink-muted text-base md:text-lg leading-relaxed max-w-xl">
+              <p className="mt-6 max-w-lg text-base leading-7 text-[#625d57] md:text-lg">
                 {treatment.short}
               </p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <CTAAnchor href={waUrl}>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <CTAAnchor href={waUrl} className="bg-[#24221f] text-[#fbfaf8] hover:bg-[#504a44]">
                   <MessageCircle className="h-4 w-4" /> Reservar por WhatsApp
                 </CTAAnchor>
-                <CTAAnchor href={`tel:${CLINIC.phoneTel}`} variant="outline">
+                <CTAAnchor
+                  href={`tel:${CLINIC.phoneTel}`}
+                  variant="outline"
+                  className="border-[#24221f]/20 text-[#24221f] hover:border-[#24221f]"
+                >
                   <Phone className="h-4 w-4" /> {CLINIC.phoneDisplay}
                 </CTAAnchor>
               </div>
             </div>
-            <div className="lg:col-span-6 reveal">
+
+            <div className="reveal overflow-hidden rounded-3xl bg-[#eee9e3]">
               <img
                 src={treatment.image}
                 alt={treatment.name}
                 width={1280}
                 height={1600}
-                className="w-full aspect-[4/5] object-cover rounded-3xl"
+                className={`aspect-[4/5] w-full object-cover ${editorial.imagePosition ?? "object-center"}`}
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Descripción */}
-      <section className="px-6 py-16 bg-nude/40">
-        <div className="mx-auto max-w-4xl reveal">
-          <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Descripción</p>
-          <p className="text-ink text-lg leading-relaxed">{treatment.description}</p>
+      <section className="px-5 py-16 sm:px-6 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div className="reveal lg:sticky lg:top-28 lg:self-start">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8d8177]">
+              {editorial.label}
+            </p>
+            <h2 className="mt-4 max-w-xl font-display text-4xl leading-[1.05] tracking-[-0.025em] text-balance md:text-6xl">
+              {editorial.headline}
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-7 text-[#625d57]">
+              {treatment.description}
+            </p>
+          </div>
+
+          <div className="reveal divide-y divide-[#24221f]/12 border-y border-[#24221f]/12">
+            <EssentialBlock title="Qué te aporta" items={treatment.benefits} />
+            <EssentialBlock title="Para quién está indicado" items={treatment.indications} />
+          </div>
         </div>
       </section>
 
-      {treatment.media && treatment.media.length > 0 && (
-        <section className="overflow-hidden bg-ink px-6 py-20 text-background md:py-28">
-          <div className="mx-auto max-w-7xl">
-            <div className="reveal grid gap-6 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-7">
-                <p className="mb-5 text-[10px] uppercase tracking-[0.32em] text-gold-soft">
-                  En consulta
-                </p>
-                <h2 className="font-display text-3xl leading-tight text-background md:text-5xl">
-                  Así cuidamos tu piel, <span className="italic">paso a paso</span>
-                </h2>
-              </div>
-              <p className="max-w-lg text-sm leading-relaxed text-background/65 md:col-span-5 md:justify-self-end md:text-base">
-                Conoce de cerca algunos de nuestros tratamientos y resultados reales. Cada sesión
-                comienza siempre con una valoración personalizada.
+      {media && (
+        <section className="border-y border-[#dedad4] bg-[#f2efeb] px-5 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+            <div className="reveal order-2 lg:order-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8d8177]">
+                En consulta
+              </p>
+              <h2 className="mt-4 font-display text-4xl leading-[1.05] tracking-[-0.025em] text-balance md:text-6xl">
+                {media.title}
+              </h2>
+              <p className="mt-6 max-w-lg text-base leading-7 text-[#625d57]">
+                {media.description}
               </p>
             </div>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-12 md:gap-6">
-              {treatment.media.map((item, index) => (
-                <article
-                  key={item.src}
-                  className={`reveal ${index === 0 ? "md:col-span-7" : "md:col-span-5"} ${index === 2 ? "md:col-start-8" : ""}`}
-                >
-                  <div
-                    className={`overflow-hidden rounded-2xl bg-background/5 ${index === 0 ? "aspect-[4/5] md:aspect-[4/3]" : "aspect-[4/5] md:aspect-[16/10]"}`}
-                  >
-                    <TreatmentVideo src={item.src} poster={treatment.image} title={item.title} />
-                  </div>
-                  <div className="mt-5 border-t border-background/15 pt-4">
-                    <p className="text-[10px] uppercase tracking-[0.24em] text-gold-soft">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="mt-2 font-display text-2xl text-background">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-background/60">
-                      {item.description}
-                    </p>
-                  </div>
-                </article>
-              ))}
+            <div className="reveal order-1 mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-3xl bg-[#e9e4de] lg:order-2 lg:max-w-none">
+              <TreatmentVideo src={media.src} poster={treatment.image} title={media.title} />
             </div>
           </div>
         </section>
       )}
 
-      {/* Beneficios + Indicaciones */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-12">
-          <DetailList eyebrow="Beneficios" title="Qué te aporta" items={treatment.benefits} />
-          <DetailList
-            eyebrow="Indicaciones"
-            title="Para quién está indicado"
-            items={treatment.indications}
-          />
+      <section
+        className={`px-5 py-16 sm:px-6 md:py-24 ${media ? "" : "border-y border-[#dedad4] bg-[#f2efeb]"}`}
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="reveal max-w-3xl">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8d8177]">
+              Cómo se realiza
+            </p>
+            <h2 className="mt-4 font-display text-4xl leading-[1.05] tracking-[-0.025em] text-balance md:text-6xl">
+              {editorial.processTitle}
+            </h2>
+          </div>
+          <ol className="mt-12 border-y border-[#24221f]/12">
+            {treatment.experience.map((step, index) => (
+              <li
+                key={step}
+                className="reveal grid min-h-24 items-center gap-4 border-b border-[#24221f]/12 py-6 last:border-b-0 sm:grid-cols-[3rem_1fr] md:min-h-28"
+              >
+                <span className="font-mono text-[10px] tracking-[0.18em] text-[#999188]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="max-w-3xl font-display text-xl leading-snug text-[#3f3a35] md:text-2xl">
+                  {step}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       {treatment.items && treatment.items.length > 0 && (
-        <section className="px-6 pb-8">
-          <div className="mx-auto max-w-7xl reveal">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Qué incluye</p>
-            <h2 className="font-display text-3xl md:text-4xl mb-10 max-w-2xl">
-              Lo que puede incluir tu plan
-            </h2>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
-              {treatment.items.map((item: string) => (
-                <li key={item} className="bg-background p-6 lg:p-8 flex items-start gap-4">
-                  <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-nude">
-                    <Check className="h-3.5 w-3.5 text-gold" />
+        <section className="px-5 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="reveal max-w-2xl">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8d8177]">
+                Opciones disponibles
+              </p>
+              <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.025em] md:text-5xl">
+                Tu plan se define después de valorar tu caso
+              </h2>
+            </div>
+            <ul className="mt-10 divide-y divide-[#24221f]/12 border-y border-[#24221f]/12">
+              {treatment.items.map((item, index) => (
+                <li
+                  key={item}
+                  className="reveal group flex min-h-20 items-center gap-5 py-4 md:min-h-24"
+                >
+                  <span className="w-8 shrink-0 font-mono text-[10px] text-[#999188]">
+                    {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-ink leading-relaxed">{item}</span>
+                  <span className="font-display text-xl leading-tight text-[#3f3a35] transition-transform duration-200 group-hover:translate-x-1 md:text-2xl">
+                    {item}
+                  </span>
+                  <ArrowRight
+                    className="ml-auto h-4 w-4 shrink-0 text-[#999188]"
+                    aria-hidden="true"
+                  />
                 </li>
               ))}
             </ul>
@@ -205,60 +274,46 @@ function TreatmentDetail() {
         </section>
       )}
 
-      {/* Qué esperar */}
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-7xl reveal">
-          <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Cómo se realiza</p>
-          <h2 className="font-display text-3xl md:text-4xl mb-10 max-w-2xl">Qué puedes esperar</h2>
-          <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
-            {treatment.experience.map((step: string, i: number) => (
-              <li key={step} className="bg-background p-8 lg:p-10 flex flex-col">
-                <span className="font-mono text-[11px] tracking-widest text-gold">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-4 text-ink leading-relaxed">{step}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-6xl rounded-3xl bg-ink text-background px-8 py-16 md:p-20 reveal">
-          <div className="grid md:grid-cols-12 gap-10 items-center">
-            <div className="md:col-span-8">
-              <p className="text-[10px] uppercase tracking-[0.32em] text-gold-soft mb-5">
-                Reserva tu cita
-              </p>
-              <h2 className="font-display text-3xl md:text-5xl leading-tight text-background">
-                Cuéntanos qué te gustaría mejorar
-              </h2>
-              <p className="mt-5 max-w-xl text-background/70 leading-relaxed">
-                Tras una valoración inicial te propondremos un plan adaptado a ti, sin compromiso.
-                Escríbenos por WhatsApp y te orientamos.
-              </p>
-            </div>
-            <div className="md:col-span-4 flex md:justify-end flex-wrap gap-3">
-              <CTAAnchor
-                href={waUrl}
-                variant="primary"
-                className="bg-gold hover:bg-background hover:text-ink"
-              >
+      <section className="px-5 pb-24 sm:px-6 md:pb-28">
+        <div className="reveal mx-auto grid max-w-7xl overflow-hidden rounded-[1.25rem] border border-[#dedad4] bg-[#f2efeb] lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="px-6 py-12 sm:px-10 md:p-14 lg:p-16">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8d8177]">
+              Reserva tu valoración
+            </p>
+            <h2 className="mt-4 max-w-2xl font-display text-4xl leading-[1.05] tracking-[-0.025em] text-balance md:text-6xl">
+              Hablemos de lo que necesitas
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-7 text-[#625d57]">
+              Te escuchamos, valoramos tu caso y te explicamos las opciones con claridad, sin
+              tratamientos innecesarios.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <CTAAnchor href={waUrl} className="bg-[#24221f] text-[#fbfaf8] hover:bg-[#504a44]">
                 <MessageCircle className="h-4 w-4" /> Reservar por WhatsApp
               </CTAAnchor>
-              <CTALink
-                to="/tratamientos"
+              <CTAAnchor
+                href={`tel:${CLINIC.phoneTel}`}
                 variant="outline"
-                className="border-background/30 text-background hover:text-gold-soft hover:border-gold-soft"
+                className="border-[#24221f]/25 text-[#24221f] hover:border-[#24221f]"
               >
-                Ver todos
-              </CTALink>
+                <Phone className="h-4 w-4" /> {CLINIC.phoneDisplay}
+              </CTAAnchor>
             </div>
+          </div>
+          <div className="relative min-h-80 lg:min-h-full">
+            <img
+              src={treatment.image}
+              alt={`Valoración de ${treatment.name.toLowerCase()} en Hathor`}
+              width={1280}
+              height={1600}
+              loading="lazy"
+              className={`absolute inset-0 h-full w-full object-cover ${editorial.imagePosition ?? "object-center"}`}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#24221f]/20 to-transparent" />
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
 
@@ -320,7 +375,6 @@ function FacialTreatmentDetail({
               />
             </div>
           </div>
-
         </div>
       </section>
 
@@ -339,14 +393,8 @@ function FacialTreatmentDetail({
           </div>
 
           <div className="reveal divide-y divide-[#24221f]/12 border-y border-[#24221f]/12">
-            <EssentialBlock
-              title="Qué te aporta"
-              items={treatment.benefits}
-            />
-            <EssentialBlock
-              title="Para quién está indicado"
-              items={treatment.indications}
-            />
+            <EssentialBlock title="Qué te aporta" items={treatment.benefits} />
+            <EssentialBlock title="Para quién está indicado" items={treatment.indications} />
           </div>
         </div>
       </section>
@@ -481,13 +529,7 @@ function FacialTreatmentDetail({
   );
 }
 
-function EssentialBlock({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function EssentialBlock({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="py-9 sm:py-11">
       <h3 className="font-display text-3xl leading-tight">{title}</h3>
@@ -495,33 +537,6 @@ function EssentialBlock({
         {items.map((item) => (
           <li key={item} className="text-sm leading-6 text-[#625d57]">
             {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function DetailList({
-  eyebrow,
-  title,
-  items,
-}: {
-  eyebrow: string;
-  title: string;
-  items: string[];
-}) {
-  return (
-    <div className="reveal">
-      <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">{eyebrow}</p>
-      <h2 className="font-display text-3xl md:text-4xl leading-tight mb-8">{title}</h2>
-      <ul className="space-y-4">
-        {items.map((item) => (
-          <li key={item} className="flex gap-4 items-start">
-            <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-nude">
-              <Check className="h-3.5 w-3.5 text-gold" />
-            </span>
-            <span className="text-ink leading-relaxed">{item}</span>
           </li>
         ))}
       </ul>

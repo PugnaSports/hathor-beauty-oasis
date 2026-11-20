@@ -39,7 +39,6 @@ import productDermaMelazero from "@/assets/product-derma-melazero.png";
 import productMetabolismPropolisSerum from "@/assets/product-metabolism-propolis-serum.png";
 import productEggScalpRevitalizer from "@/assets/product-egg-scalp-revitalizer.png";
 import productHydraRadianceMist from "@/assets/product-hydra-radiance-mist.png";
-import facialLedVideo from "@/assets/hathor-facial-led.mp4";
 import facialHollywoodVideo from "@/assets/hathor-facial-hollywood-peel.mp4";
 import facialHollywoodResultVideo from "@/assets/hathor-facial-hollywood-resultado.mp4";
 
@@ -139,11 +138,6 @@ export const TREATMENTS: Treatment[] = [
       "Tratamiento de ojeras",
     ],
     media: [
-      {
-        src: facialLedVideo,
-        title: "Una experiencia pensada para tu piel",
-        description: "Tecnología, calma y acompañamiento durante toda la sesión.",
-      },
       {
         src: facialHollywoodVideo,
         title: "Hollywood Peel en consulta",

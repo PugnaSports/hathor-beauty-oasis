@@ -1,11 +1,7 @@
-import {
-  createFileRoute,
-  Link,
-  notFound,
-  useRouter,
-} from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
 import { ArrowLeft, Check, MessageCircle, Phone } from "lucide-react";
 import { CTAAnchor, CTALink } from "@/components/hathor/CTAButton";
+import { TreatmentVideo } from "@/components/hathor/TreatmentVideo";
 import { CLINIC, getTreatmentBySlug, whatsappUrlFor } from "@/lib/hathor";
 
 export const Route = createFileRoute("/tratamientos/$slug")({
@@ -36,15 +32,9 @@ export const Route = createFileRoute("/tratamientos/$slug")({
 function TreatmentNotFound() {
   return (
     <section className="px-6 py-32 text-center">
-      <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
-        404
-      </p>
-      <h1 className="font-display text-4xl md:text-5xl">
-        Tratamiento no encontrado
-      </h1>
-      <p className="mt-5 text-ink-muted">
-        El tratamiento que buscas no está disponible.
-      </p>
+      <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">404</p>
+      <h1 className="font-display text-4xl md:text-5xl">Tratamiento no encontrado</h1>
+      <p className="mt-5 text-ink-muted">El tratamiento que buscas no está disponible.</p>
       <div className="mt-9 flex justify-center">
         <CTALink to="/tratamientos">Ver todos los tratamientos</CTALink>
       </div>
@@ -90,9 +80,7 @@ function TreatmentDetail() {
 
           <div className="mt-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 reveal">
-              <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
-                Tratamiento
-              </p>
+              <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Tratamiento</p>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance">
                 {treatment.name}
               </h1>
@@ -124,23 +112,60 @@ function TreatmentDetail() {
       {/* Descripción */}
       <section className="px-6 py-16 bg-nude/40">
         <div className="mx-auto max-w-4xl reveal">
-          <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
-            Descripción
-          </p>
-          <p className="text-ink text-lg leading-relaxed">
-            {treatment.description}
-          </p>
+          <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Descripción</p>
+          <p className="text-ink text-lg leading-relaxed">{treatment.description}</p>
         </div>
       </section>
+
+      {treatment.media && treatment.media.length > 0 && (
+        <section className="overflow-hidden bg-ink px-6 py-20 text-background md:py-28">
+          <div className="mx-auto max-w-7xl">
+            <div className="reveal grid gap-6 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-7">
+                <p className="mb-5 text-[10px] uppercase tracking-[0.32em] text-gold-soft">
+                  En consulta
+                </p>
+                <h2 className="font-display text-3xl leading-tight text-background md:text-5xl">
+                  Así cuidamos tu piel, <span className="italic">paso a paso</span>
+                </h2>
+              </div>
+              <p className="max-w-lg text-sm leading-relaxed text-background/65 md:col-span-5 md:justify-self-end md:text-base">
+                Conoce de cerca algunos de nuestros tratamientos y resultados reales. Cada sesión
+                comienza siempre con una valoración personalizada.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-5 md:grid-cols-12 md:gap-6">
+              {treatment.media.map((item, index) => (
+                <article
+                  key={item.src}
+                  className={`reveal ${index === 0 ? "md:col-span-7" : "md:col-span-5"} ${index === 2 ? "md:col-start-8" : ""}`}
+                >
+                  <div
+                    className={`overflow-hidden rounded-2xl bg-background/5 ${index === 0 ? "aspect-[4/5] md:aspect-[4/3]" : "aspect-[4/5] md:aspect-[16/10]"}`}
+                  >
+                    <TreatmentVideo src={item.src} poster={treatment.image} title={item.title} />
+                  </div>
+                  <div className="mt-5 border-t border-background/15 pt-4">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-gold-soft">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-2 font-display text-2xl text-background">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-background/60">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Beneficios + Indicaciones */}
       <section className="px-6 py-20">
         <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-12">
-          <DetailList
-            eyebrow="Beneficios"
-            title="Qué te aporta"
-            items={treatment.benefits}
-          />
+          <DetailList eyebrow="Beneficios" title="Qué te aporta" items={treatment.benefits} />
           <DetailList
             eyebrow="Indicaciones"
             title="Para quién está indicado"
@@ -152,18 +177,13 @@ function TreatmentDetail() {
       {treatment.items && treatment.items.length > 0 && (
         <section className="px-6 pb-8">
           <div className="mx-auto max-w-7xl reveal">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
-              Qué incluye
-            </p>
+            <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Qué incluye</p>
             <h2 className="font-display text-3xl md:text-4xl mb-10 max-w-2xl">
               Lo que puede incluir tu plan
             </h2>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
               {treatment.items.map((item: string) => (
-                <li
-                  key={item}
-                  className="bg-background p-6 lg:p-8 flex items-start gap-4"
-                >
+                <li key={item} className="bg-background p-6 lg:p-8 flex items-start gap-4">
                   <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-nude">
                     <Check className="h-3.5 w-3.5 text-gold" />
                   </span>
@@ -178,18 +198,11 @@ function TreatmentDetail() {
       {/* Qué esperar */}
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-7xl reveal">
-          <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
-            Cómo se realiza
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl mb-10 max-w-2xl">
-            Qué puedes esperar
-          </h2>
+          <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Cómo se realiza</p>
+          <h2 className="font-display text-3xl md:text-4xl mb-10 max-w-2xl">Qué puedes esperar</h2>
           <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60 border border-border/60 rounded-3xl overflow-hidden">
             {treatment.experience.map((step: string, i: number) => (
-              <li
-                key={step}
-                className="bg-background p-8 lg:p-10 flex flex-col"
-              >
+              <li key={step} className="bg-background p-8 lg:p-10 flex flex-col">
                 <span className="font-mono text-[11px] tracking-widest text-gold">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -212,7 +225,8 @@ function TreatmentDetail() {
                 Cuéntanos qué te gustaría mejorar
               </h2>
               <p className="mt-5 max-w-xl text-background/70 leading-relaxed">
-                Tras una valoración inicial te propondremos un plan adaptado a ti, sin compromiso. Escríbenos por WhatsApp y te orientamos.
+                Tras una valoración inicial te propondremos un plan adaptado a ti, sin compromiso.
+                Escríbenos por WhatsApp y te orientamos.
               </p>
             </div>
             <div className="md:col-span-4 flex md:justify-end flex-wrap gap-3">
@@ -249,12 +263,8 @@ function DetailList({
 }) {
   return (
     <div className="reveal">
-      <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
-        {eyebrow}
-      </p>
-      <h2 className="font-display text-3xl md:text-4xl leading-tight mb-8">
-        {title}
-      </h2>
+      <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">{eyebrow}</p>
+      <h2 className="font-display text-3xl md:text-4xl leading-tight mb-8">{title}</h2>
       <ul className="space-y-4">
         {items.map((item) => (
           <li key={item} className="flex gap-4 items-start">

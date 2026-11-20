@@ -39,6 +39,9 @@ import productDermaMelazero from "@/assets/product-derma-melazero.png";
 import productMetabolismPropolisSerum from "@/assets/product-metabolism-propolis-serum.png";
 import productEggScalpRevitalizer from "@/assets/product-egg-scalp-revitalizer.png";
 import productHydraRadianceMist from "@/assets/product-hydra-radiance-mist.png";
+import facialLedVideo from "@/assets/hathor-facial-led.mp4";
+import facialHollywoodVideo from "@/assets/hathor-facial-hollywood-peel.mp4";
+import facialHollywoodResultVideo from "@/assets/hathor-facial-hollywood-resultado.mp4";
 
 export const CLINIC = {
   name: "Hathor",
@@ -92,6 +95,11 @@ export type Treatment = {
   experience: string[];
   whatsappMessage: string;
   items?: string[];
+  media?: {
+    src: string;
+    title: string;
+    description: string;
+  }[];
 };
 
 export const TREATMENTS: Treatment[] = [
@@ -120,8 +128,7 @@ export const TREATMENTS: Treatment[] = [
       "Sesión en clínica con técnicas mínimamente invasivas",
       "Seguimiento cercano de tu evolución",
     ],
-    whatsappMessage:
-      "Hola! Me gustaría pedir cita para medicina estética facial.",
+    whatsappMessage: "Hola! Me gustaría pedir cita para medicina estética facial.",
     items: [
       "Hollywood peel",
       "Biorregeneración facial",
@@ -130,6 +137,23 @@ export const TREATMENTS: Treatment[] = [
       "Tratamientos con exosomas",
       "Peeling químico suave",
       "Tratamiento de ojeras",
+    ],
+    media: [
+      {
+        src: facialLedVideo,
+        title: "Una experiencia pensada para tu piel",
+        description: "Tecnología, calma y acompañamiento durante toda la sesión.",
+      },
+      {
+        src: facialHollywoodVideo,
+        title: "Hollywood Peel en consulta",
+        description: "Un tratamiento facial realizado de forma personalizada y controlada.",
+      },
+      {
+        src: facialHollywoodResultVideo,
+        title: "La evolución de la piel",
+        description: "Un resultado real tras una sesión de Hollywood Peel.",
+      },
     ],
   },
   {
@@ -157,15 +181,13 @@ export const TREATMENTS: Treatment[] = [
       "Trabajo en cabina con aparatología profesional",
       "Pautas y recomendaciones para casa",
     ],
-    whatsappMessage:
-      "Hola! Me gustaría pedir cita para un tratamiento corporal.",
+    whatsappMessage: "Hola! Me gustaría pedir cita para un tratamiento corporal.",
     items: ["Eliminación de celulitis", "Reafirmación corporal"],
   },
   {
     slug: "laser",
     name: "Láser",
-    short:
-      "Tratamientos láser con valoración previa de tu piel, tu fototipo y la zona a tratar.",
+    short: "Tratamientos láser con valoración previa de tu piel, tu fototipo y la zona a tratar.",
     image: laserImg,
     description:
       "Antes de empezar cualquier sesión de láser hacemos una valoración para revisar el estado de tu piel, tu fototipo y la zona que quieres tratar. A partir de ahí te explicamos con claridad qué se puede hacer, cuántas sesiones suelen ser necesarias y los cuidados que conlleva.",
@@ -186,8 +208,7 @@ export const TREATMENTS: Treatment[] = [
       "Sesiones en cabina con tecnología profesional",
       "Pautas de cuidado posteriores personalizadas",
     ],
-    whatsappMessage:
-      "Hola! Me gustaría pedir cita para un tratamiento láser.",
+    whatsappMessage: "Hola! Me gustaría pedir cita para un tratamiento láser.",
     items: ["Láser corporal indoloro", "Eliminación de tatuajes"],
   },
   {
@@ -215,13 +236,8 @@ export const TREATMENTS: Treatment[] = [
       "Tratamientos en clínica y pautas en casa",
       "Revisión periódica de la evolución",
     ],
-    whatsappMessage:
-      "Hola! Me gustaría pedir cita para un tratamiento capilar.",
-    items: [
-      "Láser capilar",
-      "Vitaminas capilares",
-      "Seguimiento y valoración especializada",
-    ],
+    whatsappMessage: "Hola! Me gustaría pedir cita para un tratamiento capilar.",
+    items: ["Láser capilar", "Vitaminas capilares", "Seguimiento y valoración especializada"],
   },
   {
     slug: "aparatologia-avanzada",
@@ -248,8 +264,7 @@ export const TREATMENTS: Treatment[] = [
       "Plan personalizado de sesiones",
       "Revisión periódica de la evolución",
     ],
-    whatsappMessage:
-      "Hola! Me gustaría pedir cita para una valoración con aparatología avanzada.",
+    whatsappMessage: "Hola! Me gustaría pedir cita para una valoración con aparatología avanzada.",
     items: [
       "Diagnóstico y seguimiento",
       "Personalización de protocolos",
@@ -259,8 +274,7 @@ export const TREATMENTS: Treatment[] = [
   {
     slug: "asesoramiento-personalizado",
     name: "Asesoramiento personalizado",
-    short:
-      "Una primera conversación para escucharte y orientarte sin compromiso.",
+    short: "Una primera conversación para escucharte y orientarte sin compromiso.",
     image: asesoramientoImg,
     description:
       "Empezamos siempre por escucharte. La valoración personalizada nos sirve para entender qué te gustaría mejorar, revisar tu piel y/o tu cabello y proponerte un plan realista adaptado a tu momento, tu rutina y tus tiempos. Si no es necesario hacer nada, también te lo decimos.",
@@ -281,8 +295,7 @@ export const TREATMENTS: Treatment[] = [
       "Propuesta de plan personalizado",
       "Resolución de dudas con calma",
     ],
-    whatsappMessage:
-      "Hola! Me gustaría pedir cita para un asesoramiento personalizado.",
+    whatsappMessage: "Hola! Me gustaría pedir cita para un asesoramiento personalizado.",
     items: [
       "Valoración previa",
       "Rutina recomendada",
@@ -320,8 +333,7 @@ export const PRODUCTS: ProductCategory[] = [
   {
     slug: "facial",
     name: "Facial",
-    description:
-      "Cremas, sérums y rutinas para cuidar la piel del rostro en casa entre sesiones.",
+    description: "Cremas, sérums y rutinas para cuidar la piel del rostro en casa entre sesiones.",
     products: [
       {
         name: "Eye Wrinkle Smooth Out",
@@ -346,8 +358,7 @@ export const PRODUCTS: ProductCategory[] = [
         format: "Crema · Facial",
         ref: "00370",
         size: "30 ml",
-        description:
-          "Crema antiedad con péptidos y numerosos extractos botánicos.",
+        description: "Crema antiedad con péptidos y numerosos extractos botánicos.",
         image: productAdvancedBrilliant,
       },
       {
@@ -365,7 +376,7 @@ export const PRODUCTS: ProductCategory[] = [
         ref: "00410",
         size: "50 ml",
         description:
-          "Crema para hombre antiedad que además previene alteraciones en la piel por los efectos de la radiación solar y elimina daños ya producidos por el sol. Pensada para quien busca una rutina sencilla: es un \"todo en uno\" que combina Esencia y Crema.",
+          'Crema para hombre antiedad que además previene alteraciones en la piel por los efectos de la radiación solar y elimina daños ya producidos por el sol. Pensada para quien busca una rutina sencilla: es un "todo en uno" que combina Esencia y Crema.',
         image: productTurm9,
       },
       {
@@ -418,7 +429,7 @@ export const PRODUCTS: ProductCategory[] = [
         ref: "00328",
         size: "50 ml",
         description:
-          "Sérum antiedad efecto lifting. Contiene tripéptidos con efecto \"bótox\", además de pantenol, extractos botánicos, ácido hialurónico y vitaminas.",
+          'Sérum antiedad efecto lifting. Contiene tripéptidos con efecto "bótox", además de pantenol, extractos botánicos, ácido hialurónico y vitaminas.',
         image: productSuperbCoreSerum,
       },
       {
@@ -479,8 +490,7 @@ export const PRODUCTS: ProductCategory[] = [
         format: "Leche limpiadora · Facial y corporal",
         ref: "UC008 / UC005",
         size: "2x 100 ml / 520 ml",
-        description:
-          "Leche limpiadora con agua y extracto de rosas. Limpieza e hidratación.",
+        description: "Leche limpiadora con agua y extracto de rosas. Limpieza e hidratación.",
         image: productRoseWaterMilk,
       },
     ],
@@ -618,8 +628,7 @@ export const PRODUCTS: ProductCategory[] = [
   {
     slug: "corporal",
     name: "Corporal",
-    description:
-      "Cremas y lociones para mantener el trabajo corporal entre sesiones.",
+    description: "Cremas y lociones para mantener el trabajo corporal entre sesiones.",
     products: [
       {
         name: "Power Active Cream",

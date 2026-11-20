@@ -286,8 +286,8 @@ function FacialTreatmentDetail({
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" /> Tratamientos
           </Link>
 
-          <div className="mt-5 grid overflow-hidden border border-[#e4e0da] bg-[#fbfaf8] lg:min-h-[38rem] lg:grid-cols-2">
-            <div className="reveal flex flex-col justify-center px-6 py-12 sm:px-10 md:py-16 lg:px-14 xl:px-20">
+          <div className="mt-10 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="reveal py-6 lg:py-12">
               <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#9b8b7c]">
                 Tratamiento
               </p>
@@ -312,13 +312,13 @@ function FacialTreatmentDetail({
               </div>
             </div>
 
-            <div className="reveal min-h-[28rem] bg-[#eee9e3] sm:min-h-[34rem] lg:min-h-full">
+            <div className="reveal overflow-hidden rounded-3xl bg-[#eee9e3]">
               <img
                 src={treatment.image}
                 alt={treatment.name}
                 width={1280}
                 height={1600}
-                className="h-full w-full object-cover"
+                className="aspect-[4/5] w-full object-cover"
               />
             </div>
           </div>

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, ShieldCheck, HeartPulse, Cpu } from "lucide-react";
-import heroImg from "@/assets/hathor-hero.jpg";
+import heroImg from "@/assets/hathor-hero-retouched.png";
 import sobreImg from "@/assets/hathor-sobre.jpg";
 import facialImg from "@/assets/hathor-facial.jpg";
 import capilarImg from "@/assets/hathor-capilar.jpg";
@@ -101,9 +101,9 @@ function Index() {
               <img
                 src={heroImg}
                 alt="Fachada y entrada de la clínica Hathor en Olesa de Montserrat"
-                width={1280}
-                height={1600}
-                className="w-full aspect-[4/5] rounded-3xl object-cover object-[50%_38%] brightness-[1.06] saturate-[1.14] contrast-[0.98]"
+                width={1086}
+                height={1448}
+                className="w-full aspect-[5/6] sm:aspect-[4/5] rounded-3xl object-cover object-[50%_44%] sm:object-[50%_42%] lg:object-[50%_40%]"
               />
               <div className="absolute -bottom-8 -left-8 hidden md:block w-44 h-44 lg:w-52 lg:h-52 rounded-2xl border-[10px] border-background overflow-hidden">
                 <img

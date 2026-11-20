@@ -59,11 +59,7 @@ function TratamientosIndex() {
                   className={`overflow-hidden rounded-2xl bg-nude ${i % 3 === 1 ? "aspect-[5/4]" : "aspect-[4/5] md:aspect-[5/4]"}`}
                 >
                   {previewVideos[t.slug] ? (
-                    <TreatmentVideo
-                      src={previewVideos[t.slug]}
-                      title={t.name}
-                      autoPlayPreview={false}
-                    />
+                    <TreatmentVideo src={previewVideos[t.slug]} title={t.name} />
                   ) : (
                     <Link
                       to="/tratamientos/$slug"

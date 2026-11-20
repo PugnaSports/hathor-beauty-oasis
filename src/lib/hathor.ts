@@ -3,7 +3,7 @@ import corporalImg from "@/assets/hathor-corporal.jpg";
 import laserImg from "@/assets/hathor-laser.jpg";
 import capilarImg from "@/assets/hathor-capilar.jpg";
 import aparatologiaImg from "@/assets/hathor-aparatologia.jpg";
-import asesoramientoImg from "@/assets/hathor-asesoramiento.jpg";
+import asesoramientoImg from "@/assets/hathor-asesoramiento-v2.png";
 import productEggShampoo from "@/assets/product-egg-shampoo.png";
 import productEyeWrinkle from "@/assets/product-eye-wrinkle.png";
 import productProbio6Shampoo from "@/assets/product-probio6-shampoo.png";

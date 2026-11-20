@@ -5,8 +5,12 @@ import sobreImg from "@/assets/hathor-sobre.jpg";
 import facialImg from "@/assets/hathor-facial.jpg";
 import capilarImg from "@/assets/hathor-capilar.jpg";
 import corporalImg from "@/assets/hathor-corporal.jpg";
+import facialVideo from "@/assets/hathor-facial-hollywood-peel.mp4";
+import capilarVideo from "@/assets/hathor-capilar-valoracion.mp4";
+import corporalVideo from "@/assets/hathor-corporal-resultado-3cm.mp4";
 import { CTAAnchor, CTALink } from "@/components/hathor/CTAButton";
 import { FaqSection } from "@/components/hathor/FaqSection";
+import { TreatmentVideo } from "@/components/hathor/TreatmentVideo";
 import { CLINIC } from "@/lib/hathor";
 
 export const Route = createFileRoute("/")({
@@ -45,18 +49,21 @@ const servicePreview = [
     title: "Medicina estética facial",
     desc: "Cuidamos tu rostro respetando tus rasgos, con un enfoque natural y sin cambios bruscos.",
     img: facialImg,
+    video: facialVideo,
   },
   {
     slug: "medicina-capilar",
     title: "Medicina capilar",
     desc: "Valoración capilar con criterio médico para acompañar la salud de tu cuero cabelludo y tu cabello.",
     img: capilarImg,
+    video: capilarVideo,
   },
   {
     slug: "tratamientos-corporales",
     title: "Tratamientos corporales",
     desc: "Protocolos progresivos para cuidar la piel y trabajar zonas concretas con seguimiento.",
     img: corporalImg,
+    video: corporalVideo,
   },
 ];
 
@@ -71,11 +78,11 @@ function Index() {
               Olesa de Montserrat · Estética & Capilar
             </p>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance">
-              Medicina estética y capilar en{" "}
-              <span className="italic">Olesa de Montserrat</span>
+              Medicina estética y capilar en <span className="italic">Olesa de Montserrat</span>
             </h1>
             <p className="mt-7 max-w-xl text-base md:text-lg text-ink-muted leading-relaxed">
-              Una clínica donde escuchamos primero, valoramos con criterio sanitario y diseñamos contigo un plan adaptado a tu piel, tu cabello y tu momento.
+              Una clínica donde escuchamos primero, valoramos con criterio sanitario y diseñamos
+              contigo un plan adaptado a tu piel, tu cabello y tu momento.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <CTALink to="/contacto">Pedir cita</CTALink>
@@ -132,7 +139,9 @@ function Index() {
                 Primero escuchamos. Después <span className="italic">cuidamos</span>.
               </h2>
               <p className="mt-5 text-ink-muted leading-relaxed">
-                Reunimos medicina estética facial, medicina capilar, tratamientos corporales y aparatología avanzada bajo el mismo enfoque: valoración previa, criterio sanitario y un plan honesto a tu medida.
+                Reunimos medicina estética facial, medicina capilar, tratamientos corporales y
+                aparatología avanzada bajo el mismo enfoque: valoración previa, criterio sanitario y
+                un plan honesto a tu medida.
               </p>
             </div>
             <CTALink to="/tratamientos" variant="ghost" className="self-start md:self-end">
@@ -148,15 +157,8 @@ function Index() {
                 key={s.title}
                 className={`group block reveal ${i === 1 ? "md:translate-y-8" : ""}`}
               >
-                <div className="overflow-hidden rounded-2xl bg-background">
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    loading="lazy"
-                    width={1024}
-                    height={1280}
-                    className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-background">
+                  <TreatmentVideo src={s.video} poster={s.img} title={s.title} />
                 </div>
                 <h3 className="mt-6 font-display text-2xl">{s.title}</h3>
                 <p className="mt-2 text-sm text-ink-muted leading-relaxed">{s.desc}</p>
@@ -183,18 +185,18 @@ function Index() {
             />
           </div>
           <div className="lg:col-span-6 reveal">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">
-              Sobre Hathor
-            </p>
+            <p className="text-[10px] uppercase tracking-[0.32em] text-gold mb-5">Sobre Hathor</p>
             <h2 className="font-display text-3xl md:text-5xl leading-[1.05]">
-              Un espacio creado para{" "}
-              <span className="italic">cuidar de ti</span>
+              Un espacio creado para <span className="italic">cuidar de ti</span>
             </h2>
             <p className="mt-6 text-ink-muted text-lg leading-relaxed">
-              Hathor nace de la mano de Laura, enfermera y fundadora, para unir el cuidado sanitario con la medicina estética y capilar en un entorno cercano y de confianza.
+              Hathor nace de la mano de Laura, enfermera y fundadora, para unir el cuidado sanitario
+              con la medicina estética y capilar en un entorno cercano y de confianza.
             </p>
             <p className="mt-4 text-ink-muted leading-relaxed">
-              Cada valoración es individual y cada plan se ajusta a tus necesidades reales: trabajamos con honestidad, criterio sanitario y un seguimiento cercano durante todo el proceso.
+              Cada valoración es individual y cada plan se ajusta a tus necesidades reales:
+              trabajamos con honestidad, criterio sanitario y un seguimiento cercano durante todo el
+              proceso.
             </p>
             <div className="mt-9">
               <CTALink to="/sobre-nosotros" variant="outline">
@@ -219,14 +221,23 @@ function Index() {
                 Cuéntanos qué te gustaría mejorar.
               </h2>
               <p className="mt-5 max-w-xl text-background/70 leading-relaxed">
-                Te atendemos en {CLINIC.address}. Reserva una valoración y diseñamos contigo un plan adaptado a tu piel, tu cabello y tus tiempos.
+                Te atendemos en {CLINIC.address}. Reserva una valoración y diseñamos contigo un plan
+                adaptado a tu piel, tu cabello y tus tiempos.
               </p>
             </div>
             <div className="md:col-span-4 flex md:justify-end flex-wrap gap-3">
-              <CTAAnchor href={`tel:${CLINIC.phoneTel}`} variant="primary" className="bg-gold hover:bg-background hover:text-ink">
+              <CTAAnchor
+                href={`tel:${CLINIC.phoneTel}`}
+                variant="primary"
+                className="bg-gold hover:bg-background hover:text-ink"
+              >
                 Llamar ahora
               </CTAAnchor>
-              <CTALink to="/contacto" variant="outline" className="border-background/30 text-background hover:text-gold-soft hover:border-gold-soft">
+              <CTALink
+                to="/contacto"
+                variant="outline"
+                className="border-background/30 text-background hover:text-gold-soft hover:border-gold-soft"
+              >
                 Contacto
               </CTALink>
             </div>

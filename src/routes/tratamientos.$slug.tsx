@@ -5,8 +5,6 @@ import {
   Check,
   MessageCircle,
   Phone,
-  ScanFace,
-  Sparkles,
 } from "lucide-react";
 import { CTAAnchor, CTALink } from "@/components/hathor/CTAButton";
 import { TreatmentVideo } from "@/components/hathor/TreatmentVideo";
@@ -323,26 +321,6 @@ function FacialTreatmentDetail({
             </div>
           </div>
 
-          <nav
-            aria-label="Contenido de medicina estética facial"
-            className="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[#dedad4] bg-[#dedad4] md:grid-cols-4"
-          >
-            {[
-              ["01", "Qué te aporta", "#facial-esencial"],
-              ["02", "Cómo se realiza", "#facial-proceso"],
-              ["03", "Tratamientos", "#facial-opciones"],
-              ["04", "Reservar", "#facial-reserva"],
-            ].map(([number, label, href]) => (
-              <a
-                key={number}
-                href={href}
-                className="group flex min-h-16 items-center gap-3 bg-[#fbfaf8] px-4 py-3 transition-colors duration-200 hover:bg-[#f4f1ed] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#8d8177] sm:px-5"
-              >
-                <span className="font-mono text-[10px] text-[#999188]">{number}</span>
-                <span className="text-xs font-semibold text-[#3f3a35]">{label}</span>
-              </a>
-            ))}
-          </nav>
         </div>
       </section>
 
@@ -362,14 +340,10 @@ function FacialTreatmentDetail({
 
           <div className="reveal divide-y divide-[#24221f]/12 border-y border-[#24221f]/12">
             <EssentialBlock
-              icon={<Sparkles className="h-5 w-5" aria-hidden="true" />}
-              number="01"
               title="Qué te aporta"
               items={treatment.benefits}
             />
             <EssentialBlock
-              icon={<ScanFace className="h-5 w-5" aria-hidden="true" />}
-              number="02"
               title="Para quién está indicado"
               items={treatment.indications}
             />
@@ -508,35 +482,22 @@ function FacialTreatmentDetail({
 }
 
 function EssentialBlock({
-  icon,
-  number,
   title,
   items,
 }: {
-  icon: React.ReactNode;
-  number: string;
   title: string;
   items: string[];
 }) {
   return (
-    <div className="grid gap-6 py-8 sm:grid-cols-[auto_1fr] sm:py-10">
-      <div className="flex items-center gap-3 sm:flex-col sm:items-start">
-        <span className="grid h-11 w-11 place-items-center rounded-full bg-[#eee9e3] text-[#625d57]">
-          {icon}
-        </span>
-        <span className="font-mono text-[10px] text-[#999188]">{number}</span>
-      </div>
-      <div>
-        <h3 className="font-display text-3xl leading-tight">{title}</h3>
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-          {items.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-sm leading-6 text-[#625d57]">
-              <Check className="mt-1 h-4 w-4 shrink-0 text-[#8d8177]" aria-hidden="true" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="py-9 sm:py-11">
+      <h3 className="font-display text-3xl leading-tight">{title}</h3>
+      <ul className="mt-6 grid gap-x-10 gap-y-4 sm:grid-cols-2">
+        {items.map((item) => (
+          <li key={item} className="text-sm leading-6 text-[#625d57]">
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

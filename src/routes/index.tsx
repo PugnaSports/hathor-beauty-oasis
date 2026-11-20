@@ -150,11 +150,8 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {servicePreview.map((s, i) => (
-              <article
-                key={s.title}
-                className={`group reveal ${i === 1 ? "md:translate-y-8" : ""}`}
-              >
+            {servicePreview.map((s) => (
+              <article key={s.title} className="group reveal">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-background">
                   <TreatmentVideo src={s.video} poster={s.img} title={s.title} />
                 </div>

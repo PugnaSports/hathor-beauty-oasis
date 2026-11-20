@@ -3,15 +3,16 @@ import { ArrowUpRight, Sparkles, ShieldCheck, HeartPulse, Cpu } from "lucide-rea
 import heroImg from "@/assets/hathor-hero-retouched.png";
 import sobreImg from "@/assets/hathor-sobre.jpg";
 import facialImg from "@/assets/hathor-facial.jpg";
-import capilarImg from "@/assets/hathor-capilar.jpg";
-import corporalImg from "@/assets/hathor-corporal.jpg";
-import facialVideo from "@/assets/hathor-facial-hollywood-peel.mp4";
-import capilarVideo from "@/assets/hathor-capilar-valoracion.mp4";
-import corporalVideo from "@/assets/hathor-corporal-resultado-3cm.mp4";
 import { CTAAnchor, CTALink } from "@/components/hathor/CTAButton";
 import { FaqSection } from "@/components/hathor/FaqSection";
-import { TreatmentVideo } from "@/components/hathor/TreatmentVideo";
-import { CLINIC } from "@/lib/hathor";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { CLINIC, TREATMENTS } from "@/lib/hathor";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,30 +42,6 @@ const trustPoints = [
   { icon: ShieldCheck, label: "Criterio sanitario" },
   { icon: Sparkles, label: "Resultados naturales" },
   { icon: Cpu, label: "Tecnología avanzada" },
-];
-
-const servicePreview = [
-  {
-    slug: "medicina-estetica-facial",
-    title: "Medicina estética facial",
-    desc: "Cuidamos tu rostro respetando tus rasgos, con un enfoque natural y sin cambios bruscos.",
-    img: facialImg,
-    video: facialVideo,
-  },
-  {
-    slug: "medicina-capilar",
-    title: "Medicina capilar",
-    desc: "Valoración capilar con criterio médico para acompañar la salud de tu cuero cabelludo y tu cabello.",
-    img: capilarImg,
-    video: capilarVideo,
-  },
-  {
-    slug: "tratamientos-corporales",
-    title: "Tratamientos corporales",
-    desc: "Protocolos progresivos para cuidar la piel y trabajar zonas concretas con seguimiento.",
-    img: corporalImg,
-    video: corporalVideo,
-  },
 ];
 
 function Index() {
@@ -128,7 +105,7 @@ function Index() {
       </section>
 
       {/* Services preview */}
-      <section className="px-6 py-24 bg-nude/40">
+      <section className="overflow-hidden bg-nude/40 px-6 py-24 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
             <div className="max-w-xl reveal">
@@ -144,27 +121,55 @@ function Index() {
                 un plan honesto a tu medida.
               </p>
             </div>
-            <CTALink to="/tratamientos" variant="ghost" className="self-start md:self-end">
-              Ver todos <ArrowUpRight className="h-4 w-4" />
-            </CTALink>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {servicePreview.map((s) => (
-              <article key={s.title} className="group reveal">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-background">
-                  <TreatmentVideo src={s.video} poster={s.img} title={s.title} />
-                </div>
-                <Link to="/tratamientos/$slug" params={{ slug: s.slug }} className="block">
-                  <h3 className="mt-6 font-display text-2xl">{s.title}</h3>
-                  <p className="mt-2 text-sm text-ink-muted leading-relaxed">{s.desc}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink group-hover:text-gold">
-                    Descubrir <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
-                </Link>
-              </article>
-            ))}
-          </div>
+          <Carousel opts={{ align: "start", dragFree: true }} className="reveal">
+            <CarouselContent className="-ml-4 md:-ml-6">
+              {TREATMENTS.map((t) => (
+                <CarouselItem
+                  key={t.slug}
+                  className="basis-[88%] pl-4 sm:basis-[62%] md:basis-[48%] md:pl-6 lg:basis-[38%]"
+                >
+                  <Link
+                    to="/tratamientos/$slug"
+                    params={{ slug: t.slug }}
+                    className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
+                  >
+                    <article>
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-background">
+                        <img
+                          src={t.image}
+                          alt={t.name}
+                          loading="lazy"
+                          width={1024}
+                          height={1280}
+                          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent px-6 pb-6 pt-24 text-white">
+                          <h3 className="font-display text-2xl md:text-3xl">{t.name}</h3>
+                          <span className="mt-3 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-white/90">
+                            Descubrir <ArrowUpRight className="h-3.5 w-3.5" />
+                          </span>
+                        </div>
+                      </div>
+                      <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-muted">
+                        {t.short}
+                      </p>
+                    </article>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="mt-8 flex items-center justify-between gap-4">
+              <div className="flex gap-2">
+                <CarouselPrevious className="static h-11 w-11 translate-y-0 border-ink/15 bg-background hover:border-gold hover:bg-background" />
+                <CarouselNext className="static h-11 w-11 translate-y-0 border-ink/15 bg-background hover:border-gold hover:bg-background" />
+              </div>
+              <CTALink to="/tratamientos" variant="ghost">
+                Ver todos <ArrowUpRight className="h-4 w-4" />
+              </CTALink>
+            </div>
+          </Carousel>
         </div>
       </section>
 

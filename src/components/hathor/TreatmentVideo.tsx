@@ -6,9 +6,15 @@ interface TreatmentVideoProps {
   src: string;
   poster: string;
   title: string;
+  autoPlayPreview?: boolean;
 }
 
-export function TreatmentVideo({ src, poster, title }: TreatmentVideoProps) {
+export function TreatmentVideo({
+  src,
+  poster,
+  title,
+  autoPlayPreview = true,
+}: TreatmentVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const expandedVideoRef = useRef<HTMLVideoElement>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +33,7 @@ export function TreatmentVideo({ src, poster, title }: TreatmentVideoProps) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !reduceMotion.matches && !isOpen) {
+        if (autoPlayPreview && entry.isIntersecting && !reduceMotion.matches && !isOpen) {
           void video.play().catch(() => undefined);
         } else {
           video.pause();
@@ -45,7 +51,7 @@ export function TreatmentVideo({ src, poster, title }: TreatmentVideoProps) {
       observer.disconnect();
       video.pause();
     };
-  }, [isOpen]);
+  }, [autoPlayPreview, isOpen]);
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open);
@@ -74,9 +80,9 @@ export function TreatmentVideo({ src, poster, title }: TreatmentVideoProps) {
             playsInline
             preload="metadata"
             aria-hidden="true"
-            className="h-full w-full object-cover transition-transform duration-700 group-hover/video:scale-[1.03]"
+            className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover/video:scale-[1.025] motion-reduce:transition-none"
           />
-          <span className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/55 text-white shadow-lg backdrop-blur-sm transition-transform group-hover/video:scale-105">
+          <span className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-white shadow-lg backdrop-blur-sm transition-transform duration-200 ease-out group-hover/video:scale-105 motion-reduce:transition-none">
             <Maximize2 className="h-4 w-4" aria-hidden="true" />
           </span>
           <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-5 pb-5 pt-12 text-[10px] font-medium uppercase tracking-[0.2em] text-white">
@@ -88,7 +94,7 @@ export function TreatmentVideo({ src, poster, title }: TreatmentVideoProps) {
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/95 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0" />
         <Dialog.Content
-          className="fixed inset-0 z-50 flex items-center justify-center p-0 focus:outline-none sm:p-6"
+          className="fixed inset-0 z-50 flex items-center justify-center p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white sm:p-6"
           onClick={(event) => {
             if (event.target === event.currentTarget) handleOpenChange(false);
           }}
@@ -107,7 +113,7 @@ export function TreatmentVideo({ src, poster, title }: TreatmentVideoProps) {
             preload="auto"
             className="max-h-[100dvh] max-w-full bg-black object-contain sm:max-h-[calc(100dvh-3rem)] sm:rounded-xl"
           />
-          <Dialog.Close className="absolute right-[max(1rem,env(safe-area-inset-right))] top-[max(1rem,env(safe-area-inset-top))] inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+          <Dialog.Close className="absolute right-[max(1rem,env(safe-area-inset-right))] top-[max(1rem,env(safe-area-inset-top))] inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-colors duration-200 ease-out hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white active:scale-[0.97]">
             <X className="h-5 w-5" aria-hidden="true" />
             <span className="sr-only">Cerrar vídeo</span>
           </Dialog.Close>

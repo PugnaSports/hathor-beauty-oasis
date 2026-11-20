@@ -151,21 +151,21 @@ function Index() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {servicePreview.map((s, i) => (
-              <Link
-                to="/tratamientos/$slug"
-                params={{ slug: s.slug }}
+              <article
                 key={s.title}
-                className={`group block reveal ${i === 1 ? "md:translate-y-8" : ""}`}
+                className={`group reveal ${i === 1 ? "md:translate-y-8" : ""}`}
               >
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-background">
                   <TreatmentVideo src={s.video} poster={s.img} title={s.title} />
                 </div>
-                <h3 className="mt-6 font-display text-2xl">{s.title}</h3>
-                <p className="mt-2 text-sm text-ink-muted leading-relaxed">{s.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink group-hover:text-gold">
-                  Descubrir <ArrowUpRight className="h-3.5 w-3.5" />
-                </span>
-              </Link>
+                <Link to="/tratamientos/$slug" params={{ slug: s.slug }} className="block">
+                  <h3 className="mt-6 font-display text-2xl">{s.title}</h3>
+                  <p className="mt-2 text-sm text-ink-muted leading-relaxed">{s.desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ink group-hover:text-gold">
+                    Descubrir <ArrowUpRight className="h-3.5 w-3.5" />
+                  </span>
+                </Link>
+              </article>
             ))}
           </div>
         </div>

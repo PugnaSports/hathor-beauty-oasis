@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Play } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { ExternalLink } from "@/components/hathor/ExternalLink";
 import { SectionHeader } from "@/components/hathor/SectionHeader";
 import { CTAAnchor } from "@/components/hathor/CTAButton";
 import { CLINIC } from "@/lib/hathor";
-import facialImg from "@/assets/hathor-facial.jpg";
-import capilarImg from "@/assets/hathor-capilar.jpg";
-import corporalImg from "@/assets/hathor-corporal.jpg";
+import prysmVideo from "@/assets/hathor-instagram-prysm.mp4";
+import manchasVideo from "@/assets/hathor-instagram-manchas.mp4";
+import laserVideo from "@/assets/hathor-instagram-laser.mp4";
 
 export const Route = createFileRoute("/instagram")({
   head: () => ({
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/instagram")({
   component: InstagramPage,
 });
 
-const thumbs = [facialImg, capilarImg, corporalImg];
+const reelVideos = [prysmVideo, manchasVideo, laserVideo];
 
 function InstagramPage() {
   return (
@@ -57,22 +57,19 @@ function InstagramPage() {
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="relative overflow-hidden rounded-2xl">
-                <img
-                  src={thumbs[i % thumbs.length]}
-                  alt={`Reel de Hathor en Instagram`}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="w-full aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105"
+                <video
+                  src={reelVideos[i % reelVideos.length]}
+                  aria-label="Reel de Hathor en Instagram"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="pointer-events-none aspect-[9/16] w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
                 <div className="absolute top-4 right-4 inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-ink">
                   <Instagram className="h-3 w-3" /> Reel
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-background/90 backdrop-blur transition-transform duration-500 group-hover:scale-110">
-                    <Play className="h-6 w-6 text-ink fill-current" />
-                  </span>
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-background">
                   <span className="text-[10px] uppercase tracking-[0.22em]">

@@ -103,7 +103,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-3 justify-self-end">
           <Link
             to="/contacto"
             className="hidden h-11 min-w-[146px] shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-ink px-5 text-[10px] font-semibold uppercase leading-none tracking-[0.14em] text-background transition-colors hover:bg-gold xl:h-12 xl:min-w-[156px] xl:px-6 xl:text-[11px] xl:tracking-[0.16em] sm:inline-flex"

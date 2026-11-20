@@ -273,7 +273,7 @@ function FacialTreatmentDetail({
 }) {
   if (!treatment) return null;
 
-  const [mainMedia, ...secondaryMedia] = treatment.media ?? [];
+  const secondaryMedia = treatment.media ?? [];
 
   return (
     <main className="facial-page overflow-hidden bg-[#fbfaf8] text-[#24221f]">
@@ -286,60 +286,40 @@ function FacialTreatmentDetail({
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" /> Tratamientos
           </Link>
 
-          <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(460px,1.1fr)] lg:items-stretch lg:gap-5">
-            <div className="reveal flex flex-col justify-center rounded-[1.25rem] border border-[#dedad4] bg-[#f4f1ed] px-6 py-10 sm:px-9 md:py-12 lg:px-12">
-              <div className="mb-7 flex items-center gap-3 text-[#8d8177]">
-                <span className="grid h-10 w-10 place-items-center rounded-full border border-[#cfc8c0] bg-[#fbfaf8]">
-                  <ScanFace className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.25em]">
-                  Cuidado facial personalizado
-                </span>
-              </div>
-              <h1 className="max-w-2xl font-display text-[clamp(2.7rem,6vw,5.4rem)] leading-[0.98] tracking-[-0.035em] text-balance">
-                Medicina estética <span className="italic">facial</span>
+          <div className="mt-5 grid overflow-hidden border border-[#e4e0da] bg-[#fbfaf8] lg:min-h-[38rem] lg:grid-cols-2">
+            <div className="reveal flex flex-col justify-center px-6 py-12 sm:px-10 md:py-16 lg:px-14 xl:px-20">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#9b8b7c]">
+                Tratamiento
+              </p>
+              <h1 className="mt-6 max-w-xl font-display text-[clamp(2.8rem,5vw,4.8rem)] leading-[1.02] tracking-[-0.03em] text-balance">
+                Medicina estética facial
               </h1>
-              <p className="mt-6 max-w-xl text-base leading-7 text-[#625d57] md:text-lg">
+              <p className="mt-6 max-w-lg text-base leading-7 text-[#625d57] md:text-lg">
                 Cuidamos tu rostro con criterio sanitario, respetando tus rasgos y buscando un
                 resultado natural.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <CTAAnchor href={waUrl} className="bg-[#24221f] text-[#fbfaf8] hover:bg-[#504a44]">
-                  <MessageCircle className="h-4 w-4" /> Reservar valoración
+                  <MessageCircle className="h-4 w-4" /> Reservar por WhatsApp
                 </CTAAnchor>
-                <a
-                  href="#facial-esencial"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#24221f]/20 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-200 hover:border-[#24221f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d8177] active:scale-[0.98]"
+                <CTAAnchor
+                  href={`tel:${CLINIC.phoneTel}`}
+                  variant="outline"
+                  className="border-[#24221f]/20 text-[#24221f] hover:border-[#24221f]"
                 >
-                  Ver el tratamiento <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </a>
+                  <Phone className="h-4 w-4" /> {CLINIC.phoneDisplay}
+                </CTAAnchor>
               </div>
             </div>
 
-            <div className="reveal relative min-h-[27rem] overflow-hidden rounded-[1.25rem] border border-[#dedad4] bg-[#ece8e3] sm:min-h-[34rem] lg:min-h-[38rem]">
-              {mainMedia ? (
-                <TreatmentVideo
-                  src={mainMedia.src}
-                  poster={treatment.image}
-                  title={mainMedia.title}
-                />
-              ) : (
-                <img
-                  src={treatment.image}
-                  alt={treatment.name}
-                  width={1280}
-                  height={1600}
-                  className="h-full w-full object-cover"
-                />
-              )}
-              <div className="pointer-events-none absolute bottom-5 left-5 max-w-[15rem] rounded-xl border border-white/70 bg-[#fbfaf8]/94 p-4 shadow-sm backdrop-blur-md sm:bottom-7 sm:left-7">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8d8177]">
-                  En consulta
-                </p>
-                <p className="mt-1.5 font-display text-xl leading-tight text-[#24221f]">
-                  {mainMedia?.title ?? "Una experiencia pensada para tu piel"}
-                </p>
-              </div>
+            <div className="reveal min-h-[28rem] bg-[#eee9e3] sm:min-h-[34rem] lg:min-h-full">
+              <img
+                src={treatment.image}
+                alt={treatment.name}
+                width={1280}
+                height={1600}
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
 

@@ -7,6 +7,7 @@ import { TREATMENTS } from "@/lib/hathor";
 import facialVideo from "@/assets/hathor-facial-hollywood-peel.mp4";
 import capilarVideo from "@/assets/hathor-capilar-valoracion.mp4";
 import corporalVideo from "@/assets/hathor-corporal-resultado-3cm.mp4";
+import asesoramientoVideo from "@/assets/hathor-asesoramiento-personalizado.mp4";
 
 export const Route = createFileRoute("/tratamientos/")({
   head: () => ({
@@ -33,6 +34,7 @@ function TratamientosIndex() {
     "medicina-estetica-facial": facialVideo,
     "tratamientos-corporales": corporalVideo,
     "medicina-capilar": capilarVideo,
+    "asesoramiento-personalizado": asesoramientoVideo,
   };
 
   return (

@@ -61,7 +61,6 @@ function TratamientosIndex() {
                   {previewVideos[t.slug] ? (
                     <TreatmentVideo
                       src={previewVideos[t.slug]}
-                      poster={t.image}
                       title={t.name}
                       autoPlayPreview={false}
                     />

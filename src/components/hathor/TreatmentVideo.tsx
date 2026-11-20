@@ -4,7 +4,7 @@ import { Maximize2, X } from "lucide-react";
 
 interface TreatmentVideoProps {
   src: string;
-  poster: string;
+  poster?: string;
   title: string;
   autoPlayPreview?: boolean;
 }
@@ -78,7 +78,7 @@ export function TreatmentVideo({
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             aria-hidden="true"
             className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover/video:scale-[1.025] motion-reduce:transition-none"
           />
